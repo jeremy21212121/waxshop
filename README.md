@@ -2,6 +2,9 @@
 
 > waxshop.ca
 
+Built with vue, using nuxt basically as a static site generator.
+Currently MVP, muchg more to come.
+
 ## Build Setup
 
 ``` bash
