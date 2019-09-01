@@ -94,6 +94,9 @@ export default {
 }
 @media screen and (min-width: 740px) {
   section.about {
+    h1 {
+      font-size: 1.9rem;
+    }
     div.boxes {
       justify-content: space-between;
     }

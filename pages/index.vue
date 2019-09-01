@@ -68,4 +68,14 @@ h2.section-title {
 .links {
   padding-top: 15px;
 }
+@media screen and (min-width: 620px) {
+  h1.section-title {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (min-width: 740px) {
+  h1.section-title {
+    font-size: 1.9rem;
+  }
+}
 </style>
