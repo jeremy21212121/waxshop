@@ -15,7 +15,7 @@
 }
 
 @font-face {
-    font-family: 'Ralway';
+    font-family: 'Raleway';
     src: url('~static/fonts/raleway-extrabold-webfont.woff2') format('woff2'),
          url('~static/fonts/raleway-extrabold-webfont.woff') format('woff');
     font-weight: 800;
