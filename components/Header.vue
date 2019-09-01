@@ -81,11 +81,12 @@ export default {
 header {
   // box-shadow: 0 2px 5px rgba(0,0,0,.26);
   width: 100%;
-  background-color: black;
+  // background-color: black;
   position: fixed;
   top: 0;
   .logo {
     display: flex;
+    width: 100%;
     // justify-content: space-around;
     align-items: center;
     background-color: black;
@@ -136,7 +137,9 @@ header {
     }
   }
   nav {
-    background-color: #ccccccf3;
+    // background-color: #cccccc;
+    // background-color: rgba(174,174,174,0.75);
+    background-color: rgba(204,204,204,.65);
     max-height: 0px;
     overflow: hidden;
     opacity: 0;

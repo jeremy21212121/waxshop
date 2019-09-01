@@ -59,16 +59,18 @@ html {
 }
 
 .button--green:hover {
-  color: #fff;
-  background-color: #666;
-  border-color: #333;
+  color: #ddd;
+  /* background-color: rgb(128,36,0); */
+  background-color: rgb(170,48,0);
+  /* border-color: #333; */
 }
 
 .button--grey {
   display: inline-block;
   border-radius: 4px;
   /* border: 1px solid #a6a6a6; */
-  background-color: #00000030;
+  /* background-color: #00000030; */
+  background-color: rgba(204,204,204,0.95294);
   color: #444;
   text-decoration: none;
   padding: 6px 20px;
@@ -77,7 +79,8 @@ html {
 }
 
 .button--grey:hover {
-  color: #fff;
+  /* color: #fff; */
   background-color: #666;
+  background-color: rgba(175, 175, 175, 0.95294);
 }
 </style>
