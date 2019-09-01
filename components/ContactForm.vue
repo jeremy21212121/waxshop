@@ -69,6 +69,12 @@ export default {
     }
   },
   methods: {
+    resetForm () {
+      const f = this.formData
+      f.name = ''
+      f.email = ''
+      f.text = ''
+    },
     async submitForm () {
       // detect dev mode by using window.webpackHotUpdate
       const apiUrl = (window.webpackHotUpdate) ? this.apiUrl.dev : this.apiUrl.prod
@@ -77,7 +83,8 @@ export default {
       this.loading = false
       const msg = (response.success) ? 'Message sent! We will get back to you ASAP.' : 'Sorry, error sending message. Please e-mail hello@waxshop.ca or call.'
       this.setSnackbar(msg)
-      this.$refs.contactForm.reset()
+      // this.$refs.contactForm.reset()
+      this.resetForm()
       window.setTimeout(() => this.setSnackbar(''), 5000)
     },
     checkForm (e) {
