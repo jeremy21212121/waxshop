@@ -89,7 +89,8 @@ section.contact {
     }
     span.content {
       // margin-top: 20px;
-      opacity: 0.80;
+      // opacity: 0.80;
+      color: rgba(0,0,0,.8);
       flex-grow: 1;
       display: flex;
       flex-direction: column;

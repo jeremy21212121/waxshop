@@ -18,7 +18,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20%;
   // .applicator {
   //   display: flex;
   //   align-items: center;
@@ -72,24 +72,27 @@ section {
   }
 }
 @media screen and (min-width: 740px) {
-  div.applicator {
-    img {
-      width: 90%;
-    }
+  section {
+    margin-top: 30px;
   }
-  div.overlay {
-    top: 33%;
-    h1 {
-      // margin-bottom: 40px;
-      font-size: 1.8rem;
-      span {
-        font-size: 1.5rem;
-      }
-    }
-    h2 {
-      // margin-top: 70px;
-      font-size: 2.4rem;
-    }
-  }
+//   div.applicator {
+//     img {
+//       width: 90%;
+//     }
+//   }
+//   div.overlay {
+//     top: 33%;
+//     h1 {
+//       // margin-bottom: 40px;
+//       font-size: 1.8rem;
+//       span {
+//         font-size: 1.5rem;
+//       }
+//     }
+//     h2 {
+//       // margin-top: 70px;
+//       font-size: 2.4rem;
+//     }
+//   }
 }
 </style>

@@ -53,13 +53,13 @@
       :class="{ active }"
     >
       <ul>
-        <li>
+        <li @click="() => { active = !active }">
           <a href="#about" class="button--grey">About</a>
         </li>
-        <li>
+        <li @click="() => { active = !active }">
           <a href="#contact" class="button--grey">Contact</a>
         </li>
-        <li>
+        <li @click="() => { active = !active }">
           <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" noreferrer noopener>Book</a>
         </li>
       </ul>
@@ -80,6 +80,8 @@ export default {
 <style lang="scss">
 header {
   // box-shadow: 0 2px 5px rgba(0,0,0,.26);
+  position: fixed;
+  top: 0;
   .logo {
     display: flex;
     // justify-content: space-around;
@@ -132,7 +134,7 @@ header {
     }
   }
   nav {
-    background-color: #cccccc50;
+    background-color: #ccccccf3;
     max-height: 0px;
     overflow: hidden;
     opacity: 0;
@@ -156,6 +158,7 @@ header {
 }
 @media screen and (min-width: 740px) {
   header {
+    position: initial;
     .logo {
       justify-content: center;
        img#logo-img {
