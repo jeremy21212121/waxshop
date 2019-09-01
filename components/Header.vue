@@ -179,7 +179,7 @@ header {
       visibility: visible;
       transition: all 300ms ease-in;
       ul {
-        justify-content: center;
+        // justify-content: center;
         li {
           width: 15%;
         }
