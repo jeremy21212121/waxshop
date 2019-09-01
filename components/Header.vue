@@ -80,6 +80,8 @@ export default {
 <style lang="scss">
 header {
   // box-shadow: 0 2px 5px rgba(0,0,0,.26);
+  width: 100%;
+  background-color: black;
   position: fixed;
   top: 0;
   .logo {
