@@ -12,7 +12,8 @@ export default {
       { hid: 'description', name: 'description', content: 'Kelowna\'s newest wax bar' },
       { name: 'application-name', content: 'The place for waxing in Kelowna' },
       { name: 'msapplication-TileColor', content: '#000000' },
-      { name: 'msapplication-TileImage', content: '/mstile-144x144.png' }
+      { name: 'msapplication-TileImage', content: '/mstile-144x144.png' },
+      { name: 'theme-color', content: '#000000' }
     ],
     link: [
       { rel: 'apple-touch-icon-precomposed', sizes: '57x57', href: '/apple-touch-icon-57x57.png' },
@@ -24,8 +25,8 @@ export default {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Raleway:400,600,700,800&display=swap' }
+      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Montserrat:600&display=swap' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Raleway:800&display=swap' }
     ]
   },
   /*
