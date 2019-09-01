@@ -5,6 +5,7 @@
     <About />
     <Contact />
     <Footer />
+    <Snackbar />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import Masthead from '~/components/Masthead.vue'
 import About from '~/components/About.vue'
 import Contact from '~/components/Contact.vue'
 import Footer from '~/components/Footer.vue'
+import Snackbar from '~/components/Snackbar.vue'
 
 export default {
   components: {
@@ -21,7 +23,8 @@ export default {
     Masthead,
     About,
     Contact,
-    Footer
+    Footer,
+    Snackbar
   }
 }
 </script>

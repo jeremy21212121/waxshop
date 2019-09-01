@@ -7,7 +7,45 @@
         :class="{ active }"
         @click.prevent="() => { active = !active }"
       >
-        <img src="~/assets/menu.png" alt="">
+        <svg
+          id="burgericon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 32 32"
+          fill="#fff"
+        >
+          <g class="icon">
+            <rect
+              class="frstbar"
+              x="2"
+              y="8"
+              width="28"
+              height="3"
+              rx="2"
+              ry="2"
+            />
+            <rect
+              class="scndbar"
+              x="2"
+              y="16"
+              width="28"
+              height="3"
+              rx="2"
+              ry="2"
+            />
+            <rect
+              class="thrdbar"
+              x="2"
+              y="24"
+              width="28"
+              height="3"
+              rx="2"
+              ry="2"
+            />
+          </g>
+        </svg>
+        <!-- <img src="~/assets/menu.png" alt=""> -->
       </a>
       <img id="logo-img" src="~/assets/logo.png" alt="The Waxshop logo">
     </div>
@@ -41,6 +79,7 @@ export default {
 
 <style lang="scss">
 header {
+  // box-shadow: 0 2px 5px rgba(0,0,0,.26);
   .logo {
     display: flex;
     // justify-content: space-around;
@@ -49,10 +88,43 @@ header {
     padding: 4px 0px;
     a {
       padding-left: 4%;
-      img {
-        max-width: 24px;
-        opacity: 0.85;
+      svg {
+        .icon {
+          width: 100%;
+          height: 100%;
+          .frstbar {
+            transform-origin: 12% 51%;
+            transition: transform 250ms;
+          }
+          .scndbar {
+            opacity: 1;
+            transition: opacity 250ms;
+          }
+          .thrdbar {
+            transform-origin: 28% 67%;
+            transition: transform 300ms;
+          }
+        }
       }
+      &.active {
+        svg {
+          .icon {
+            .frstbar {
+              transform: rotate(45deg);
+            }
+            .scndbar {
+              opacity: 0;
+            }
+            .thrdbar {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+      // img {
+      //   max-width: 24px;
+      //   opacity: 0.85;
+      // }
     }
     img#logo-img {
       max-width: 75%;

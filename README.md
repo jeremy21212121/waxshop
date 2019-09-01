@@ -3,7 +3,7 @@
 > waxshop.ca
 
 Built with vue, using nuxt basically as a static site generator.
-Currently MVP, muchg more to come.
+Currently MVP, much more to come.
 
 ## Build Setup
 

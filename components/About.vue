@@ -27,37 +27,37 @@ export default {
         {
           title: 'Strictest hygiene standards',
           message: 'We never cut corners on cleanliness.',
-          imagePath: require('~/assets/sparkle.png'),
+          imagePath: require('~/assets/sm-sparkle.png'),
           active: false
         },
         {
           title: 'Certified wax technicians',
           message: 'You are in good hands with our well-trained, experienced waxers.',
-          imagePath: require('~/assets/cert.png'),
+          imagePath: require('~/assets/sm-cert.png'),
           active: false
         },
         {
           title: 'Top quality products',
           message: 'Tough on hair but gentle on your skin.',
-          imagePath: require('~/assets/wax.png'),
+          imagePath: require('~/assets/sm-wax.png'),
           active: false
         },
         {
           title: 'Prompt and efficient',
           message: 'We\'ll get you in and out quickly without feeling rushed.',
-          imagePath: require('~/assets/fast.png'),
+          imagePath: require('~/assets/sm-fast.png'),
           active: false
         },
         {
           title: 'Unbeatable value',
-          message: 'Seamless service at very reasonable rates.',
-          imagePath: require('~/assets/dollar2.png'),
+          message: 'Seamless service at very <a href="https://go.booker.com/location/TheWaxShop" target="_blank" noreferrer noopener>reasonable rates.</a>',
+          imagePath: require('~/assets/sm-dollar2.png'),
           active: false
         },
         {
           title: 'Inclusive',
           message: 'Whether you\'re a waxing veteran or a newbie, everyone is welcome.',
-          imagePath: require('~/assets/heart.png'),
+          imagePath: require('~/assets/sm-heart.png'),
           active: false
         }
       ]

@@ -13,9 +13,8 @@
     >
     <span
       :class="{ active: box.active }"
-    >
-      {{ box.message }}
-    </span>
+      v-html="box.message"
+    />
     <span
       :class="{ active: !box.active }"
       aria-hidden="true"
@@ -54,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .box {
     padding: 5px 2px;
     margin-top: 16px;
@@ -67,20 +66,22 @@ export default {
     background-color: #cccccc50;
     box-shadow: 0px 1px 3px 0px #00000000;
     border: 1px solid #00000000;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: all ease 200ms;
     &.active {
       box-shadow: 0px 1px 3px 0px #00000090;
-      border: 1px solid #00000020;
+      box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.2);
+      // border: 1px solid #00000020;
     }
     &:hover {
       cursor: pointer;
     }
     h2 {
-      font-family: 'Raleway';
+      font-family: 'Montserrat', sans-serif;
       text-transform: capitalize;
       font-weight: bold;
       font-size: 1.2rem;
+      max-width: 95%;
     }
     img {
       width: 20%;
@@ -94,8 +95,8 @@ export default {
       visibility: hidden;
       opacity: 0;
       transition: all ease-out 200ms;
-      img {
-        // max-width: 14px;
+      a {
+        color: rgb(0,0,64);
       }
     }
     span.active {
