@@ -91,6 +91,7 @@ header {
     align-items: center;
     background-color: black;
     padding: 4px 0px;
+    z-index: 10;
     a {
       padding-left: 4%;
       svg {
@@ -140,13 +141,17 @@ header {
     // background-color: #cccccc;
     // background-color: rgba(174,174,174,0.75);
     background-color: rgba(204,204,204,.65);
-    max-height: 0px;
+    // max-height: 0px;
+    position: relative;
+    bottom: 40px;
+    z-index: -1;
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
     transition: all 200ms ease-out;
     &.active {
-      max-height: 45px;
+      // max-height: 45px;
+      bottom: 0;
       opacity: 1;
       visibility: visible;
       transition: all 300ms ease-in;
@@ -178,6 +183,7 @@ header {
       opacity: 1;
       visibility: visible;
       transition: all 300ms ease-in;
+      bottom: 0;
       ul {
         // justify-content: center;
         li {
