@@ -9,6 +9,7 @@
     font-family: 'Montserrat';
     src: url('~static/fonts/montserrat-bold-webfont.woff2') format('woff2'),
          url('~static/fonts/montserrat-bold-webfont.woff') format('woff');
+    font-display: swap;
     font-weight: bold;
     font-style: normal;
 
@@ -18,6 +19,7 @@
     font-family: 'Raleway';
     src: url('~static/fonts/raleway-extrabold-webfont.woff2') format('woff2'),
          url('~static/fonts/raleway-extrabold-webfont.woff') format('woff');
+    font-display: swap;
     font-weight: 800;
     font-style: normal;
 }
