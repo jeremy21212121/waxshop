@@ -3,7 +3,7 @@
     <Header />
     <Masthead />
     <About />
-    <Contact />
+    <Message />
     <Footer />
     <Snackbar />
   </div>
@@ -13,7 +13,8 @@
 import Header from '~/components/Header.vue'
 import Masthead from '~/components/Masthead.vue'
 import About from '~/components/About.vue'
-import Contact from '~/components/Contact.vue'
+// import Contact from '~/components/Contact.vue'
+import Message from '~/components/Message.vue'
 import Footer from '~/components/Footer.vue'
 import Snackbar from '~/components/Snackbar.vue'
 
@@ -22,7 +23,7 @@ export default {
     Header,
     Masthead,
     About,
-    Contact,
+    Message,
     Footer,
     Snackbar
   }

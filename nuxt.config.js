@@ -9,7 +9,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Kelowna\'s newest wax bar' },
+      { hid: 'description', name: 'description', content: 'The place for waxing in Kelowna' },
       { name: 'application-name', content: 'The place for waxing in Kelowna' },
       { name: 'msapplication-TileColor', content: '#000000' },
       { name: 'msapplication-TileImage', content: '/mstile-144x144.png' },

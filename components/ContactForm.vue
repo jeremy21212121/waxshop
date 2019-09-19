@@ -31,7 +31,7 @@
         name="messagetext"
         maxlength="1024"
         cols="30"
-        rows="5"
+        rows="3"
         placeholder="Message"
         required
       />
@@ -105,8 +105,10 @@ export default {
 <style lang="scss" scoped>
 .mui-form {
   max-width: 400px;
+  margin: 0 auto;
   margin-top: 30px;
   width: 90%;
+  background-color: rgba(255,255,255,0.85);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
   padding: 10px 15px;
@@ -130,7 +132,7 @@ export default {
   .mui-textfield {
     display: block;
     padding-top: 0.9375rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.0rem;
     position: relative;
     input,
     textarea {
@@ -179,7 +181,7 @@ export default {
         width: 11px;
         height: 11px;
         border-radius: 50%;
-        background: #fff;
+        background-color: #fff;
         animation-timing-function: cubic-bezier(0, 1, 1, 0);
         &:nth-child(1) {
           left: 6px;

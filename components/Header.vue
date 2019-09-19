@@ -81,9 +81,11 @@ export default {
 header {
   // box-shadow: 0 2px 5px rgba(0,0,0,.26);
   width: 100%;
+  min-width: 320px;
   // background-color: black;
   position: fixed;
   top: 0;
+  z-index: 99;
   .logo {
     display: flex;
     width: 100%;
@@ -91,7 +93,8 @@ header {
     align-items: center;
     background-color: black;
     padding: 4px 0px;
-    z-index: 10;
+    box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
+    // z-index: 10;
     a {
       padding-left: 4%;
       svg {
@@ -141,6 +144,7 @@ header {
     // background-color: #cccccc;
     // background-color: rgba(174,174,174,0.75);
     background-color: rgba(204,204,204,.65);
+    background-color: rgba(0,0,0,0.75);
     // max-height: 0px;
     position: relative;
     bottom: 40px;
@@ -155,6 +159,7 @@ header {
       opacity: 1;
       visibility: visible;
       transition: all 300ms ease-in;
+      box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
     }
     ul {
       display: flex;
@@ -169,8 +174,10 @@ header {
 @media screen and (min-width: 740px) {
   header {
     position: initial;
+    z-index: 99;
     .logo {
       justify-content: center;
+      box-shadow: none;
        img#logo-img {
          padding-left: 0;
        }
@@ -184,8 +191,12 @@ header {
       visibility: visible;
       transition: all 300ms ease-in;
       bottom: 0;
+      z-index: 99;
+      // box-shadow: none;
+      box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
       ul {
         // justify-content: center;
+        background-color: rgba(255,255,255,0.15);
         li {
           width: 15%;
         }
