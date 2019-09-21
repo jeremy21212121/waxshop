@@ -1,8 +1,26 @@
 <template>
   <div>
+    <site-header />
     <nuxt />
+    <site-footer />
+    <snackbar />
   </div>
 </template>
+
+<script>
+import SiteHeader from '~/components/SiteHeader.vue'
+import SiteFooter from '~/components/SiteFooter.vue'
+import Snackbar from '~/components/Snackbar.vue'
+
+export default {
+  components: {
+    SiteHeader,
+    SiteFooter,
+    Snackbar
+
+  }
+}
+</script>
 
 <style>
 @font-face {

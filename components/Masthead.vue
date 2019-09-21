@@ -1,10 +1,11 @@
 <template>
   <section class="masthead">
     <div class="mast">
-      <img src="~/assets/bw_landing1b.jpg" alt="Couple at the beach" aria-hidden="true">
+      <img src="~/assets/bw_landing1.jpg" alt="Couple at the beach" aria-hidden="true">
       <div class="overlay">
         <h1>new clients</h1>
         <span class="highlight-text">25% off</span>
+        <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noreferrer noopener">Book now!</a>
       </div>
     </div>
   </section>
@@ -26,9 +27,9 @@ section {
     img {
       width: 100%;
       object-fit: cover;
-      object-position: 60% 30%;
-      height: 300px;
-      height: 80%;
+      object-position: 77%;
+      height: 80vw;
+      max-height: 500px;
       z-index: 0;
     }
     .overlay {
@@ -52,24 +53,23 @@ section {
         font-size: 15vw;
         text-shadow: 2px 2px 4px black;
       }
+      a {
+        border: 1px solid rgba(0,0,0,0.4);
+        padding: 5px 30px;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        color: black;
+      }
     }
   }
-
-  // h2 {
-  //   font-family: 'Raleway', sans-serif;
-  //   text-transform: capitalize;
-  //   // text-shadow: #000 0px 0px 1px;
-  //   -webkit-text-stroke: 1.0px #00000020;
-  //   font-weight: 800;
-  //   font-size: 2.2em;
-  //   color: #cca449;
-  //   word-spacing: 5px;
-  //   padding-bottom: 15px;
-  // }
 }
 @media screen and (min-width: 620px) {
-  div.overlay {
-    // top: 25%;
+  section {
+    .mast {
+      div.overlay {
+        top: 30%;
+      }
+    }
   }
 }
 @media screen and (min-width: 740px) {
@@ -88,24 +88,5 @@ section {
       }
     }
   }
-//   div.applicator {
-//     img {
-//       width: 90%;
-//     }
-//   }
-//   div.overlay {
-//     top: 33%;
-//     h1 {
-//       // margin-bottom: 40px;
-//       font-size: 1.8rem;
-//       span {
-//         font-size: 1.5rem;
-//       }
-//     }
-//     h2 {
-//       // margin-top: 70px;
-//       font-size: 2.4rem;
-//     }
-//   }
 }
 </style>

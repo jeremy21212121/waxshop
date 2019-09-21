@@ -6,24 +6,25 @@
         :paragraphs="paragraphs"
       />
     </div>
+    <promo-details />
   </section>
 </template>
 <script>
 import NowOpen from '~/components/NowOpen.vue'
 import PromoDescription from '~/components/PromoDescription.vue'
-// import PromoDetails from '~/components/PromoDetails.vue'
+import PromoDetails from '~/components/PromoDetails.vue'
 
 export default {
   components: {
     NowOpen,
-    PromoDescription
-    // PromoDetails
+    PromoDescription,
+    PromoDetails
   },
   data () {
     return {
       paragraphs: [
-        'The Wax Shop specializes in men\'s and women\'s waxing. That\'s all we do! We know how important it is to have a comfortable, clean and safe waxing experience.',
-        'We welcome you into our Kelowna waxing studio - a clean, tranquil environment in which you can relax and be sure you are receiving a superior waxing service by certified wax technicians.'
+        'The Wax Shop specializes in women and men\'s waxing in Kelowna. That\'s all we do! We know how important it is to have a comfortable, clean and safe waxing experience. We use high quality wax specifically made for each area of the body.',
+        'We welcome you into our Kelowna waxing studio - a clean, tranquil environment suited to both men and women in which you can relax and be sure you are receiving a superior waxing service every visit by certified wax technicians.'
       ]
     }
   },

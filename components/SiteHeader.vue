@@ -2,6 +2,7 @@
   <header>
     <div class="logo">
       <a
+        id="menu-mobile"
         href="#"
         title="Menu button"
         :class="{ active }"
@@ -47,7 +48,9 @@
         </svg>
         <!-- <img src="~/assets/menu.png" alt=""> -->
       </a>
-      <img id="logo-img" src="~/assets/logo.png" alt="The Waxshop logo">
+      <nuxt-link to="/">
+        <img id="logo-img" src="~/assets/logo.png" alt="The Waxshop logo">
+      </nuxt-link>
     </div>
     <nav
       :class="{ active }"
@@ -60,7 +63,7 @@
           <a href="#contact" class="button--grey">Contact</a>
         </li>
         <li @click="() => { active = !active }">
-          <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" noreferrer noopener>Book</a>
+          <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" rel="noreferrer noopener">Book</a>
         </li>
       </ul>
     </nav>
@@ -82,6 +85,8 @@ header {
   // box-shadow: 0 2px 5px rgba(0,0,0,.26);
   width: 100%;
   min-width: 320px;
+  max-width: 740px;
+  margin: 0 auto;
   // background-color: black;
   position: fixed;
   top: 0;
@@ -181,7 +186,7 @@ header {
        img#logo-img {
          padding-left: 0;
        }
-      a {
+      a#menu-mobile {
         display: none;
       }
     }

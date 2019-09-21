@@ -1,27 +1,21 @@
 <template>
   <div class="container">
-    <!-- <Header /> -->
     <Masthead />
-    <About />
+    <promo-about />
     <Message />
-    <!-- <Footer /> -->
-    <!-- <Snackbar /> -->
   </div>
 </template>
 
 <script>
 import Masthead from '~/components/Masthead.vue'
-import About from '~/components/About.vue'
+import PromoAbout from '~/components/PromoAbout.vue'
 import Message from '~/components/Message.vue'
 
 export default {
   components: {
-    // Header,
     Masthead,
-    About,
+    PromoAbout,
     Message
-    // Footer,
-    // Snackbar
   }
 }
 </script>
