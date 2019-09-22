@@ -2,22 +2,26 @@
   <section class="about">
     <div class="intro">
       <now-open />
+      <photo-row />
       <promo-description
         :paragraphs="paragraphs"
       />
     </div>
+    <about-boxes />
   </section>
 </template>
 <script>
 import NowOpen from '~/components/NowOpen.vue'
 import PromoDescription from '~/components/PromoDescription.vue'
-// import PromoDetails from '~/components/PromoDetails.vue'
+import AboutBoxes from '~/components/AboutBoxes.vue'
+import PhotoRow from '~/components/PhotoRow.vue'
 
 export default {
   components: {
     NowOpen,
-    PromoDescription
-    // PromoDetails
+    PromoDescription,
+    AboutBoxes,
+    PhotoRow
   },
   data () {
     return {

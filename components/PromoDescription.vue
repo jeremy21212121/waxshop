@@ -6,12 +6,6 @@
     >
       {{ paragraph }}
     </p>
-    <!-- <p>
-      The Wax Shop specializes in women and men's waxing in Kelowna. That's all we do! We know how important it is to have a comfortable, clean and safe waxing experience. We use high quality wax specifically made for each area of the body.
-    </p>
-    <p>
-      We welcome you into our Kelowna waxing studio - a clean, tranquil environment suited to both men and women in which you can relax and be sure you are receiving a superior waxing service every visit by certified wax technicians.
-    </p> -->
   </div>
 </template>
 <script>
@@ -31,8 +25,15 @@ div {
   margin-top: 20px;
   p {
     text-align: center;
-    font-size: 1rem;
+    font-size: 3.9vw;
     margin: 10px auto;
+  }
+}
+@media screen and (min-width: 740px) {
+  div {
+    p {
+      font-size: 28px;
+    }
   }
 }
 </style>

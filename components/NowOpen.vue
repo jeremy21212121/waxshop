@@ -24,7 +24,7 @@
     width: 90%;
     margin: 0 auto;
     text-transform: capitalize;
-    font-size: 1.8rem;
+    font-size: 6vw;
     span.caps {
       font-weight: bold;
     }
@@ -32,4 +32,11 @@
       text-transform: none;
     }
   }
+@media screen and (min-width: 740px) {
+  div {
+    p.teaser {
+      font-size: 3rem;
+    }
+  }
+}
 </style>

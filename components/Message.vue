@@ -26,6 +26,7 @@ export default {
     img {
       width: 100%;
       height: 100vw;
+      min-height: 396px;
       max-height: 403px;
       object-fit: cover;
     }
@@ -34,7 +35,7 @@ export default {
       width: 100%;
       margin: 0 auto;
       position: absolute;
-      bottom: 20px;
+      bottom: 25px;
     }
   }
 }

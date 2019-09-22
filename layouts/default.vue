@@ -122,6 +122,7 @@ html {
 }
 .highlight-text {
   color: #ddc97c;
+  color: #c6993d;
 }
 .caps {
   text-transform: uppercase;

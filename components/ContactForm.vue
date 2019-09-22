@@ -106,9 +106,10 @@ export default {
 .mui-form {
   max-width: 400px;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 0px;
   width: 90%;
-  background-color: rgba(255,255,255,0.85);
+  background-color: rgba(0,0,0,0.75);
+  color: rgba(255, 255, 255, 0.87);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
   padding: 10px 15px;
@@ -116,6 +117,7 @@ export default {
   img {
     padding-top: 10px;
     max-width: 15%;
+    opacity: 0.87;
   }
   legend {
     display: block;
@@ -125,30 +127,31 @@ export default {
     margin-bottom: 0.625rem;
     font-size: 1.3rem;
     font-weight: 300;
-    color: rgba(0, 0, 0, 0.87);
+    color: rgba(255, 255, 255, 0.87);
     line-height: inherit;
     border: 0;
   }
   .mui-textfield {
     display: block;
-    padding-top: 0.9375rem;
-    margin-bottom: 1.0rem;
+    padding-top: 0.3rem;
+    margin-bottom: .31rem;
+    margin-bottom: 0.9375rem;
     position: relative;
     input,
     textarea {
       width: 90%;
       box-sizing: border-box;
       display: block;
-      background-color: transparent;
-      color: rgba(0, 0, 0, 0.87);
+      background-color: rgba(255,255,255,0.10);
+      color: rgba(255, 255, 255, 0.87);
       border: none;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.26);
       outline: 0;
       width: 100%;
-      padding: 0;
+      padding: 2px 6px;
       box-shadow: none;
-      border-radius: 0;
-      font-size: 1rem;
+      border-radius: 1px;
+      font-size: 1.2rem;
       font-family: inherit;
       line-height: inherit;
       background-image: none;

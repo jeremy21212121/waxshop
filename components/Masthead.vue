@@ -1,7 +1,7 @@
 <template>
   <section class="masthead">
     <div class="mast">
-      <img src="~/assets/bw_landing1.jpg" alt="Couple at the beach" aria-hidden="true">
+      <img src="~/assets/bw_landing1w.jpg" alt="Couple at the beach" aria-hidden="true">
       <div class="overlay">
         <h1>new clients</h1>
         <span class="highlight-text">25% off</span>

@@ -6,6 +6,7 @@
         href="#"
         title="Menu button"
         :class="{ active }"
+        :aria-expanded="active.toString()"
         @click.prevent="() => { active = !active }"
       >
         <svg
@@ -46,6 +47,9 @@
             />
           </g>
         </svg>
+        <span class="hidden">
+          Toggle navigation menu
+        </span>
         <!-- <img src="~/assets/menu.png" alt=""> -->
       </a>
       <nuxt-link to="/">
@@ -135,10 +139,14 @@ header {
           }
         }
       }
-      // img {
-      //   max-width: 24px;
-      //   opacity: 0.85;
-      // }
+      span.hidden {
+        position: absolute;
+        display: inline-block;
+        max-width: 0;
+        max-height: 0;
+        overflow: hidden;
+        font-size: 1px;
+      }
     }
     img#logo-img {
       max-width: 75%;

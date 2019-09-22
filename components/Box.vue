@@ -17,9 +17,10 @@
     />
     <span
       :class="{ active: !box.active }"
+      class="caret-wrapper"
       aria-hidden="true"
     >
-      <img src="~/assets/caret.png" alt="">
+      <img src="~/assets/caret.png" aria-hidden="true">
     </span>
   </div>
 </template>
@@ -58,7 +59,8 @@ export default {
     padding: 5px 2px;
     margin-top: 16px;
     width: 90%;
-    height: 200px;
+    height: 40vw;
+    min-height: 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,49 +69,76 @@ export default {
     box-shadow: 0px 1px 3px 0px #00000000;
     border: 1px solid #00000000;
     border-radius: 8px;
+    color: rgba(255, 255, 255, 0.85);
+    transform: translateX(0px);
     transition: all ease 200ms;
     &.active {
-      box-shadow: 0px 1px 3px 0px #00000090;
-      box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.2);
-      // border: 1px solid #00000020;
+      box-shadow: 0px 1px 3px 0px rgba(255,255,255,0.5);
+      box-shadow: 2px 2px 2px rgba(255,255,255,.24),2px 2px 2px rgba(255,255,255,.36);
+      transform: translate(-2px,-2px)
     }
     &:hover {
       cursor: pointer;
     }
     h2 {
-      font-family: 'Montserrat', sans-serif;
+      // font-family: 'Montserrat', sans-serif;
       text-transform: capitalize;
       font-weight: bold;
       font-size: 1.2rem;
+      font-size: 3.8vw;
       max-width: 95%;
     }
     img {
       width: 20%;
       // padding: 10px 0;
+      // opacity: 0.9;
     }
     span {
+      display: block;
+      transform: scale(0.5);
       overflow: hidden;
       // display: none;
-      max-width: 95%;
-      max-height: 0px;
+      max-width: 0px;
+      max-height: 24px;
       visibility: hidden;
       opacity: 0;
-      transition: all ease-out 200ms;
+      transition-property: transform,max-height,opacity,visibility,font-size;
+      transition-timing-function: ease-out;
+      transition-duration: 200ms;
       a {
-        color: rgb(0,0,64);
+        color: rgba(220,220,255,0.8);
       }
     }
     span.active {
+      max-width: 95%;
+      font-size: 3.4vw;
+      font-size: 15px;
+      transform: scale(1.0);
       // display: block;
       visibility: visible;
       opacity: 1;
       max-height: 48px;
-      transition: all ease-in 250ms;
+      // transition: transform,max-height,opacity,visibility ease-in 250ms;
+      transition-property: transform,max-height,opacity,visibility,font-size;
+      transition-timing-function: ease-in;
+      transition-duration: 200ms;
+    }
+    span.caret-wrapper {
+      img {
+        width: 30%;
+      }
     }
   }
   @media screen and (min-width: 640px) {
   div.box {
     max-width: 47%;
+    height: 296px;
+    h2 {
+      font-size: 28px;
+    }
+    span.active {
+      font-size: 18px;
+    }
   }
 }
   @media screen and (min-width: 740px) {
