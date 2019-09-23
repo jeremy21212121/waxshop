@@ -58,7 +58,8 @@ export default {
 html {
   min-width: 320px;
   background-color: black;
-  color: #fff;
+  /* color: #fff; */
+  color: rgba(255,255,255,0.85);
   font-family: 'Roboto', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;

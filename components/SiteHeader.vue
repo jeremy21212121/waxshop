@@ -60,14 +60,27 @@
       :class="{ active }"
     >
       <ul>
-        <li @click="() => { active = !active }">
+        <li
+          v-for="(link, i) in filteredNav"
+          :key="'nav' + i"
+          @click="() => { active = !active }"
+        >
+          <nuxt-link
+            v-if="link.isNuxt"
+            :to="link.path"
+            class="button--grey"
+          >
+            {{ link.title }}
+          </nuxt-link>
+        </li>
+        <!-- <li @click="() => { active = !active }">
           <a href="#about" class="button--grey">About</a>
         </li>
         <li @click="() => { active = !active }">
           <a href="#contact" class="button--grey">Contact</a>
-        </li>
+        </li> -->
         <li @click="() => { active = !active }">
-          <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" rel="noreferrer noopener">Book</a>
+          <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" rel="noreferrer noopener">Book Now!</a>
         </li>
       </ul>
     </nav>
@@ -78,7 +91,30 @@
 export default {
   data () {
     return {
-      active: false
+      active: false,
+      nav: [
+        {
+          title: 'Home',
+          path: '/',
+          isNuxt: true
+        },
+        {
+          title: 'Services',
+          path: '/services',
+          isNuxt: true
+        },
+        {
+          title: 'Contact',
+          path: '/contact',
+          isNuxt: true
+        }
+      ]
+    }
+  },
+  computed: {
+    filteredNav () {
+      // filters current page from nav menu array
+      return this.nav.filter(link => link.path !== this.$route.path)
     }
   }
 }
@@ -191,7 +227,11 @@ header {
     .logo {
       justify-content: center;
       box-shadow: none;
-       img#logo-img {
+      a.nuxt-link-active {
+        display: flex;
+        justify-content: center;
+      }
+      img#logo-img {
          padding-left: 0;
        }
       a#menu-mobile {
@@ -211,7 +251,7 @@ header {
         // justify-content: center;
         background-color: rgba(255,255,255,0.15);
         li {
-          width: 15%;
+          // width: 15%;
         }
       }
     }

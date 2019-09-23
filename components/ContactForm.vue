@@ -108,7 +108,7 @@ export default {
   margin: 0 auto;
   margin-top: 0px;
   width: 90%;
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0,0,0,0.85);
   color: rgba(255, 255, 255, 0.87);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);

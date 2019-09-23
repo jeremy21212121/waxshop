@@ -11,9 +11,14 @@ div {
   margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   img {
     width: 30%;
   }
 }
+// @media screen and (min-width: 740px) {
+//   div {
+//     justify-content: space-between;
+//   }
+// }
 </style>

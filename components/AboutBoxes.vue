@@ -87,6 +87,7 @@ export default {
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 2rem;
   h1 {
+    margin-top: 0px;
     font-size: 6vw;
   }
   .boxes {

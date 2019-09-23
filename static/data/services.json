@@ -1,6 +1,7 @@
 [
   {
     "title": "hers",
+    "icon": "/static_img/sm-female-symbol.png",
     "services": [
       {
         "title": "bikini",
@@ -111,6 +112,7 @@
   },
   {
     "title": "his",
+    "icon": "/static_img/sm-male-symbol.png",
     "services": [
       {
         "title": "guykini",
