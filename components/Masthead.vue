@@ -20,7 +20,7 @@ section {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  margin-top: 12%;
+  margin-top: 10%;
   .mast {
     position: relative;
     width: 100%;
@@ -30,24 +30,25 @@ section {
       object-position: 77%;
       height: 80vw;
       max-height: 500px;
-      z-index: 0;
+      z-index: -1;
     }
     .overlay {
       width: 100%;
       position: absolute;
-      top: 25vw;
+      top: 23vw;
       h1 {
         text-transform: uppercase;
         font-family: 'roboto_cb';
         font-size: 3.5em;
         font-size: 15vw;
         text-shadow: 2px 2px 4px black;
+        color: rgba(255,255,255,0.95);
       }
       span {
         display: block;
         position: relative;
         bottom: 3vw;
-        font-family: "Cinzel";
+        font-family: "Cinzel", cursive;
         // font-weight: bold;
         font-size: 3.3em;
         font-size: 15vw;

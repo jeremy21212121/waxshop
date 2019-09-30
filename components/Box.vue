@@ -9,6 +9,8 @@
     </h2>
     <img
       :src="box.imagePath"
+      :alt="box.alt"
+      class="about-icons"
       aria-hidden="true"
     >
     <span
@@ -20,7 +22,7 @@
       class="caret-wrapper"
       aria-hidden="true"
     >
-      <img src="~/assets/caret.png" aria-hidden="true">
+      <img src="~/assets/caret.png" alt="caret icon" aria-hidden="true">
     </span>
   </div>
 </template>
@@ -65,6 +67,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    justify-content: space-around;
     background-color: #cccccc50;
     box-shadow: 0px 1px 3px 0px #00000000;
     border: 1px solid #00000000;
@@ -98,6 +101,7 @@ export default {
       transform: scale(0.5);
       overflow: hidden;
       // display: none;
+      position: absolute;
       max-width: 0px;
       max-height: 24px;
       visibility: hidden;
@@ -110,11 +114,13 @@ export default {
       }
     }
     span.active {
+      position:inherit;
       max-width: 95%;
+      width: 95%;
       font-size: 3.4vw;
       font-size: 15px;
       transform: scale(1.0);
-      // display: block;
+      // display:inline-block;
       visibility: visible;
       opacity: 1;
       max-height: 48px;
@@ -124,6 +130,7 @@ export default {
       transition-duration: 200ms;
     }
     span.caret-wrapper {
+      width: auto;
       img {
         width: 30%;
       }
@@ -132,7 +139,7 @@ export default {
   @media screen and (min-width: 640px) {
   div.box {
     max-width: 47%;
-    height: 296px;
+    height: 200px;
     h2 {
       font-size: 28px;
     }
@@ -143,6 +150,10 @@ export default {
 }
   @media screen and (min-width: 740px) {
   div.box {
+    img.about-icons {
+      width: 72px;
+      height: 72px;
+    }
     max-width: 49%;
   }
 }

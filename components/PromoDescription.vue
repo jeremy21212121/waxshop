@@ -33,6 +33,7 @@ div {
 @media screen and (min-width: 740px) {
   div {
     margin-top: 20px;
+    width: 100%;
     p {
       font-size: 28px;
     }

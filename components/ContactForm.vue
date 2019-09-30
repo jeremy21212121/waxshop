@@ -1,7 +1,7 @@
 <template>
   <form ref="contactForm" class="mui-form">
-    <img src="~/assets/sm-msg.png" aria-hidden="true">
-    <legend>Send a message</legend>
+    <img src="~/assets/sm-msg.png" alt="message bubble icon" aria-hidden="true">
+    <h2>Send a message</h2>
     <div class="mui-textfield">
       <input
         id="name-input"
@@ -119,7 +119,7 @@ export default {
     max-width: 15%;
     opacity: 0.87;
   }
-  legend {
+  h2 {
     display: block;
     width: 100%;
     padding: 0;

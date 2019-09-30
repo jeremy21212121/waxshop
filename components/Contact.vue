@@ -11,7 +11,7 @@
         Phone
       </h2>
       <div class="img">
-        <img src="~/assets/sm-phone.png" aria-hidden="true">
+        <img src="~/assets/sm-phone.png" alt="phone icon" aria-hidden="true">
       </div>
       <div>
         <a id="tel" class="button--grey" href="tel:12368372100">Call us</a>
@@ -25,7 +25,7 @@
         Address
       </h2>
       <div class="img">
-        <img src="~/assets/sm-map.png" aria-hidden="true">
+        <img src="~/assets/sm-map.png" alt="map icon" aria-hidden="true">
       </div>
       <span>
         <a class="button--grey" href="https://www.google.com/maps/place/100-2698+pandosy+st+kelowna+bc" target="_blank" rel="noreferrer noopener">
@@ -42,7 +42,7 @@
         Kelowna, BC V1Y 9V9
       </span>
     </div>
-    <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJX33ybTGLfVMRLC4l1HzHwEc&key=AIzaSyASCfx46mSwtL11S20Lv3FpusELZKuXA3w" allowfullscreen />
+    <iframe style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJX33ybTGLfVMRLC4l1HzHwEc&key=AIzaSyASCfx46mSwtL11S20Lv3FpusELZKuXA3w" allowfullscreen />
   </section>
 </template>
 
@@ -92,9 +92,10 @@ section.contact {
     background-color: rgba(255,255,255,0.15);
     // border: 1px solid rgba(255,255,255,0.25);
     border-radius: 4px;
-    margin: 10px 0;
+    margin: 10px auto;
     padding-bottom: 20px;
     .img {
+      height: auto;
       img {
         max-width: 15%;
         padding-bottom: 10px;
@@ -127,6 +128,7 @@ section.contact {
     margin-bottom: 15px;
     width: 90%;
     height: 350px;
+    border: none;
   }
 }
 @media screen and (min-width: 740px) {

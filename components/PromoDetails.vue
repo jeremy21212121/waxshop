@@ -9,7 +9,7 @@
         their first wax.
       </p>
     </div>
-    <img id="flourish" src="~/assets/flourish.png" aria-hidden="true">
+    <img id="flourish" src="~/assets/flourish.png" alt="stylish divider" aria-hidden="true">
     <div class="service-grid">
       <div
         v-for="(row,i) in parts"
@@ -67,9 +67,9 @@ export default {
       justify-content: center;
       span {
         width: 18%;
-        min-width: 75px;
+        min-width: 68px;
         font-size: 0.8rem;
-        text-align: left;
+        text-align: center;
       }
     }
   }

@@ -51,7 +51,7 @@ export default {
       font-size: 1.9rem;
     }
     div.boxes {
-      justify-content: space-between;
+      justify-content: space-around;
     }
   }
 }

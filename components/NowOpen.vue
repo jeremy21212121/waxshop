@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 id="about">
-      about the waxshop
+    <h1 id="about-wax-shop">
+      About the wax shop
     </h1>
     <p class="teaser">
       Kelowna's newest waxing studio
@@ -14,6 +14,8 @@
 </template>
 
 <style lang="scss" scoped>
+div {
+  width: 100%;
   h1 {
     max-height: 0px;
     min-width: 0px;
@@ -32,6 +34,7 @@
       text-transform: none;
     }
   }
+}
 @media screen and (min-width: 740px) {
   div {
     p.teaser {

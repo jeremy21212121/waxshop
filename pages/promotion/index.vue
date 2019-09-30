@@ -31,7 +31,7 @@ h2.section-title {
 .container {
   max-width: 740px;
   margin: 0 auto;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* display: flex; */
   justify-content: center;
   align-items: center;

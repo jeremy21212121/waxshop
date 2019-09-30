@@ -4,7 +4,7 @@
       <h1 class="section-title">
         {{ pageHeading }}
       </h1>
-      <img src="~/assets/sm-wax-icon.png" aria-hidden="true">
+      <!-- <img src="~/assets/sm-wax-icon.png" alt="wax applicator icon" aria-hidden="true"> -->
     </div>
     <div
       v-for="(group, i) in services"
@@ -15,7 +15,7 @@
         <h2>
           {{ group.title }}
         </h2>
-        <img :src="group.icon" aria-hidden="true">
+        <img :src="group.icon" :alt="getImageAltText(group.title)" aria-hidden="true">
       </div>
       <ul class="group-wrapper">
         <li
@@ -85,6 +85,22 @@ export default {
       pageHeading: 'Popular services',
       services: require('~/static/data/services.json')
     }
+  },
+  methods: {
+    getImageAltText (title) {
+      let output = ''
+      switch (title) {
+        case 'his':
+          output = 'Male symbol'
+          break
+        case 'hers':
+          output = 'Female symbol'
+          break
+        default:
+          break
+      }
+      return output
+    }
   }
 }
 </script>
@@ -137,8 +153,8 @@ export default {
         text-transform: capitalize;
         border-bottom: 1px solid rgba(255,255,255,0.03);
         text-align: left;
+        font-size: 1.0rem;
         span.service-title {
-          font-size: 1.2rem;
           padding-left: 7px;
           // text-transform: capitalize;
           // text-align: left;
@@ -148,6 +164,7 @@ export default {
           display: flex;
           flex-grow: 1;
           align-items: baseline;
+          font-size: 0.9rem;
           .service-info {
             text-transform: none;
             text-align: center;
@@ -157,11 +174,14 @@ export default {
           }
         }
         .service-options {
-          .service-option-title {
-            // opacity: .80;
-          }
+          font-size: 0.8rem;
+          // .service-option-title {
+
+          // }
           .service-option-price {
-            opacity: .80;
+            // opacity: .80;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.64);
           }
         }
       }

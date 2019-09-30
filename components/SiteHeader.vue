@@ -50,7 +50,6 @@
         <span class="hidden">
           Toggle navigation menu
         </span>
-        <!-- <img src="~/assets/menu.png" alt=""> -->
       </a>
       <nuxt-link to="/">
         <img id="logo-img" src="~/assets/logo.png" alt="The Waxshop logo">
@@ -122,26 +121,27 @@ export default {
 
 <style lang="scss">
 header {
-  // box-shadow: 0 2px 5px rgba(0,0,0,.26);
   width: 100%;
   min-width: 320px;
   max-width: 740px;
   margin: 0 auto;
-  // background-color: black;
   position: fixed;
   top: 0;
-  z-index: 99;
+  z-index: 990;
   .logo {
+    /* // display: -webkit-flex; */
     display: flex;
     width: 100%;
-    // justify-content: space-around;
+    /* justify-content: space-around; */
+    /* // align-items: -webkit-center; */
     align-items: center;
     background-color: black;
     padding: 4px 0px;
     box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
-    // z-index: 10;
+    // z-index: 991;
     a {
       padding-left: 4%;
+      // z-index: 999;
       svg {
         .icon {
           width: 100%;
@@ -185,25 +185,26 @@ header {
       }
     }
     img#logo-img {
-      max-width: 75%;
+      width: 75%;
       padding-left: 5%;
+      object-fit: contain;
+      vertical-align: middle;
+      // z-index: -1;
     }
   }
   nav {
-    // background-color: #cccccc;
-    // background-color: rgba(174,174,174,0.75);
     background-color: rgba(204,204,204,.65);
     background-color: rgba(0,0,0,0.75);
-    // max-height: 0px;
+    /* max-height: 0px; */
     position: relative;
     bottom: 40px;
-    z-index: -1;
+    // z-index: 300;
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
     transition: all 200ms ease-out;
     &.active {
-      // max-height: 45px;
+      /* max-height: 45px; */
       bottom: 0;
       opacity: 1;
       visibility: visible;
@@ -211,19 +212,30 @@ header {
       box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
     }
     ul {
+      /* // display: -webkit-flex; */
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
       list-style-type: none;
       padding: 0;
       padding-top: 6px;
       padding-bottom: 6px;
+      li {
+        a.button--grey {
+          padding: 5px 14px;
+          // padding: 5px 0px;
+        }
+        a.button--green {
+          padding: 5px 14px;
+          // padding: 5px 0px;
+        }
+      }
     }
   }
 }
 @media screen and (min-width: 740px) {
   header {
     position: initial;
-    z-index: 99;
+    // z-index: 99;
     .logo {
       justify-content: center;
       box-shadow: none;
@@ -244,15 +256,14 @@ header {
       visibility: visible;
       transition: all 300ms ease-in;
       bottom: 0;
-      z-index: 99;
-      // box-shadow: none;
+      // z-index: 99;
       box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
       ul {
-        // justify-content: center;
+        /* justify-content: center; */
         background-color: rgba(255,255,255,0.15);
-        li {
-          // width: 15%;
-        }
+        /* li {
+          width: 15%;
+        } */
       }
     }
   }

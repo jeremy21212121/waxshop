@@ -25,6 +25,17 @@ export default {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: 'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=es5%2Ces6' }
+    ]
+  },
+  generate: {
+    routes: [
+      '/',
+      '/contact',
+      '/services',
+      '/promotion'
     ]
   },
   /*
@@ -35,11 +46,13 @@ export default {
   ** Global CSS
   */
   css: [
+    // '@/styles/test.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    // { src: 'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=es5%2Ces6', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -69,7 +82,42 @@ export default {
     /*
     ** You can extend webpack config here
     */
+    // scss: {
+    //   sourceMap: true
+    // },
+    // postcss: {
+    //   // parser: 'postcss-scss',
+    //   // plugins: {
+    //   //   'sass-loader': {}
+    //   // },
+    //   // order: 'presetEnvAndCssnanoLast',
+    //   // preset: {
+    //   //   stage: 2,
+    //   //   autoprefixer: {
+    //   //     flexbox: true
+    //   //   }
+    //   // }
+    //   plugins: {
+    //     'postcss-nested': {},
+    //     'postcss-import': {},
+    //     'postcss-url': {},
+    //     'postcss-preset-env': this.preset,
+    //     'cssnano': { preset: 'default' } // disabled in dev mode
+    //   },
+    //   order: 'presetEnvAndCssnanoLast',
+    //   preset: {
+    //     stage: 2,
+    //     autoprefixer: {
+    //       flexbox: true,
+    //       grid: true
+    //     }
+    //     // preserve: true
+    //   }
+    // },
     extend (config, ctx) {
+      // if (ctx.isClient) {
+      //  console.log(config)
+      // }
     }
   }
 }

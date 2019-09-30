@@ -1,8 +1,8 @@
 <template>
   <section class="about">
-    <h1 id="about" class="section-title">
+    <h2 id="about" class="section-title">
       What makes us different?
-    </h1>
+    </h2>
     <div class="boxes">
       <Box
         v-for="(box, i) in boxes"
@@ -25,39 +25,45 @@ export default {
     return {
       boxes: [
         {
-          title: 'Strictest hygiene standards',
+          title: 'Strict hygiene',
           message: 'We never cut corners on cleanliness.',
           imagePath: require('~/assets/sm-sparkle.png'),
+          alt: 'Sparkling clean',
           active: false
         },
         {
           title: 'Certified wax technicians',
           message: 'You are in good hands with our well-trained, experienced waxers.',
           imagePath: require('~/assets/sm-cert.png'),
+          alt: 'Certificate',
           active: false
         },
         {
           title: 'Top quality products',
           message: 'Tough on hair but gentle on your skin.',
           imagePath: require('~/assets/sm-wax.png'),
+          alt: 'wax pot and applicator',
           active: false
         },
         {
           title: 'Prompt and efficient',
           message: 'We\'ll get you in and out quickly without feeling rushed.',
           imagePath: require('~/assets/sm-fast.png'),
+          alt: 'Quick',
           active: false
         },
         {
           title: 'Unbeatable value',
-          message: 'Smooth service at very <a href="https://go.booker.com/location/TheWaxShop" target="_blank" noreferrer noopener>reasonable rates.</a>',
+          message: 'Seamless service at very <a href="https://go.booker.com/location/TheWaxShop" target="_blank" rel="noreferrer noopener">reasonable rates.</a>',
           imagePath: require('~/assets/sm-dollar2.png'),
+          alt: 'Dollar sign',
           active: false
         },
         {
           title: 'Inclusive',
           message: 'Whether you\'re a waxing veteran or a newbie, everyone is welcome.',
           imagePath: require('~/assets/sm-heart.png'),
+          alt: 'Heart',
           active: false
         }
       ]
@@ -95,7 +101,7 @@ export default {
     // flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
 }
 @media screen and (min-width: 740px) {

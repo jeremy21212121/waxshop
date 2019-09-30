@@ -1,10 +1,10 @@
 <template>
   <section class="message">
     <div class="img">
-      <img src="~/assets/bw_landing2.jpg" aria-hidden="true">
-      <span class="msg-wrapper">
+      <img src="~/assets/bw_landing2.jpg" alt="A woman with smooth legs" aria-hidden="true">
+      <div class="msg-wrapper">
         <contact-form />
-      </span>
+      </div>
     </div>
   </section>
 </template>
