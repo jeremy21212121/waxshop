@@ -31,13 +31,13 @@ export default {
     ]
   },
   generate: {
-    fallback: true,
-    routes: [
-      '/',
-      '/contact',
-      '/services',
-      '/promotion'
-    ]
+    fallback: true
+    // routes: [
+    //   '/',
+    //   '/contact',
+    //   '/services',
+    //   '/promotion'
+    // ]
   },
   /*
   ** Customize the progress-bar color
