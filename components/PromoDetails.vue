@@ -66,7 +66,7 @@ export default {
       display: flex;
       justify-content: center;
       span {
-        width: 18%;
+        width: 19%;
         min-width: 68px;
         font-size: 0.8rem;
         text-align: center;
