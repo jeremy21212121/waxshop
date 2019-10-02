@@ -127,7 +127,9 @@ header {
   margin: 0 auto;
   position: fixed;
   top: 0;
-  z-index: 990;
+  z-index: 999;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   .logo {
     /* // display: -webkit-flex; */
     display: flex;
@@ -148,6 +150,7 @@ header {
           height: 100%;
           .frstbar {
             transform-origin: 12% 51%;
+            transform-origin: 4px 15px;
             transition: transform 250ms;
           }
           .scndbar {
@@ -156,7 +159,8 @@ header {
           }
           .thrdbar {
             transform-origin: 28% 67%;
-            transition: transform 300ms;
+            transform-origin: 10px 22px;
+            transition: transform 250ms;
           }
         }
       }
