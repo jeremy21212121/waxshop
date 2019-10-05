@@ -20,6 +20,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/scss/mixins/boxShadows.scss';
+
 div {
   display: flex;
   justify-content: center;
@@ -46,7 +48,8 @@ div {
     text-align: center;
     border-radius: 3px;
     padding: 16px;
-    box-shadow: 0 0 4px rgba(0,0,0,.12),0 4px 4px rgba(0,0,0,.2);
+    @include bs-white-3b;
+    // box-shadow: 0 0 4px rgba(0,0,0,.12),0 4px 4px rgba(0,0,0,.2);
   }
   &.show {
     visibility: visible;
