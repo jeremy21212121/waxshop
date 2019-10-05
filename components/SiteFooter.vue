@@ -2,19 +2,19 @@
   <footer>
     <div class="info">
       <div>
-        <span>P</span>
+        <span class="abbrev">P</span>
         <span class="hidden">hone</span>
         <span class="colon">: </span>
         <a id="tel-anchor" href="tel:12368372100">236.837.2100</a>
       </div>
       <div>
-        <span>A</span>
+        <span class="abbrev">A</span>
         <span class="hidden">ddress</span>
         <span class="colon">: </span>
-        <span>100 - 2689 Pandosy Street, Kelowna, BC V1Y 9V9</span>
+        <span class="address">100 - 2689 Pandosy Street, Kelowna, BC V1Y 9V9</span>
       </div>
       <div>
-        <span>E</span>
+        <span class="abbrev">E</span>
         <span class="hidden">-mail</span>
         <span class="colon">: </span>
         <a href="mailto:hello@waxshop.ca">hello@waxshop.ca</a>
@@ -27,24 +27,24 @@
 </template>
 
 <style lang="scss" scoped>
+@import '~/scss/mixins/spaceEvenlyHack.scss';
+
 footer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  // margin-top: 30px;
+  // justify-content: space-evenly;
+  @include space-evenly-hack;
   width: 100%;
   max-width: 740px;
+  min-height: 120px;
   margin: 0 auto;
-  // height: 75px;
-  // background-color: #cccccc50;
   background-color: black;
   div.info {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    // flex-direction: column;
-    // align-items: flex-start;
+    align-items: center;
     margin-bottom: 10px;
     color: rgba(255, 255, 255, 0.75);
     a#tel-anchor {
@@ -53,6 +53,17 @@ footer {
     }
     div {
       display: flex;
+      // align-items: center;
+      span.abbrev,
+      span.colon {
+        font-size: 10px;
+        // line-height: inherit;
+        align-self: center;
+      }
+      span.address {
+        font-size: inherit;
+        align-self: baseline;
+      }
       span.colon {
         padding-right: 5px;
       }
