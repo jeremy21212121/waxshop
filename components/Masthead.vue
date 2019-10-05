@@ -31,6 +31,8 @@ section {
       height: 80vw;
       max-height: 500px;
       z-index: -1;
+      // border-bottom-left-radius: 2px;
+      // border-bottom-right-radius: 2px;
     }
     .overlay {
       width: 100%;
@@ -77,6 +79,10 @@ section {
   section {
     margin-top: 0px;
     .mast {
+      img {
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+      }
       .overlay {
         top: 214px;
         h1 {
