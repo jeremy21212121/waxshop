@@ -22,6 +22,7 @@ div {
     width: 30%;
     height: 100%;
     @include bs-white-1;
+    border-radius: 2px;
   }
 }
 @media screen and (min-width: 740px) {
