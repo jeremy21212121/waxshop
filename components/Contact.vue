@@ -28,7 +28,7 @@
         <img src="~/assets/sm-map.png" alt="map icon" aria-hidden="true">
       </div>
       <span>
-        <a class="button--grey" href="https://www.google.com/maps/place/the+wax+shop+kelowna+bc" target="_blank" rel="noreferrer noopener">
+        <a class="button--grey" href="https://www.google.com/maps/place/the+wax+shop+kelowna+bc+canada" target="_blank" rel="noreferrer noopener">
           View map
         </a>
       </span>
