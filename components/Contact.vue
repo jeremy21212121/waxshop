@@ -65,6 +65,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/scss/mixins/borderRadius.scss';
+@import '~/scss/mixins/boxShadows.scss';
+@import '~/scss/vars/breakpoints.scss';
+
 a#tel {
   text-decoration: none;
 }
@@ -79,6 +83,7 @@ section.contact {
   h1 {
     width: 100%;
     margin-top: 60px;
+    margin-top: 12%;
     margin-bottom: 0;
     // margin: 0;
   }
@@ -87,11 +92,13 @@ section.contact {
     flex-direction: column;
     // justify-content: center;
     width: 100%;
-    max-width: 350px;
+    // max-width: 350px;
     // height: 220px;
     background-color: rgba(255,255,255,0.15);
     // border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 4px;
+    // border-radius: 2px;
+    @include bs-white-1;
+    @include border-radius-standard;
     margin: 10px auto;
     padding-bottom: 20px;
     .img {
@@ -126,24 +133,41 @@ section.contact {
     margin: 0 auto;
     margin-top: 30px;
     margin-bottom: 15px;
-    width: 90%;
+    width: 100%;
     height: 350px;
     border: none;
+    @include bs-white-1;
+    @include border-radius-standard;
   }
 }
-@media screen and (min-width: 740px) {
+@media screen and (min-width: $break-s) {
   section.contact {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     .wrapper {
+      width: 48%;
+      height: 210px;
+      margin: 0px;
+    }
+  }
+
+}
+@media screen and (min-width: $break-l) {
+  section.contact {
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    .wrapper {
       height: 230px;
+      width: 359px;
+      // margin: 0px;
     }
     h1 {
       margin-top: 20px;
     }
     iframe {
-      width: 75%;
+      // width: 75%;
       height: 450px;
     }
   }

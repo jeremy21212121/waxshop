@@ -140,6 +140,8 @@ header {
     background-color: black;
     padding: 4px 0px;
     box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
+    // box-shadow: 0 6px 6px -6px rgba(255,255,255,0.12),
+    //             0 6px 6px -6px rgba(255,255,255,0.16);
     // z-index: 991;
     a {
       padding-left: 4%;

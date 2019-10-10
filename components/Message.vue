@@ -23,20 +23,37 @@ export default {
 .message {
   .img {
     position: relative;
+    display: flex;
+    // justify-content: center;
     img {
+      position: absolute;
       width: 100%;
-      height: 100vw;
-      min-height: 396px;
-      max-height: 403px;
+      // height: 100vw;
+      // min-height: 396px;
+      // max-height: 403px;
+      height: 403px;
       object-fit: cover;
+      z-index: -1;
     }
     .msg-wrapper {
-      display: block;
+      display: flex;
+      align-items: center;
+      height: 403px;
       width: 100%;
       margin: 0 auto;
-      position: absolute;
-      bottom: 25px;
+      // position: absolute;
+      // bottom: 25px;
     }
   }
+}
+@media screen and (min-width: 740px) {
+  .message {
+    .img {
+      img {
+        border-radius: 2px;
+      }
+    }
+  }
+
 }
 </style>

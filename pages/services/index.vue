@@ -105,6 +105,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '~/scss/mixins/borderRadius.scss';
+@import '~/scss/mixins/boxShadows.scss';
+@import '~/scss/vars/breakpoints.scss';
+
 .container {
   display: flex;
   // flex-direction: column;
@@ -131,6 +135,8 @@ export default {
     margin: 20px auto;
     padding: 8px 6px;
     background-color: rgba(255, 255, 255, 0.15);
+    @include bs-white-1;
+    @include border-radius-standard;
     .title-row {
       display: flex;
       align-items: center;
@@ -213,11 +219,20 @@ export default {
     }
   }
 }
-@media screen and (min-width: 740px) {
+@media screen and (min-width: $break-s) {
+  .container {
+    .service-wrapper {
+      width: 90%;
+    }
+  }
+}
+@media screen and (min-width: $break-l) {
   .container {
     margin-top: 30px;
     justify-content: space-between;
     .service-wrapper {
+      margin-left: 0;
+      margin-right: 0;
       width: 49%;
       height: 420px;
       .group-wrapper {

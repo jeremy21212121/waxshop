@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   data () {
@@ -82,10 +82,11 @@ export default {
       const response = await this.$axios.$post(apiUrl, this.formData)
       this.loading = false
       const msg = (response.success) ? 'Message sent! We will get back to you ASAP.' : 'Sorry, error sending message. Please e-mail hello@waxshop.ca or call.'
-      this.setSnackbar(msg)
+      // this.setSnackbar(msg)
+      this.activateSnackbar(msg)
       // this.$refs.contactForm.reset()
       this.resetForm()
-      window.setTimeout(() => this.setSnackbar(''), 5000)
+      // window.setTimeout(() => this.setSnackbar(''), 5000)
     },
     checkForm (e) {
       const valid = this.$refs.contactForm.checkValidity()
@@ -95,9 +96,12 @@ export default {
         this.submitForm()
       }
     },
-    ...mapMutations({
-      setSnackbar: 'setSnackbar'
-    })
+    // ...mapMutations({
+    //   setSnackbar: 'setSnackbar'
+    // }),
+    ...mapActions([
+      'activateSnackbar'
+    ])
   }
 }
 </script>
@@ -111,9 +115,11 @@ export default {
   background-color: rgba(0,0,0,0.85);
   color: rgba(255, 255, 255, 0.87);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   padding: 10px 15px;
-  border-radius: 8px;
+  border-radius: 2px;
   img {
     padding-top: 10px;
     max-width: 15%;
