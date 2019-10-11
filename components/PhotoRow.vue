@@ -1,8 +1,8 @@
 <template>
   <div>
-    <img src="~/assets/lobby2c.jpg" alt="the lobby of the wax shop">
-    <img src="~/assets/prod_crop.jpg" alt="waxing products">
-    <img src="~/assets/entry.jpg" alt="the entry of the wax shop">
+    <img src="~/assets/lobby_sm.jpg" alt="the lobby of the wax shop">
+    <img src="~/assets/prod_crop_sm.jpg" alt="waxing products">
+    <img src="~/assets/entry_sm.jpg" alt="the entry of the wax shop">
   </div>
 </template>
 
