@@ -27,7 +27,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=es5%2Ces6' }
+      // { src: 'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=es5%2Ces6' }
     ]
   },
   generate: {
