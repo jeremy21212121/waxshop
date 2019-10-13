@@ -6,6 +6,45 @@
     <promo-description
       :paragraphs="description"
     />
+    <div
+      v-if="simplifiedHours.length"
+      class="wrapper full-width"
+    >
+      <h2>
+        Hours of operation
+      </h2>
+      <img
+        v-show="openingHours.open_now"
+        class="open-sign"
+        src="~/assets/open_sign_fw.png"
+        alt="open sign"
+        aria-hidden="true"
+      >
+      <div class="img">
+        <img src="~/assets/sm-clock.png" alt="clock icon" aria-hidden="true">
+      </div>
+      <div class="hours-container">
+        <div
+          v-for="(hours, i) in simplifiedHours"
+          :key="'sh' + i"
+          class="hrow"
+        >
+          <div class="day-wrap">
+            <span class="start">
+              {{ hours.start_day }}
+            </span>
+            <span
+              v-if="hours.start_day !== hours.end_day"
+            >
+              {{ ' - ' + hours.end_day }}
+            </span>
+          </div>
+          <span>
+            {{ hours.hours }}
+          </span>
+        </div>
+      </div>
+    </div>
     <div class="wrapper">
       <h2 class="section-title">
         Phone
@@ -49,9 +88,18 @@
 <script>
 // import Message from '~/components/Message.vue'
 import PromoDescription from '~/components/PromoDescription.vue'
+
 export default {
   components: {
     PromoDescription
+  },
+  props: {
+    openingHours: {
+      type: Object,
+      default: () => {
+        return {}
+      }
+    }
   },
   data () {
     return {
@@ -59,6 +107,39 @@ export default {
         'We\'d love to hear from you!',
         'Call, send a message or come see us in the heart of Pandosy Village.'
       ]
+    }
+  },
+  computed: {
+    parsedWeekdayText () {
+    // converts array of strings into array of structured objects
+      let result = []
+      if (this.openingHours.weekday_text.length) {
+        result = this.openingHours.weekday_text.map((timeString) => {
+          const hour = timeString.split(': ')
+          return {
+            start_day: hour[0],
+            end_day: hour[0],
+            hours: hour[1]
+          }
+        })
+      }
+      return result
+    },
+    simplifiedHours () {
+    // groups consecutive days with the same hours
+      let result = this.parsedWeekdayText
+      if (result.length) {
+        result.forEach((obj, i, arr) => {
+          if (i > 0) {
+            if (obj.hours === arr[i - 1].hours) {
+              obj.start_day = arr[i - 1].start_day
+              arr[i - 1].flag = true
+            }
+          }
+        })
+        result = result.filter(obj => !obj.flag)
+      }
+      return result
     }
   }
 }
@@ -69,6 +150,17 @@ export default {
 @import '~/scss/mixins/boxShadows.scss';
 @import '~/scss/vars/breakpoints.scss';
 
+@keyframes swing {
+  0% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
 a#tel {
   text-decoration: none;
 }
@@ -104,7 +196,7 @@ section.contact {
     .img {
       height: auto;
       img {
-        max-width: 15%;
+        width: 15%;
         padding-bottom: 10px;
       }
     }
@@ -129,6 +221,56 @@ section.contact {
       justify-content: center;
     }
   }
+  img.open-sign {
+    margin-right: auto;
+    margin-top: 5px;
+    margin-left: 18px;
+    position: absolute;
+    max-width: 18%;
+    // transform-origin: 33px 22px;
+    transform-origin: top center;
+    transform: rotate(0deg);
+    // transition: transform 200ms ease;
+    animation: swing 2000ms ease-in-out infinite reverse both running;
+    // top: 0;
+  }
+  div.full-width {
+    width: 100%;
+    margin-bottom: 10px;
+    .img {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 15%;
+        height: 100%;
+        object-fit: contain;
+        // justify-self: center;
+        // margin: 0 auto;
+      }
+    }
+    .hours-container {
+      // max-width: 600px;
+      // justify-self: center;
+      // margin: 0 auto;
+      .hrow {
+        display: flex;
+        margin-bottom: 8px;
+        // justify-content: space-around;
+        .day-wrap {
+          text-align: left;
+          margin-left: auto;
+        }
+        div {
+          width: 45%
+        }
+        span {
+          width: 45%;
+          margin-right: auto;
+        }
+      }
+    }
+
+  }
   iframe {
     margin: 0 auto;
     margin-top: 30px;
@@ -150,6 +292,23 @@ section.contact {
       height: 210px;
       margin: 0px;
     }
+    img.open-sign {
+      max-width: 13%;
+    }
+    div.full-width {
+      height: auto;
+      margin-bottom: 20px;
+      .img {
+        margin-bottom: 8px;
+        img {
+          max-width: 10%;
+        }
+      }
+      .hours-container {
+        width: 600px;
+        margin: 10px auto;
+      }
+    }
   }
 
 }
@@ -163,6 +322,9 @@ section.contact {
       width: 359px;
       // margin: 0px;
     }
+    img.open-sign {
+      max-width: 105px;
+    }
     h1 {
       margin-top: 20px;
     }
@@ -170,6 +332,11 @@ section.contact {
       // width: 75%;
       height: 450px;
     }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  img.open-sign {
+    animation: none !important;
   }
 }
 </style>
