@@ -32,11 +32,13 @@ export default {
   props: {
     box: {
       type: Object,
-      default: () => Object.assign({}, {
-        title: '',
-        message: '',
-        imagePath: ''
-      })
+      default: () => {
+        return {
+          title: '',
+          message: '',
+          imagePath: ''
+        }
+      }
     },
     index: {
       type: Number,
