@@ -27,7 +27,6 @@ export default {
   },
   asyncData () {
     return fetch('https://dev.waxshop.ca/hours').then(res => res.json())
-    // return fetch('https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyDxzGphN7Omp11K2vDulJF8TBh7vCR6ddQ&place_id=ChIJX33ybTGLfVMRLC4l1HzHwEc&fields=opening_hours')
   }
 }
 </script>
