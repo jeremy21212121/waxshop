@@ -6,7 +6,7 @@
     <promo-description
       :paragraphs="description"
     />
-    <div
+    <!-- <div
       v-if="simplifiedHours.length"
       class="wrapper full-width"
     >
@@ -27,6 +27,7 @@
         <div
           v-for="(hours, i) in simplifiedHours"
           :key="'sh' + i"
+          :class="{ today: hours.today }"
           class="hrow"
         >
           <div class="day-wrap">
@@ -44,7 +45,18 @@
           </span>
         </div>
       </div>
-    </div>
+      <div class="info">
+        <a href="https://www.google.com/maps/place/The+Wax+Shop+-+Kelowna+Mission/@49.8665247,-119.4932158,17z/data=!3m1!4b1!4m5!3m4!1s0x537d8b316df27d5f:0x47c0c77cd4252e2c!8m2!3d49.8665247!4d-119.4910271" target="_blank" rel="noopener noreferrer">
+          <span>
+            <img src="~/assets/info.png" alt="info" aria-hidden="true">
+            Holiday hours
+          </span>
+        </a>
+      </div>
+    </div> -->
+    <business-hours
+      :opening-hours="openingHours"
+    />
     <div class="wrapper">
       <h2 class="section-title">
         Phone
@@ -88,11 +100,17 @@
 <script>
 // import Message from '~/components/Message.vue'
 import PromoDescription from '~/components/PromoDescription.vue'
+import BusinessHours from '~/components/BusinessHours.vue'
+// import statHolidaysBC from '~/mixins/statHolidaysBC.js'
 
 export default {
   components: {
-    PromoDescription
+    PromoDescription,
+    BusinessHours
   },
+  mixins: [
+    // statHolidaysBC
+  ],
   props: {
     openingHours: {
       type: Object,
@@ -107,39 +125,7 @@ export default {
         'We\'d love to hear from you!',
         'Call, send a message or come see us in the heart of Pandosy Village.'
       ]
-    }
-  },
-  computed: {
-    parsedWeekdayText () {
-    // converts array of strings into array of structured objects
-      let result = []
-      if (this.openingHours.weekday_text.length) {
-        result = this.openingHours.weekday_text.map((timeString) => {
-          const hour = timeString.split(': ')
-          return {
-            start_day: hour[0],
-            end_day: hour[0],
-            hours: hour[1]
-          }
-        })
-      }
-      return result
-    },
-    simplifiedHours () {
-    // groups consecutive days with the same hours
-      let result = this.parsedWeekdayText
-      if (result.length) {
-        result.forEach((obj, i, arr) => {
-          if (i > 0) {
-            if (obj.hours === arr[i - 1].hours) {
-              obj.start_day = arr[i - 1].start_day
-              arr[i - 1].flag = true
-            }
-          }
-        })
-        result = result.filter(obj => !obj.flag)
-      }
-      return result
+      // holidays: this.BCStatHolidays(new Date().getFullYear())
     }
   }
 }
@@ -150,17 +136,17 @@ export default {
 @import '~/scss/mixins/boxShadows.scss';
 @import '~/scss/vars/breakpoints.scss';
 
-@keyframes swing {
-  0% {
-    transform: rotate(2deg);
-  }
-  50% {
-    transform: rotate(-2deg);
-  }
-  100% {
-    transform: rotate(2deg);
-  }
-}
+// @keyframes swing {
+//   0% {
+//     transform: rotate(2deg);
+//   }
+//   50% {
+//     transform: rotate(-2deg);
+//   }
+//   100% {
+//     transform: rotate(2deg);
+//   }
+// }
 a#tel {
   text-decoration: none;
 }
@@ -221,56 +207,90 @@ section.contact {
       justify-content: center;
     }
   }
-  img.open-sign {
-    margin-right: auto;
-    margin-top: 5px;
-    margin-left: 18px;
-    position: absolute;
-    max-width: 18%;
-    // transform-origin: 33px 22px;
-    transform-origin: top center;
-    transform: rotate(0deg);
-    // transition: transform 200ms ease;
-    animation: swing 2000ms ease-in-out infinite reverse both running;
-    // top: 0;
-  }
-  div.full-width {
-    width: 100%;
-    margin-bottom: 10px;
-    .img {
-      display: flex;
-      justify-content: center;
-      img {
-        width: 15%;
-        height: 100%;
-        object-fit: contain;
-        // justify-self: center;
-        // margin: 0 auto;
-      }
-    }
-    .hours-container {
-      // max-width: 600px;
-      // justify-self: center;
-      // margin: 0 auto;
-      .hrow {
-        display: flex;
-        margin-bottom: 8px;
-        // justify-content: space-around;
-        .day-wrap {
-          text-align: left;
-          margin-left: auto;
-        }
-        div {
-          width: 45%
-        }
-        span {
-          width: 45%;
-          margin-right: auto;
-        }
-      }
-    }
-
-  }
+  // img.open-sign {
+  //   margin-right: auto;
+  //   margin-top: 5px;
+  //   margin-left: 18px;
+  //   position: absolute;
+  //   max-width: 18%;
+  //   // transform-origin: 33px 22px;
+  //   transform-origin: top center;
+  //   transform: rotate(0deg);
+  //   // transition: transform 200ms ease;
+  //   animation: swing 2000ms ease-in-out infinite reverse both running;
+  //   // top: 0;
+  // }
+  // div.full-width {
+  //   width: 100%;
+  //   margin-bottom: 10px;
+  //   padding-bottom: 10px;
+  //   .img {
+  //     display: flex;
+  //     justify-content: center;
+  //     img {
+  //       width: 15%;
+  //       height: 100%;
+  //       object-fit: contain;
+  //       // justify-self: center;
+  //       // margin: 0 auto;
+  //     }
+  //   }
+  //   .hours-container {
+  //     // max-width: 600px;
+  //     // justify-self: center;
+  //     // margin: 0 auto;
+  //     .hrow {
+  //       display: flex;
+  //       margin-bottom: 8px;
+  //       // justify-content: space-around;
+  //       &.today {
+  //         background-color: rgba(255,255,255,0.1);
+  //         padding: 4px 0px;
+  //         @include border-radius-standard;
+  //       }
+  //       .day-wrap {
+  //         text-align: left;
+  //         margin-left: auto;
+  //       }
+  //       div {
+  //         width: 45%
+  //       }
+  //       span {
+  //         width: 45%;
+  //         margin-right: auto;
+  //       }
+  //     }
+  //   }
+  //   .info {
+  //     a {
+  //       color: rgba(255,255,255,0.65);
+  //       font-size: 12px;
+  //       // background-color: rgba(255,255,255,0.05);
+  //       margin-bottom: 0px;
+  //       margin-top: 20px;
+  //       display: flex;
+  //       justify-content: flex-end;
+  //       span {
+  //         display: flex;
+  //         justify-content: center;
+  //         align-items: center;
+  //         // width: 30%;
+  //         margin-right: 15%;
+  //         padding: 3px 5px;
+  //         padding-right: 10px;
+  //         background-color: rgba(255,255,255,0.05);
+  //         @include border-radius-standard;
+  //         // vertical-align: baseline;
+  //         img {
+  //           width: 24px;
+  //           margin-right: 5px;
+  //           // padding: 5px;
+  //           // background-color: rgba(255,255,255,0.05);
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
   iframe {
     margin: 0 auto;
     margin-top: 30px;
@@ -297,6 +317,7 @@ section.contact {
     }
     div.full-width {
       height: auto;
+      padding-bottom: 10px;
       margin-bottom: 20px;
       .img {
         margin-bottom: 8px;

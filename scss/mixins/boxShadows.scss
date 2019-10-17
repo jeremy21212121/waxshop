@@ -3,6 +3,11 @@
   box-shadow: 0 0px 1px rgba(255,255,255,0.16),
               0 0px 1px rgba(255,255,255,0.23);
 }
+@mixin bs-white-0b {
+  // box-shadow: 0 1px 3px rgba(255,255,255,0.16), 0 1px 3px rgba(255,255,255,0.23);
+  box-shadow: 0 0px 2px rgba(255,255,255,0.16),
+              0 0px 2px rgba(255,255,255,0.23);
+}
 @mixin bs-white-1 {
   // box-shadow: 0 1px 3px rgba(255,255,255,0.16), 0 1px 3px rgba(255,255,255,0.23);
   box-shadow: 0 0px 6px rgba(255,255,255,0.16),
