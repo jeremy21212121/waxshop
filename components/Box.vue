@@ -13,10 +13,12 @@
       class="about-icons"
       aria-hidden="true"
     >
+    <!-- eslint-disable -->
     <span
       :class="{ active: box.active }"
       v-html="box.message"
     />
+    <!-- eslint-enable -->
     <span
       :class="{ active: !box.active }"
       class="caret-wrapper"
