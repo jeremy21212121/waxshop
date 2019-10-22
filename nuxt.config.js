@@ -53,7 +53,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    // { src: 'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=es5%2Ces6', mode: 'client' }
+    '~/plugins/lightGallery.client.js'
   ],
   /*
   ** Nuxt.js dev-modules

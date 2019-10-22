@@ -1,7 +1,12 @@
 <template>
   <section class="masthead">
     <div class="mast">
-      <img src="~/assets/bw_landing1w.jpg" alt="Couple at the beach" aria-hidden="true">
+      <img
+        :srcset="getImageSrcset()"
+        :src="image.src.url"
+        :sizes="image.sizes"
+        :alt="image.alt"
+      >
       <div class="overlay">
         <h1>new clients</h1>
         <span class="highlight-text">25% off</span>
@@ -11,7 +16,35 @@
   </section>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      image: {
+        src: {
+          url: require('~/assets/landing_warm-804.jpg'),
+          width: 804
+        },
+        src2x: {
+          url: require('~/assets/landing_warm-1608.jpg'),
+          width: 1608
+        },
+        sizes: '(min-width: 740px) 740px, 100vw',
+        alt: 'Couple at the beach'
+      }
+    }
+  },
+  methods: {
+    getImageSrcset () {
+      return `${this.image.src.url} ${this.image.src.width}w, ${this.image.src2x.url} ${this.image.src2x.width}w`
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
+@import '~/scss/vars/breakpoints.scss';
+
 section {
   width: 100%;
   min-width: 320px;
@@ -66,7 +99,7 @@ section {
     }
   }
 }
-@media screen and (min-width: 620px) {
+@media screen and (min-width: $break-s) {
   section {
     .mast {
       div.overlay {
@@ -75,7 +108,7 @@ section {
     }
   }
 }
-@media screen and (min-width: 740px) {
+@media screen and (min-width: $break-l) {
   section {
     margin-top: 0px;
     .mast {

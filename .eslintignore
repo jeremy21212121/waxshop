@@ -90,4 +90,8 @@ sw.*
 # Vim swap files
 *.swp
 
+# local npm modules
+modules/
 
+# plugin
+plugins/lightGallery.client.js
