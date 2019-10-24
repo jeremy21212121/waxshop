@@ -152,6 +152,7 @@ footer {
     color: rgba(255, 255, 255, 0.75);
     padding-bottom: 6px;
     margin-top: 20px;
+    margin-bottom: 7px;
     font-size: 0.8rem;
     text-align: center;
     a {
