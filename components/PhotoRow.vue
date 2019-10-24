@@ -48,6 +48,7 @@ export default {
             srcset: require('assets/entryway-1480.jpg') + ' 2x, ' + require('assets/entryway-740.jpg') + ' 1x',
             alt: 'entryway',
             thumb: {
+              src: require('assets/entryway_thumb-238.jpg'),
               srcset: require('assets/entryway_thumb-476.jpg') + ' 2x, ' + require('assets/entryway_thumb-238.jpg') + ' 1x'
             }
           },
@@ -57,6 +58,7 @@ export default {
             srcset: require('assets/products-1480.jpg') + ' 2x, ' + require('assets/products-740.jpg') + ' 1x',
             alt: 'premium products',
             thumb: {
+              src: require('assets/products_thumb-238.jpg'),
               srcset: require('assets/products_thumb-476.jpg') + ' 2x, ' + require('assets/products_thumb-238.jpg') + ' 1x'
             }
           },
@@ -66,6 +68,7 @@ export default {
             srcset: require('assets/room-1480.jpg') + ' 2x, ' + require('assets/room-740.jpg') + ' 1x',
             alt: 'tidy treatment room',
             thumb: {
+              src: require('assets/room_thumb-238.jpg'),
               srcset: require('assets/room_thumb-476.jpg') + ' 2x, ' + require('assets/room_thumb-238.jpg') + ' 1x'
             }
           }
