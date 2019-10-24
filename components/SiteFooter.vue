@@ -20,14 +20,60 @@
         <a href="mailto:hello@waxshop.ca">hello@waxshop.ca</a>
       </div>
     </div>
+    <nav>
+      <ul>
+        <li
+          v-for="(link, i) in nav"
+          :key="link.title.toLowerCase() + i"
+        >
+          <nuxt-link
+            :to="link.path"
+          >
+            {{ link.title }}
+          </nuxt-link>
+        </li>
+      </ul>
+    </nav>
     <div class="copy">
       &copy; 2019 <a href="https://waxshop.ca">The Wax Shop</a>
     </div>
   </footer>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      nav: [
+        {
+          title: 'Home',
+          path: '/',
+          isNuxt: true
+        },
+        {
+          title: 'Services',
+          path: '/services',
+          isNuxt: true
+        },
+        {
+          title: 'Contact',
+          path: '/contact',
+          isNuxt: true
+        },
+        {
+          title: 'Promotion',
+          path: '/promotion',
+          isNuxt: true
+        }
+      ]
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 @import '~/scss/mixins/spaceEvenlyHack.scss';
+@import '~/scss/vars/colours.scss';
 
 footer {
   display: flex;
@@ -46,7 +92,11 @@ footer {
     justify-content: space-around;
     align-items: center;
     margin-bottom: 10px;
+    margin-top: 10px;
     color: rgba(255, 255, 255, 0.75);
+    div {
+      padding: 2px 5px;
+    }
     a#tel-anchor {
       text-decoration: none;
       color: inherit;
@@ -79,9 +129,29 @@ footer {
       overflow: hidden;
     }
   }
+  nav {
+    ul {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      li {
+        a {
+          color: rgba(255, 255, 255, 0.75);
+          &:visited {
+            color: rgba(220, 220, 255, 0.75);
+          }
+        }
+      }
+    }
+  }
   div.copy {
     color: rgba(255, 255, 255, 0.75);
     padding-bottom: 6px;
+    margin-top: 20px;
     font-size: 0.8rem;
     text-align: center;
     a {
