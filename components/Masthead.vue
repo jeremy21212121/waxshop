@@ -2,8 +2,8 @@
   <section class="masthead">
     <div class="mast">
       <img
-        :srcset="getImageSrcset()"
-        :src="image.src.url"
+        :srcset="imageArrayToSrcset(image.srcset)"
+        :src="image.srcset[0].src"
         :sizes="image.sizes"
         :alt="image.alt"
       >
@@ -21,22 +21,28 @@ export default {
   data () {
     return {
       image: {
-        src: {
-          url: require('~/assets/landing_warm-804.jpg'),
-          width: 804
-        },
-        src2x: {
-          url: require('~/assets/landing_warm-1608.jpg'),
-          width: 1608
-        },
+        srcset: [
+          {
+            src: require('~/assets/landing_med-804.jpg'),
+            width: 804
+          },
+          {
+            src: require('~/assets/landing_med-1206.jpg'),
+            width: 1206
+          },
+          {
+            src: require('~/assets/landing_med-1608.jpg'),
+            width: 1608
+          }
+        ],
         sizes: '(min-width: 740px) 740px, 100vw',
         alt: 'Couple at the beach'
       }
     }
   },
   methods: {
-    getImageSrcset () {
-      return `${this.image.src.url} ${this.image.src.width}w, ${this.image.src2x.url} ${this.image.src2x.width}w`
+    imageArrayToSrcset (imageArray) {
+      return imageArray.map(img => `${img.src} ${img.width}w`).join(', ')
     }
   }
 }
@@ -84,7 +90,6 @@ section {
         position: relative;
         bottom: 3vw;
         font-family: "Cinzel", cursive;
-        // font-weight: bold;
         font-size: 3.3em;
         font-size: 15vw;
         text-shadow: 2px 2px 4px black;
