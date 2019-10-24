@@ -64,7 +64,7 @@ export default {
       return [
         {
           title: 'New Year\'s Day',
-          date: new Date(`January 1 ${year} 12:00:00.000`) // set to noon to handle server set to GMT and browser set to GMT-7/8
+          date: new Date(`January 1, ${year} 12:00`) // set to noon to handle server set to GMT and browser set to GMT-7/8
         },
         {
           title: 'Family Day',
@@ -80,7 +80,7 @@ export default {
         },
         {
           title: 'Canada Day',
-          date: new Date(`July 1 ${year} 12:00:00.000`)
+          date: new Date(`July 1, ${year} 12:00`)
         },
         {
           title: 'BC Day',
@@ -96,11 +96,11 @@ export default {
         },
         {
           title: 'Remembrance Day',
-          date: new Date(`November 11 ${year} 12:00:00.000`)
+          date: new Date(`November 11, ${year} 12:00`)
         },
         {
           title: 'Christmas Day',
-          date: new Date(`December 25 ${year} 12:00:00.000`)
+          date: new Date(`December 25, ${year} 12:00`)
         }
       ]
     }
