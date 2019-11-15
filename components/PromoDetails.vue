@@ -4,7 +4,7 @@
       <p>
         For a limited time, all new clients receive
         <span class="highlight-text caps">
-          25% off
+          15% off
         </span>
         their first wax.
       </p>

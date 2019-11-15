@@ -9,7 +9,7 @@
       >
       <div class="overlay">
         <h1>new clients</h1>
-        <span class="highlight-text">25% off</span>
+        <span class="highlight-text">15% off</span>
         <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noreferrer noopener">Book now!</a>
       </div>
     </div>
