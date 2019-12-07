@@ -62,7 +62,7 @@ export default {
         },
         {
           title: 'Promotion',
-          path: '/promotion',
+          path: '/gift-card-promo',
           isNuxt: true
         }
       ]
