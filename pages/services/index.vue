@@ -1,6 +1,66 @@
 <template>
   <section class="container">
     <div class="main-title-row">
+      <h1 class="section-title-alt">
+        {{ newServices.heading }}
+      </h1>
+    </div>
+    <div class="service-wrapper">
+      <div class="title-row">
+        <h2>
+          {{ newServices.title }}
+        </h2>
+        <img :src="newServices.icon" :alt="getImageAltText(newServices.title)" aria-hidden="true">
+      </div>
+      <ul class="group-wrapper">
+        <li
+          v-for="(service, nI) in [...newServices.services, ...newServices.specials]"
+          :key="'new-service' + nI"
+          class="row-wrapper"
+        >
+          <span class="service-title">
+            {{ service.title }}
+          </span>
+          <span
+            v-if="service.price > 0"
+            class="service-price"
+          >
+            ${{ service.price }}
+            <span
+              v-if="service.info"
+              class="service-info"
+            >
+              {{ service.info }}
+            </span>
+          </span>
+          <span
+            v-else
+            class="service-options"
+          >
+            <span
+              v-for="(option, k) in service.options"
+              :key="'ns-option-' + nI + k"
+              class="service-option"
+            >
+              <span class="service-option-title">
+                {{ option.title }}
+              </span>
+              <span class="service-option-price">
+                ${{ option.price }}
+              </span>
+              <span
+                v-if="k < (service.options.length -1)"
+                class="service-option-separator"
+              >
+                /
+              </span>
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" rel="noreferrer noopener">Book Now!</a>
+    <div class="main-title-row">
       <h1 class="section-title">
         {{ pageHeading }}
       </h1>
@@ -83,7 +143,53 @@ export default {
   data () {
     return {
       pageHeading: 'Popular services',
-      services: require('~/static/data/services.json')
+      services: require('~/static/data/services.json'),
+      newServices: {
+        heading: 'New services',
+        title: 'brows & lashes',
+        icon: '/static_img/brow-lash.svg',
+        services: [
+          {
+            title: 'Brow tint',
+            price: 20,
+            info: null
+          },
+          {
+            title: 'Lash tint',
+            price: 25,
+            info: null
+          },
+          {
+            title: 'Lash lift',
+            price: 65,
+            info: null
+          }
+        ],
+        specials: [
+          {
+            title: 'Just brows',
+            price: 0,
+            // info: 'Brow wax & tint',
+            options: [
+              {
+                title: 'Brow wax & tint',
+                price: 35
+              }
+            ]
+          },
+          {
+            title: 'Just lashes',
+            price: 0,
+            // info: 'Lash lift & tint',
+            options: [
+              {
+                title: 'Lash lift & tint',
+                price: 80
+              }
+            ]
+          }
+        ]
+      }
     }
   },
   methods: {
@@ -95,6 +201,9 @@ export default {
           break
         case 'hers':
           output = 'Female symbol'
+          break
+        case 'brows & lashes':
+          output = 'Eyelash and eyebrow icon'
           break
         default:
           break
@@ -113,6 +222,7 @@ export default {
   display: flex;
   // flex-direction: column;
   flex-wrap: wrap;
+  margin-top: 10%;
   .main-title-row {
     display: flex;
     align-items: center;
@@ -125,8 +235,11 @@ export default {
       width: 48px;
       height: 48px;
     }
+    h1.section-title-alt {
+      margin-top: 10px;
+      font-weight: 300;
+    }
   }
-  margin-top: 15%;
   .service-wrapper {
     display: flex;
     flex-direction: column;
@@ -208,6 +321,8 @@ export default {
   a.button--green {
     // align-self: center;
     margin: 0 auto;
+    @include bs-white-1;
+    color: rgba(255,255,255,0.85);
   }
   p {
     margin: 10px auto;
