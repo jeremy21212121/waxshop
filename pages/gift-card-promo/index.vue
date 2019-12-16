@@ -90,14 +90,6 @@ export default {
             }
           }
         ]
-        // row: {
-        //   images: {
-        //     base: 'giftag',
-        //     sizes: [740,1125,1480],
-        //     thumbs: [238,476,714],
-        //     alt: 'Gift card surrounded by gold and black decorative bags'
-        //   }
-        // }
       }
     }
   }
@@ -107,6 +99,9 @@ export default {
 <style lang="scss" scoped>
 @import '~/scss/vars/colours.scss';
 
+.masthead img {
+  width: 100%;
+}
 div.spacer {
   margin-top: 20px;
 }
