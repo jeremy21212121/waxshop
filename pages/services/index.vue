@@ -1,11 +1,11 @@
 <template>
   <section class="container">
     <div class="main-title-row">
-      <h1 class="section-title-alt">
+      <h1 class="section-title section-title-alt">
         {{ newServices.heading }}
       </h1>
     </div>
-    <div class="service-wrapper">
+    <div class="service-wrapper alt">
       <div class="title-row">
         <h2>
           {{ newServices.title }}
@@ -307,6 +307,9 @@ export default {
 
       }
     }
+  div.service-wrapper.alt {
+    padding-bottom: 30px;
+  }
   .disclaimer {
     justify-self: flex-end;
     align-self: flex-end;
@@ -322,7 +325,7 @@ export default {
     // align-self: center;
     margin: 0 auto;
     @include bs-white-1;
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.86);
   }
   p {
     margin: 10px auto;
@@ -338,6 +341,9 @@ export default {
   .container {
     .service-wrapper {
       width: 90%;
+      .row-wrapper {
+        padding: 1px 0;
+      }
     }
   }
 }
@@ -352,6 +358,7 @@ export default {
       height: 420px;
       .group-wrapper {
         .row-wrapper {
+          padding: 2px 0;
           span.service-options {
             font-size: 0.9rem;
           }
@@ -363,6 +370,12 @@ export default {
       .disclaimer {
         margin-top: auto;
       }
+    }
+    div.service-wrapper.alt {
+      // display: none;
+      width: 95%;
+      height: 220px;
+      margin: 15px auto;
     }
     p {
       align-self: baseline;
