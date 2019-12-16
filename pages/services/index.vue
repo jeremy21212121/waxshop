@@ -10,7 +10,8 @@
         <h2>
           {{ newServices.title }}
         </h2>
-        <img :src="newServices.icon" :alt="getImageAltText(newServices.title)" aria-hidden="true">
+        <!-- <img :src="newServices.icon" :alt="getImageAltText(newServices.title)" aria-hidden="true"> -->
+        <new-services-SVG />
       </div>
       <ul class="group-wrapper">
         <li
@@ -139,7 +140,12 @@
   </section>
 </template>
 <script>
+import NewServicesSVG from '@/components/NewServicesSvg.vue'
+
 export default {
+  components: {
+    NewServicesSVG
+  },
   data () {
     return {
       pageHeading: 'Popular services',

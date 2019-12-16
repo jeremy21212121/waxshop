@@ -282,7 +282,7 @@ div.full-width {
     .img {
       margin-bottom: 8px;
       img {
-        max-width: 10%;
+        // max-width: 10%;
       }
     }
     .hours-container {
@@ -298,6 +298,11 @@ div.full-width {
   div.full-width {
     // height: 230px;
     // width: 359px;
+    .img img {
+      width: 96px;
+      height: 96px;
+      max-width: 96px;
+    }
     img.open-sign {
       max-width: 105px;
     }
