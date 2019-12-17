@@ -34,6 +34,11 @@
         </li>
       </ul>
     </nav>
+    <div class="social-wrapper">
+      <social-icons
+        :spacing="24"
+      />
+    </div>
     <div class="copy">
       &copy; 2019 <a href="https://waxshop.ca">The Wax Shop</a>
     </div>
@@ -41,7 +46,12 @@
 </template>
 
 <script>
+import SocialIcons from '@/components/SocialIcons.vue'
+
 export default {
+  components: {
+    SocialIcons
+  },
   data () {
     return {
       nav: [
@@ -91,8 +101,8 @@ footer {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    // margin-bottom: 10px;
+    margin-top: 20px;
     color: rgba(255, 255, 255, 0.75);
     div {
       padding: 2px 5px;
@@ -129,6 +139,12 @@ footer {
       overflow: hidden;
     }
   }
+  div.social-wrapper {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
   nav {
     ul {
       padding-left: 10px;
@@ -151,7 +167,7 @@ footer {
   div.copy {
     color: rgba(255, 255, 255, 0.75);
     padding-bottom: 6px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 7px;
     font-size: 0.8rem;
     text-align: center;

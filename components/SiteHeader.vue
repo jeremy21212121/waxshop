@@ -51,9 +51,10 @@
           Toggle navigation menu
         </span>
       </a>
-      <nuxt-link to="/">
+      <nuxt-link id="home-link" to="/">
         <img id="logo-img" src="~/assets/logo.png" alt="The Waxshop logo">
       </nuxt-link>
+      <social-icons />
     </div>
     <nav
       :class="{ active }"
@@ -72,12 +73,6 @@
             {{ link.title }}
           </nuxt-link>
         </li>
-        <!-- <li @click="() => { active = !active }">
-          <a href="#about" class="button--grey">About</a>
-        </li>
-        <li @click="() => { active = !active }">
-          <a href="#contact" class="button--grey">Contact</a>
-        </li> -->
         <li @click="() => { active = !active }">
           <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" rel="noreferrer noopener">Book Now!</a>
         </li>
@@ -87,7 +82,12 @@
 </template>
 
 <script>
+import SocialIcons from '@/components/SocialIcons.vue'
+
 export default {
+  components: {
+    SocialIcons
+  },
   data () {
     return {
       active: false,
@@ -131,21 +131,14 @@ header {
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
   .logo {
-    /* // display: -webkit-flex; */
     display: flex;
     width: 100%;
-    /* justify-content: space-around; */
-    /* // align-items: -webkit-center; */
     align-items: center;
     background-color: black;
     padding: 4px 0px;
     box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
-    // box-shadow: 0 6px 6px -6px rgba(255,255,255,0.12),
-    //             0 6px 6px -6px rgba(255,255,255,0.16);
-    // z-index: 991;
     a {
       padding-left: 4%;
-      // z-index: 999;
       svg {
         .icon {
           width: 100%;
@@ -190,27 +183,26 @@ header {
         font-size: 1px;
       }
     }
-    img#logo-img {
-      width: 75%;
-      padding-left: 5%;
-      object-fit: contain;
-      vertical-align: middle;
-      // z-index: -1;
+    a#home-link {
+      width: 65%;
+      img#logo-img {
+        width: 100%;
+        padding-left: 5%;
+        object-fit: contain;
+        vertical-align: middle;
+      }
     }
   }
   nav {
     background-color: rgba(204,204,204,.65);
     background-color: rgba(0,0,0,0.75);
-    /* max-height: 0px; */
     position: relative;
     bottom: 40px;
-    // z-index: 300;
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
     transition: all 200ms ease-out;
     &.active {
-      /* max-height: 45px; */
       bottom: 0;
       opacity: 1;
       visibility: visible;
@@ -218,7 +210,6 @@ header {
       box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
     }
     ul {
-      /* // display: -webkit-flex; */
       display: flex;
       justify-content: space-around;
       list-style-type: none;
@@ -228,11 +219,9 @@ header {
       li {
         a.button--grey {
           padding: 5px 14px;
-          // padding: 5px 0px;
         }
         a.button--green {
           padding: 5px 14px;
-          // padding: 5px 0px;
         }
       }
     }
@@ -241,7 +230,6 @@ header {
 @media screen and (min-width: 740px) {
   header {
     position: initial;
-    // z-index: 99;
     .logo {
       justify-content: center;
       box-shadow: none;
@@ -262,14 +250,9 @@ header {
       visibility: visible;
       transition: all 300ms ease-in;
       bottom: 0;
-      // z-index: 99;
       box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
       ul {
-        /* justify-content: center; */
         background-color: rgba(255,255,255,0.15);
-        /* li {
-          width: 15%;
-        } */
       }
     }
   }
