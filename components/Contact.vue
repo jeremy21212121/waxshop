@@ -28,21 +28,16 @@
         Address
       </h2>
       <div class="img">
-        <img src="~/assets/sm-map.png" alt="map icon" aria-hidden="true">
+        <!-- <img src="~/assets/sm-map.png" alt="map icon" aria-hidden="true"> -->
+        <tour-svg />
       </div>
       <span>
-        <a class="button--grey" href="https://www.google.com/maps/place/The+Wax+Shop+-+Kelowna+Mission/@49.8665247,-119.4932158,17z/data=!3m1!4b1!4m5!3m4!1s0x537d8b316df27d5f:0x47c0c77cd4252e2c!8m2!3d49.8665247!4d-119.4910271" target="_blank" rel="noreferrer noopener">
-          View map
+        <a class="button--grey" href="https://youriguide.com/100_2689_pandosy_st_kelowna_bc?nodetails=1&nomenu=1&mute=1&minfp=1" target="_blank" rel="noreferrer noopener">
+          3D Virtual Tour
         </a>
       </span>
       <span class="content">
-        2689 Pandosy St
-      </span>
-      <span class="content">
-        Suite 100
-      </span>
-      <span class="content">
-        Kelowna, BC V1Y 9V9
+        Check out our beautiful shop before you book
       </span>
     </div>
     <iframe style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJX33ybTGLfVMRLC4l1HzHwEc&key=AIzaSyASCfx46mSwtL11S20Lv3FpusELZKuXA3w" allowfullscreen />
@@ -52,11 +47,13 @@
 <script>
 import PromoDescription from '~/components/PromoDescription.vue'
 import BusinessHours from '~/components/BusinessHours.vue'
+import TourSvg from '~/components/TourSVG.vue'
 
 export default {
   components: {
     PromoDescription,
-    BusinessHours
+    BusinessHours,
+    TourSvg
   },
   props: {
     openingHours: {
