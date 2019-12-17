@@ -379,7 +379,7 @@ export default {
     }
     div.service-wrapper.alt {
       // display: none;
-      width: 95%;
+      width: 100%;
       height: 220px;
       margin: 15px auto;
     }
