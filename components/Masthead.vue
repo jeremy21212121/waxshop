@@ -81,7 +81,7 @@ section {
       position: absolute;
       top: 0;
       // flex-grow: 1;
-      height: stretch;
+      // height: stretch;
       // display: flex;
       // flex-direction: column;
       // justify-content: space-between;
@@ -92,6 +92,7 @@ section {
         // font-size: 3.5em;
         font-size: 10vw;
         // margin-bottom: 28vw;
+        -webkit-text-stroke: 0.5px black;
         margin-bottom: 25%;
         padding: 10px 10%;
         padding-bottom: 0;
@@ -108,6 +109,7 @@ section {
         // line-height: 1.5;
         font-size: 8vw;
         text-shadow: 2px 2px 4px black;
+        -webkit-text-stroke: 0.5px black;
         // padding: 0 1%;
       }
       a {
@@ -141,7 +143,7 @@ section {
     .mast {
       div.overlay {
         span {
-          padding: 0 4%;
+          padding: 0 3.75%;
         }
       }
     }
