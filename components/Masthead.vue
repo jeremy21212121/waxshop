@@ -94,6 +94,7 @@ section {
         // margin-bottom: 28vw;
         margin-bottom: 25%;
         padding: 10px 10%;
+        padding-bottom: 0;
         text-shadow: 2px 2px 4px black;
         color: rgba(255,255,255,0.95);
       }
