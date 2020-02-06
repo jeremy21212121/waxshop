@@ -87,7 +87,7 @@ export default {
         // handles sunday
         currentDay = 6
       }
-      // used for adding .today = true in simplifiedHours
+      // used for marking current day in simplifiedHours
       if (this.openingHours.weekday_text.length) {
         result = this.openingHours.weekday_text.map((timeString, i) => {
           const hour = timeString.split(': ')
@@ -106,21 +106,29 @@ export default {
       let result = this.parsedWeekdayText
       if (result.length) {
         result.forEach((obj, i, arr) => {
+          // we can't group the first item with its predecessor because there isnt one
           if (i > 0) {
+            // if current item and the previous item have the same hours, group them together
             if (obj.hours === arr[i - 1].hours) {
               obj.start_day = arr[i - 1].start_day
+              // flag the previous item for later removal
               arr[i - 1].flag = true
               if (arr[i - 1].today) {
+                // mark this group as containing the current day (today) if the previous item was marked today
+                // this allows us to visually indicate the relevant hours for today
                 obj.today = true
               }
             }
           }
         })
+        // filter flagged days, they have been grouped and can now be discarded
         result = result.filter(obj => !obj.flag)
       }
       return result
     },
     upcomingHolidays () {
+      // returns stat holidays upcoming in the next two weeks
+      // each upcoming holiday has a title and the time until the holiday in ms
       const now = Date.now()
       const maxDiff = 1000 * 60 * 60 * 24 * 14 * 2 // two weeks in milliseconds
       const holidayDiffs = this.holidays.map((holiday) => {
@@ -134,6 +142,7 @@ export default {
   },
   methods: {
     currentAndNextYearsHolidays () {
+      // we need to get next year, too, just to be safe. It could be late december.
       const currentYear = new Date().getFullYear()
       const results = this.BCStatHolidays(currentYear)
       // add next years' holidays to handle, for example, december 27th
@@ -281,9 +290,9 @@ div.full-width {
     margin-bottom: 20px;
     .img {
       margin-bottom: 8px;
-      img {
-        // max-width: 10%;
-      }
+      // img {
+      //   // max-width: 10%;
+      // }
     }
     .hours-container {
       width: 600px;
