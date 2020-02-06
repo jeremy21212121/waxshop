@@ -8,9 +8,10 @@
         :alt="image.alt"
       >
       <div class="overlay">
-        <h1>new clients</h1>
-        <span class="highlight-text">15% off</span>
-        <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noreferrer noopener">Book now!</a>
+        <h1>Valentine's Special</h1>
+        <span class="highlight-text">Buy a $100 gift card, get a $25 gift card </span>
+        <span class="highlight-text caps">for free!</span>
+        <!-- <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noreferrer noopener">Book now!</a> -->
       </div>
     </div>
   </section>
@@ -23,20 +24,20 @@ export default {
       image: {
         srcset: [
           {
-            src: require('~/assets/landing_med-804.jpg'),
+            src: require('~/assets/valentine_804.jpg'),
             width: 804
           },
           {
-            src: require('~/assets/landing_med-1206.jpg'),
+            src: require('~/assets/valentine_1206.jpg'),
             width: 1206
           },
           {
-            src: require('~/assets/landing_med-1608.jpg'),
+            src: require('~/assets/valentine_1608.jpg'),
             width: 1608
           }
         ],
         sizes: '(min-width: 740px) 740px, 100vw',
-        alt: 'Couple at the beach'
+        alt: 'Valentine on wood background'
       }
     }
   },
@@ -63,6 +64,8 @@ section {
   .mast {
     position: relative;
     width: 100%;
+    // display: flex;
+    // flex-direction: column;
     img {
       width: 100%;
       object-fit: cover;
@@ -76,12 +79,23 @@ section {
     .overlay {
       width: 100%;
       position: absolute;
-      top: 23vw;
+      top: 0;
+      // flex-grow: 1;
+      // height: stretch;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-between;
       h1 {
-        text-transform: uppercase;
-        font-family: 'roboto_cb';
-        font-size: 3.5em;
-        font-size: 15vw;
+        // text-transform: uppercase;
+        // font-family: 'roboto_cb';
+        font-family: 'shortstack';
+        // font-size: 3.5em;
+        font-size: 10vw;
+        // margin-bottom: 28vw;
+        -webkit-text-stroke: 0.5px black;
+        margin-bottom: 25%;
+        padding: 10px 10%;
+        padding-bottom: 0;
         text-shadow: 2px 2px 4px black;
         color: rgba(255,255,255,0.95);
       }
@@ -89,10 +103,14 @@ section {
         display: block;
         position: relative;
         bottom: 3vw;
-        font-family: "Cinzel", cursive;
+        // font-family: "Cinzel", cursive;
+        font-family: 'shortstack';
         font-size: 3.3em;
-        font-size: 15vw;
+        // line-height: 1.5;
+        font-size: 8vw;
         text-shadow: 2px 2px 4px black;
+        -webkit-text-stroke: 0.5px black;
+        // padding: 0 1%;
       }
       a {
         border: 1px solid rgba(0,0,0,0.4);
@@ -108,7 +126,25 @@ section {
   section {
     .mast {
       div.overlay {
-        top: 30%;
+        // top: 30%;
+        h1 {
+          // margin-bottom: 140px;
+          font-size: 61px;
+        }
+        span {
+          font-size: 49px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $breaks-sm) {
+  section {
+    .mast {
+      div.overlay {
+        span {
+          padding: 0 3.75%;
+        }
       }
     }
   }
@@ -121,16 +157,21 @@ section {
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 2px;
       }
-      .overlay {
-        top: 214px;
+      div.overlay {
         h1 {
-          font-size: 98px;
-        }
-        span {
-          font-size: 100px;
-          bottom: 28px;
+          padding-top: 5px;
         }
       }
+      // .overlay {
+      //   top: 214px;
+      //   h1 {
+      //     font-size: 98px;
+      //   }
+      //   span {
+      //     font-size: 100px;
+      //     bottom: 28px;
+      //   }
+      // }
     }
   }
 }
