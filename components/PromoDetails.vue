@@ -1,12 +1,15 @@
 <template>
   <div>
     <div class="promo">
-      <p>
+      <!-- <p>
         For a limited time, all new clients receive
         <span class="highlight-text caps">
           15% off
         </span>
         their first wax.
+      </p> -->
+      <p>
+        Gift cards can be used on any of our services!
       </p>
     </div>
     <img id="flourish" src="~/assets/flourish.png" alt="stylish divider" aria-hidden="true">

@@ -3,11 +3,11 @@
     <div class="logo">
       <a
         id="menu-mobile"
-        href="#"
-        title="Menu button"
         :class="{ active }"
         :aria-expanded="active.toString()"
         @click.prevent="() => { active = !active }"
+        href="#"
+        title="Menu button"
       >
         <svg
           id="burgericon"

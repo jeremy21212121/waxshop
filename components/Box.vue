@@ -1,8 +1,8 @@
 <template>
   <div
-    class="box"
     :class="{ active: box.active }"
     @click="clickHandler"
+    class="box"
   >
     <h2>
       {{ box.title }}

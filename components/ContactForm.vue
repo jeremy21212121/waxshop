@@ -36,7 +36,7 @@
         required
       />
     </div>
-    <button type="submit" class="button--grey" :class="{ loading }" :disabled="loading" @click="checkForm">
+    <button :class="{ loading }" :disabled="loading" @click="checkForm" type="submit" class="button--grey">
       <span v-if="!loading">
         Send
       </span>

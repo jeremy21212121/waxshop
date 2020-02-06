@@ -1,8 +1,9 @@
 <template>
   <div class="container">
-    <div class="masthead">
+    <!-- <div class="masthead">
       <img :src="images.masthead[0].src" :alt="images.masthead[0].alt" :srcset="images.masthead[0].srcset" :sizes="images.masthead[0].sizes">
-    </div>
+    </div> -->
+    <masthead />
     <section class="text">
       <h1>
         There are a Brazilian reasons to give the gift of waxing!
@@ -30,6 +31,7 @@
 </template>
 
 <script>
+import Masthead from '~/components/Masthead.vue'
 import PhotoRow from '~/components/PhotoRow.vue'
 import PromoDetails from '~/components/PromoDetails.vue'
 import Message from '~/components/Message.vue'
@@ -37,6 +39,7 @@ import imageArrayToSrcset from '@/mixins/imagesToSrcset.js'
 
 export default {
   components: {
+    Masthead,
     PhotoRow,
     PromoDetails,
     Message
