@@ -17,6 +17,14 @@ export default {
     Message,
     Contact
   },
+  head () {
+    return {
+      title: 'Contact Us - The Wax Shop',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Hours of operation and contact information for the Wax Shop in Kelowna. Send us a message, take a virtual tour of our lovely studio, or give us a call.' }
+      ]
+    }
+  },
   data () {
     return {
       result: {

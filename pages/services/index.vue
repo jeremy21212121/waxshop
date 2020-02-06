@@ -146,6 +146,14 @@ export default {
   components: {
     NewServicesSVG
   },
+  head () {
+    return {
+      title: 'Services - The Wax Shop',
+      meta: [
+        { hid: 'description', name: 'description', content: 'The services offered by our Kelowna waxing studio- a clean, tranquil environment suited to both men and women. You can relax and be sure you are receiving the best waxing service, every visit, by certified wax technicians.' }
+      ]
+    }
+  },
   data () {
     return {
       pageHeading: 'Popular services',

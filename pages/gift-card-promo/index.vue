@@ -47,6 +47,14 @@ export default {
   mixins: [
     imageArrayToSrcset
   ],
+  head () {
+    return {
+      title: 'Gift Card Promo - The Wax Shop',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Gift card promotion for the Wax Shop Kelowna. A clean, tranquil environment for both men and women. Receive a superior waxing service every visit by certified wax technicians.' }
+      ]
+    }
+  },
   data () {
     return {
       images: {

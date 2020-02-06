@@ -1,7 +1,7 @@
 {
-  "name": "waxshop",
+  "name": "thewaxshop_kelowna",
   "version": "1.0.0",
-  "description": "waxshop.ca",
+  "description": "The place for waxing in Kelowna",
   "author": "Jeremy",
   "private": true,
   "scripts": {
