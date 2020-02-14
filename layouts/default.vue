@@ -23,14 +23,14 @@ export default {
 
 <style>
 /* not currently in use */
-/* @font-face {
+@font-face {
     font-family: 'roboto_cb';
     src: url('~static/fonts/robotocondensed-bold-webfont.woff2') format('woff2'),
          url('~static/fonts/robotocondensed-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-} */
+}
 @font-face {
     font-family: 'Roboto';
     src: url('~static/fonts/roboto-bold-webfont.woff2') format('woff2'),
@@ -48,22 +48,22 @@ export default {
     font-display: swap;
 }
 /* not currently in use */
-/* @font-face {
+@font-face {
     font-family: 'Cinzel';
     src: url('~static/fonts/cinzel-regular-webfont.woff2') format('woff2'),
          url('~static/fonts/cinzel-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-} */
-@font-face {
+}
+/* @font-face {
     font-family: 'shortstack';
     src: url('~static/fonts/shortstack-regular-webfont.woff2') format('woff2'),
          url('~static/fonts/shortstack-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-}
+} */
 html {
   min-width: 320px;
   background-color: black;

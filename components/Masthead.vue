@@ -8,10 +8,10 @@
         :alt="image.alt"
       >
       <div class="overlay">
-        <h1>Valentine's Special</h1>
-        <span class="highlight-text">Buy a $100 gift card, get a $25 gift card </span>
-        <span class="highlight-text caps">for free!</span>
-        <!-- <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noreferrer noopener">Book now!</a> -->
+        <h1><span>The place for</span> <span>Waxing in Kelowna</span></h1>
+        <!-- <span class="highlight-text">Buy a $100 gift card, get a $25 gift card </span>
+        <span class="highlight-text caps">for free!</span> -->
+        <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noopener">Book now!</a>
       </div>
     </div>
   </section>
@@ -24,15 +24,15 @@ export default {
       image: {
         srcset: [
           {
-            src: require('~/assets/valentine_804.jpg'),
+            src: require('@/assets/landing_cool-804.jpg'),
             width: 804
           },
           {
-            src: require('~/assets/valentine_1206.jpg'),
+            src: require('@/assets/landing_cool-1206.jpg'),
             width: 1206
           },
           {
-            src: require('~/assets/valentine_1608.jpg'),
+            src: require('@/assets/landing_cool-1608.jpg'),
             width: 1608
           }
         ],
@@ -78,42 +78,55 @@ section {
     }
     .overlay {
       width: 100%;
+      height: 75vw;
+      max-height: 485px;
       position: absolute;
-      top: 0;
+      top: 10px;
       // flex-grow: 1;
       // height: stretch;
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
       h1 {
-        // text-transform: uppercase;
-        // font-family: 'roboto_cb';
-        font-family: 'shortstack';
-        // font-size: 3.5em;
-        font-size: 10vw;
+        text-transform: capitalize;
+        font-family: 'roboto_cb';
+        font-weight: normal;
+        // font-family: 'shortstack';
+        font-size: 14vw;
+        // font-size: 10vw;
         // margin-bottom: 28vw;
-        -webkit-text-stroke: 0.5px black;
-        margin-bottom: 25%;
-        padding: 10px 10%;
-        padding-bottom: 0;
-        text-shadow: 2px 2px 4px black;
-        color: rgba(255,255,255,0.95);
+        -webkit-text-stroke: 0.5px rgba(0,0,0,0.50);
+        // margin-bottom: 25%;
+        // margin-top: 10px;
+        // padding: 10px 10%;
+        // padding-bottom: 0;
+        text-shadow: 1px 1px 0px rgba(0,0,0,0.23);
+        // color: rgba(255,255,255,0.0);
+        background: linear-gradient(270deg,rgba(198, 153, 61,0.99), rgba(233, 222, 143,0.99));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
       span {
-        display: block;
-        position: relative;
-        bottom: 3vw;
-        // font-family: "Cinzel", cursive;
-        font-family: 'shortstack';
-        font-size: 3.3em;
-        // line-height: 1.5;
-        font-size: 8vw;
-        text-shadow: 2px 2px 4px black;
-        -webkit-text-stroke: 0.5px black;
-        // padding: 0 1%;
+        // display: block;
+        // position: relative;
+        // bottom: 3vw;
+        // // font-family: "Cinzel", cursive;
+        // font-family: 'shortstack';
+        // font-size: 3.3em;
+        // // line-height: 1.5;
+        // font-size: 8vw;
+        // text-shadow: 2px 2px 4px black;
+        // -webkit-text-stroke: 0.5px black;
+        text-transform: capitalize;
+        padding: 0;
+        margin: 0;
       }
       a {
-        border: 1px solid rgba(0,0,0,0.4);
+        // margin-top: 10px;
+        width: 225px;
+        border: 1px solid rgba(0,0,0,0.5);
+        background-color: #ccc;
         padding: 5px 30px;
         font-size: 1.7rem;
         text-transform: uppercase;
@@ -122,29 +135,41 @@ section {
     }
   }
 }
-@media screen and (min-width: $break-s) {
-  section {
-    .mast {
-      div.overlay {
-        // top: 30%;
-        h1 {
-          // margin-bottom: 140px;
-          font-size: 61px;
-        }
-        span {
-          font-size: 49px;
-        }
-      }
-    }
-  }
-}
 @media screen and (min-width: $breaks-sm) {
   section {
     .mast {
       div.overlay {
-        span {
-          padding: 0 3.75%;
+        h1 {
+          font-size: 89px;
         }
+        // span {
+        //   // padding: 0 3.75%;
+        // }
+      }
+    }
+  }
+}
+@media screen and (min-width: $breaks-m) {
+  section {
+    .mast {
+      div.overlay {
+        max-height: 450px;
+        h1 {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-bottom: 90px;
+
+        }
+        // top: 30%;
+        // h1 {
+        //   // margin-bottom: 140px;
+        //   // font-size: 61px;
+        // }
+        // span {
+        //   font-size: 49px;
+        // }
       }
     }
   }
@@ -153,15 +178,24 @@ section {
   section {
     margin-top: 0px;
     .mast {
+      div.overlay {
+        top: 110px;
+        max-height: 350px;
+        h1 {
+          padding-bottom: 25px;
+        }
+      }
       img {
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 2px;
       }
-      div.overlay {
-        h1 {
-          padding-top: 5px;
-        }
-      }
+      // div.overlay {
+      //   h1 {
+      //     text
+      //     // font-size: 89px;
+      //     // line-height: 150px;
+      //   }
+      // }
       // .overlay {
       //   top: 214px;
       //   h1 {
