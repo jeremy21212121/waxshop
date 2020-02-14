@@ -2,13 +2,8 @@
 
 > waxshop.ca
 
-Client site for a small business built with Nuxt/Vue. Server-side rendered and fetches business hours from a google API.
-
-Built very quickly due to a tight timeline. I worked with their design and marketing people to implement their vision.
-
-I use NGINX for SSL termination/reverse proxy. I'm also proxying calls to the google API for business hours. This allows restricting the API key and will allow caching in the future if rates start getting expensive.
-
-I'm running a simple CI/CD server I wrote that rebuilds and restarts on push to github. There is a duplicate of everything on the `dev` subdomain for testing and evaluation.
+Built with vue, using nuxt basically as a static site generator.
+Currently MVP, much more to come.
 
 ## Build Setup
 
