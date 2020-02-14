@@ -105,7 +105,7 @@ section {
         // color: rgba(255,255,255,0.0);
         background: linear-gradient(270deg,rgba(198, 153, 61,0.99), rgba(233, 222, 143,0.99));
         background-clip: text;
-        -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: rgba(198, 153, 61, 0.0);
       }
       span {
         // display: block;
