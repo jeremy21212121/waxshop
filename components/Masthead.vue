@@ -81,7 +81,7 @@ section {
       height: 75vw;
       max-height: 485px;
       position: absolute;
-      top: 0px;
+      top: 10px;
       // flex-grow: 1;
       // height: stretch;
       display: flex;
@@ -91,11 +91,12 @@ section {
       h1 {
         text-transform: capitalize;
         font-family: 'roboto_cb';
+        font-weight: normal;
         // font-family: 'shortstack';
         font-size: 14vw;
         // font-size: 10vw;
         // margin-bottom: 28vw;
-        -webkit-text-stroke: 0.5px rgba(0,0,0,0.90);
+        -webkit-text-stroke: 0.5px rgba(0,0,0,0.50);
         // margin-bottom: 25%;
         // margin-top: 10px;
         // padding: 10px 10%;
