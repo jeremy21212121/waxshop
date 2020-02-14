@@ -8,7 +8,7 @@
         :alt="image.alt"
       >
       <div class="overlay">
-        <h1><span>The place for</span> <span>Waxing in Kelowna</span></h1>
+        <h1>The place for Waxing in Kelowna</h1>
         <!-- <span class="highlight-text">Buy a $100 gift card, get a $25 gift card </span>
         <span class="highlight-text caps">for free!</span> -->
         <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noopener">Book now!</a>
@@ -89,6 +89,7 @@ section {
       justify-content: space-around;
       align-items: center;
       h1 {
+        width: 100%;
         text-transform: capitalize;
         font-family: 'roboto_cb';
         font-weight: normal;
@@ -103,9 +104,10 @@ section {
         // padding-bottom: 0;
         text-shadow: 1px 1px 0px rgba(0,0,0,0.23);
         // color: rgba(255,255,255,0.0);
+        color: #c6993d;
         background: linear-gradient(270deg,rgba(198, 153, 61,0.99), rgba(233, 222, 143,0.99));
         background-clip: text;
-        -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: rgba(198, 153, 61, 0.0);
       }
       span {
         // display: block;
@@ -155,10 +157,10 @@ section {
       div.overlay {
         max-height: 450px;
         h1 {
-          flex-grow: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+          // flex-grow: 1;
+          // display: flex;
+          // flex-direction: column;
+          // justify-content: space-between;
           padding-bottom: 90px;
 
         }
@@ -206,6 +208,19 @@ section {
       //     bottom: 28px;
       //   }
       // }
+    }
+  }
+}
+@media all and (-ms-high-contrast:none) {
+  section {
+    div.mast {
+      div.overlay {
+        h1 {
+          background: none;
+          color: #c6993d;
+          -webkit-text-fill-color: #c6993d;
+        }
+      }
     }
   }
 }
