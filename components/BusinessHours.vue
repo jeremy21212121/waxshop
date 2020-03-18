@@ -16,6 +16,7 @@
     <div class="img">
       <img src="~/assets/sm-clock.png" alt="clock icon" aria-hidden="true">
     </div>
+    <covid-banner />
     <div class="hours-container">
       <div
         v-for="(hours, i) in simplifiedHours"
@@ -39,26 +40,31 @@
       </div>
     </div>
     <div class="info">
-      <span
+      <!-- <span
         v-if="upcomingHolidays && upcomingHolidays.length"
         class="next-holiday"
       >
         {{ upcomingHolidays[0].title }} is coming up!
       </span>
-      <a href="https://www.google.com/maps/place/The+Wax+Shop+-+Kelowna+Mission/@49.8665247,-119.4932158,17z/data=!3m1!4b1!4m5!3m4!1s0x537d8b316df27d5f:0x47c0c77cd4252e2c!8m2!3d49.8665247!4d-119.4910271" target="_blank" rel="noopener noreferrer">
+      <a class="holiday" href="https://www.google.com/maps/place/The+Wax+Shop+-+Kelowna+Mission/@49.8665247,-119.4932158,17z/data=!3m1!4b1!4m5!3m4!1s0x537d8b316df27d5f:0x47c0c77cd4252e2c!8m2!3d49.8665247!4d-119.4910271" target="_blank" rel="noopener noreferrer">
         <span>
           <img src="~/assets/info.png" alt="info" aria-hidden="true">
           Holiday hours
         </span>
-      </a>
+      </a> -->
     </div>
   </div>
 </template>
 
 <script>
 import statHolidaysBC from '~/mixins/statHolidaysBC.js'
+import CovidBanner from '@/components/covidBanner.vue'
 
 export default {
+  name: 'BusinessHours',
+  components: {
+    CovidBanner
+  },
   mixins: [
     statHolidaysBC
   ],
@@ -234,7 +240,7 @@ div.full-width {
       font-size: 0.9rem;
       font-style: italic;
     }
-    a {
+    a.holiday {
       color: rgba(255,255,255,0.65);
       font-size: 12px;
       // background-color: rgba(255,255,255,0.05);

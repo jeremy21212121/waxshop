@@ -60,7 +60,7 @@ section {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  margin-top: 10%;
+  margin-top: 18%;
   .mast {
     position: relative;
     width: 100%;
@@ -139,6 +139,7 @@ section {
 }
 @media screen and (min-width: $breaks-sm) {
   section {
+    margin-top: 15%;
     .mast {
       div.overlay {
         h1 {
@@ -153,6 +154,7 @@ section {
 }
 @media screen and (min-width: $breaks-m) {
   section {
+    margin-top: 13%;
     .mast {
       div.overlay {
         max-height: 450px;
