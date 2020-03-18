@@ -1,5 +1,6 @@
 <template>
   <header>
+    <covid-banner />
     <div class="logo">
       <a
         id="menu-mobile"
@@ -83,10 +84,12 @@
 
 <script>
 import SocialIcons from '@/components/SocialIcons.vue'
+import CovidBanner from '@/components/covidBanner.vue'
 
 export default {
   components: {
-    SocialIcons
+    SocialIcons,
+    CovidBanner
   },
   data () {
     return {
