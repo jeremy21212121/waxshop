@@ -8,10 +8,10 @@
         To help protect our clients, staff and community from the spread of COVID-19, we will be closed from March 19, 2020 until further notice.
       </p>
       <p>
-        Due to the uncertainty of this situation, we don't know when it will be safe to re-open. Please follow us on <a title="Visit our Facebook page" href="https://www.facebook.com/thewaxshopkelowna" target="_blank" rel="noopener noreferrer">Facebook</a> to receive future updates about our status.
+        Due to the uncertainty of this situation, we don't know when it will be safe to re-open. Follow us on <a title="Visit our Facebook page" href="https://www.facebook.com/thewaxshopkelowna" target="_blank" rel="noopener noreferrer">Facebook</a> to receive future updates about our status.
       </p>
       <p>
-        Please stay safe and look out for one another. We look forward to serving you again in the future.
+        Please stay safe and look out for each other during these difficult times. We look forward to serving you again in the future.
       </p>
       <p class="indent first">
         Sincerely,
