@@ -2,7 +2,7 @@
   <nuxt-link :to="'/covid-19'" class="covid">
     <img src="~/assets/info.png" alt="Info" aria-hidden="true">
     <span>
-      We will be closed as of March 19 to help prevent the spread of COVID-19
+      Re-opening soon with extensive safety measures in place. Stay tuned!
     </span>
     <span class="readmore">
       read more  >
