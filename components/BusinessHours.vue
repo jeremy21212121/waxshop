@@ -94,7 +94,7 @@ export default {
         currentDay = 6
       }
       // used for marking current day in simplifiedHours
-      if (this.openingHours.weekday_text.length) {
+      if (this.openingHours.weekday_text && this.openingHours.weekday_text.length) {
         result = this.openingHours.weekday_text.map((timeString, i) => {
           const hour = timeString.split(': ')
           return {
