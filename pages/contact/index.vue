@@ -30,11 +30,12 @@ export default {
       result: {
         opening_hours: JSON.parse('{"open_now":false,"periods":[{"close":{"day":1,"time":"1800"},"open":{"day":1,"time":"1000"}},{"close":{"day":2,"time":"1800"},"open":{"day":2,"time":"1000"}},{"close":{"day":3,"time":"1800"},"open":{"day":3,"time":"1000"}},{"close":{"day":4,"time":"1900"},"open":{"day":4,"time":"1000"}},{"close":{"day":5,"time":"1900"},"open":{"day":5,"time":"1000"}},{"close":{"day":6,"time":"1800"},"open":{"day":6,"time":"1000"}}],"weekday_text" : ["Monday: 10:00 AM – 6:00 PM","Tuesday: 10:00 AM – 6:00 PM","Wednesday: 10:00 AM – 6:00 PM","Thursday: 10:00 AM – 7:00 PM","Friday: 10:00 AM – 7:00 PM","Saturday: 10:00 AM – 6:00 PM","Sunday: Closed"]}')
       },
-      status: 'OK'
+      status: 'OK',
+      error: null
     }
   },
   asyncData () {
-    return fetch('https://dev.waxshop.ca/hours').then(res => res.json())
+    return fetch('https://dev.waxshop.ca/hours').then(res => res.json()).catch(e => { this.error = e })
   }
 }
 </script>
