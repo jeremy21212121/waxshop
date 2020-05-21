@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <main>
+      <img :src="require('@/assets/covid256.png')" alt="SARS-CoV-2" aria-hidden="true">
       <h1 class="title">
         <!-- Announcing temporary closure due to risk posed by COVID-19 -->
         {{ heading }}
@@ -9,16 +10,7 @@
         v-for="(paragraph, index) in paragraphs"
         :key="`para${index}`"
         v-html="paragraph"
-      >
-        <!-- To help protect our clients, staff and community from the spread of COVID-19, we will be closed from March 19, 2020 until further notice. -->
-        <!-- {{ paragraph }} -->
-      </p>
-      <!-- <p>
-        Due to the uncertainty of this situation, we don't know when it will be safe to re-open. Follow us on <a title="Visit our Facebook page" href="https://www.facebook.com/thewaxshopkelowna" target="_blank" rel="noopener noreferrer">Facebook</a> to receive future updates about our status.
-      </p>
-      <p>
-        Please stay safe and look out for each other during these difficult times. We look forward to serving you again in the future.
-      </p> -->
+      />
       <p class="indent first">
         Sincerely,
       </p>
@@ -68,8 +60,14 @@ main {
   }
   h1 {
     margin: 32px 8px;
+    margin-top: 0px;
     font-size: 1.8rem;
     text-transform: capitalize;
+  }
+  img {
+    margin-top: 16px;
+    width: 50%;
+    max-width: 128px;
   }
   p {
     font-size: 1.2rem;
@@ -116,13 +114,14 @@ export default {
   name: 'CovidPage',
   data() {
     return {
-      heading: 'Re-Opening Soon With Extensive Safety Measures in Place',
+      heading: 'Re-opening Friday May 22 with extensive safety measures in place',
       paragraphs: [
-        `On May 6, 2020, Premier John Horgan announced <a href="https://www2.gov.bc.ca/gov/content/safety/emergency-preparedness-response-recovery/covid-19-provincial-support/bc-restart-plan" target="_blank" rel="noopener noreferrer">BC’s Restart Plan</a> which outlines four phases.`,
-        `Phase 2 of the restart plan will allow us to re-open, under enhanced safety protocols, in the near future.`,
-        `We are currently in the process of developing extensive safety protocols and acquiring the necessary protective equipment.`,
-        `The health and safety of our clients, staff and community is our biggest concern. We look forward to being able to welcome you back in the very near future.`,
-        `Stay tuned for more updates!`
+        `We are very excited to be welcoming you back starting Friday, May 22!`,
+        `We have been hard at work re-designing every aspect of our business to be as safe as possible. This process has required significant changes to both the services we offer and how we offer them.`,
+        `Please see our <a href="/health-and-safety">Health & Safety page</a> for a detailed list of <a href="/health-and-safety/hygiene">the measures we are taking</a> to protect our clients and staff, as well as <a href="/health-and-safety/client-protocol">what will be expected of you as a client</a>.`,
+        `Some of these measures may seem extreme at first glance. We believe that we cannot be too careful in these uncertain times. The health of our clients, staff and community is our highest priority.`,
+        `We ask that clients familiarize themselves with our safety protocools <i>before</i> scheduling an appointment.`,
+        `We look forward to seeing you again soon!`
       ]
     }
   }
