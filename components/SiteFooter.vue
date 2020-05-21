@@ -157,6 +157,7 @@ footer {
       li {
         a {
           color: rgba(255, 255, 255, 0.75);
+          text-decoration: underline;
           &:visited {
             color: rgba(220, 220, 255, 0.75);
           }
