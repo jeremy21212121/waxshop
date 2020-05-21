@@ -222,9 +222,11 @@ header {
       li {
         a.button--grey {
           padding: 5px 14px;
+          color: rgba(0,0,0,0.75);
         }
         a.button--green {
           padding: 5px 14px;
+          color: rgba(255,255,255,0.95)
         }
       }
     }
