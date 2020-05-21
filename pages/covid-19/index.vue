@@ -17,6 +17,7 @@
       <p class="indent">
         The Wax Shop Staff
       </p>
+      <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" rel="noreferrer noopener">Book Now!</a>
       <div>
         <img src="@/assets/info.png" alt="info">
         <p>
@@ -77,6 +78,9 @@ main {
       color: rgba(180, 180, 255, 0.9);
       text-decoration: none;
     }
+  }
+  a.button--green {
+    margin-top: 32px;
   }
   p.first.indent {
     margin-top: 32px;

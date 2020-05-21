@@ -110,6 +110,7 @@ export default {
   }
   p {
     margin-bottom: 16px;
+    width: 100%;
   }
   .boxes {
     display: flex;
