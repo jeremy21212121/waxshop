@@ -88,7 +88,7 @@ html {
   margin: 0;
 }
 
-.button--green {
+a.button--green {
   display: inline-block;
   border-radius: 4px;
   /* border: 1px solid #c7993d; */
@@ -97,16 +97,19 @@ html {
   color: rgba(255,200,0,0.9); */
   background-color: #ff4800;
   background-color: #bf3600;
-  color: #fff;
+  /* color: #fff; */
+  color: rgba(255,255,255,0.95);
   text-decoration: none;
   font-weight: bold;
   padding: 6px 20px;
   box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.2);
   /* margin-left: 15px; */
 }
-
-.button--green:hover {
-  color: #ddd;
+a.button--green:visited {
+  color: rgba(255,255,255,0.95);
+}
+a.button--green:hover {
+  color: rgba(255,255,255,0.95);
   /* background-color: rgb(128,36,0); */
   /* background-color: rgb(170,48,0); */
   background-color: #882400;
