@@ -40,7 +40,7 @@ export default {
       moreInfo: 'Please review the procedures for clients before coming in',
       boxes: [
         {
-          title: 'Personal health questionaire',
+          title: 'Personal health questionnaire',
           imagePath: require('@/assets/firstaid256.png'),
           alt: 'Health icon',
           text: 'Please do not come in if you are feeling sick or have a fever. We will ask some questions about your recent health to ensure we can safely serve you.'
