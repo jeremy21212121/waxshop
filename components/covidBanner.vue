@@ -2,7 +2,7 @@
   <nuxt-link :to="'/covid-19'" class="covid">
     <img src="~/assets/info.png" alt="Info" aria-hidden="true">
     <span>
-      Re-opening soon with extensive safety measures in place. Stay tuned!
+      Re-opening Friday May 22 with extensive safety measures in place
     </span>
     <span class="readmore">
       read more  >
@@ -21,6 +21,7 @@ export default {
   padding: 4px;
   display: flex;
   align-items: center;
+  // justify-content: space-around;
   font-weight: bold;
   text-decoration: none;
   color: rgba(255,255,255,0.85);
@@ -32,13 +33,16 @@ export default {
   }
   span {
     text-align: center;
+    text-transform: capitalize;
   }
   .readmore {
-    margin-left: 8px;
+    cursor: pointer;
+    margin: 0 auto;
     padding: 3px 6px;
     border: 1px solid rgba(255,255,255,0.75);
     border-radius: 4px;
     text-transform: uppercase;
+    text-align: center;
     font-size: 0.5rem;
     text-align: left;
   }
@@ -50,7 +54,7 @@ export default {
       margin-right: 8px;
     }
     .readmore {
-      margin-left: 8px;
+      // margin-left: 8px;
       font-size: 0.6rem;
     }
   }

@@ -71,8 +71,8 @@ export default {
           isNuxt: true
         },
         {
-          title: 'Promotion',
-          path: '/gift-card-promo',
+          title: 'Health & Safety',
+          path: '/health-and-safety',
           isNuxt: true
         }
       ]

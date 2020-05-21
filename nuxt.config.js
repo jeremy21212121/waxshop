@@ -72,7 +72,8 @@ export default {
     ['@nuxtjs/google-analytics', {
       id: 'UA-149462506-1',
       dev: false
-    }]
+    }],
+    '@nuxtjs/sitemap'
   ],
   /*
   ** Axios module configuration
@@ -80,6 +81,10 @@ export default {
   */
   axios: {
   },
+  //
+  // sitemap: {
+  //   lastmod: (new Date()).toISOString()
+  // },
   /*
   ** Build configuration
   */
