@@ -19,17 +19,19 @@
           :key="'new-service' + nI"
           class="row-wrapper"
         >
-          <span class="service-title">
+          <span class="service-title" :class="{ strike: cancelledTitles.includes(service.title) }">
             {{ service.title }}
           </span>
           <span
             v-if="service.price > 0"
             class="service-price"
+            :class="{ strike: cancelledTitles.includes(service.title) }"
           >
             ${{ service.price }}
             <span
               v-if="service.info"
               class="service-info"
+              :class="{ strike: cancelledTitles.includes(service.title) }"
             >
               {{ service.info }}
             </span>
@@ -42,6 +44,7 @@
               v-for="(option, k) in service.options"
               :key="'ns-option-' + nI + k"
               class="service-option"
+              :class="{ strike: cancelledTitles.includes(service.title) }"
             >
               <span class="service-option-title">
                 {{ option.title }}
@@ -84,7 +87,7 @@
           :key="'service-' + i + '-' + j"
           class="row-wrapper"
         >
-          <span class="service-title">
+          <span class="service-title" :class="{ strike: cancelledTitles.includes(service.title) }">
             {{ service.title }}
             <span
               v-if="service.info"
@@ -95,6 +98,7 @@
           <span
             v-if="service.price > 0"
             class="service-price"
+            :class="{ strike: cancelledTitles.includes(service.title) }"
           >
             ${{ service.price }}
             <span
@@ -158,6 +162,11 @@ export default {
     return {
       pageHeading: 'Popular services',
       services: require('~/static/data/services.json'),
+      cancelledTitles: [
+        'Lash lift',
+        'Just lashes',
+        'lip or chin'
+      ],
       newServices: {
         heading: 'New services',
         title: 'brows & lashes',
@@ -237,6 +246,9 @@ export default {
   // flex-direction: column;
   flex-wrap: wrap;
   margin-top: 10%;
+  .strike {
+    text-decoration-line: line-through;
+  }
   .main-title-row {
     display: flex;
     align-items: center;

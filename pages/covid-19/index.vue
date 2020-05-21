@@ -80,7 +80,10 @@ main {
     }
   }
   a.button--green {
-    margin-top: 32px;
+    display: block;
+    max-width: 150px;
+    margin: 0 auto;
+    margin-top: 64px;
   }
   p.first.indent {
     margin-top: 32px;
