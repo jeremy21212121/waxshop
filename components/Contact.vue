@@ -123,6 +123,9 @@ section.contact {
       // max-width: 175px;
       margin-bottom: 20px;
     }
+    a.button--grey {
+      color: rgba(0,0,0,0.8)
+    }
     h2 {
       font-size: 1.3rem;
       margin-bottom: 20px;
