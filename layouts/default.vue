@@ -174,6 +174,13 @@ h2.section-title {
 .links {
   padding-top: 15px;
 }
+
+a {
+  color: rgba(190, 190, 255, 0.9);
+}
+a:visited {
+  color: rgba(180, 180, 255, 0.9);
+}
 @media screen and (min-width: 620px) {
   .section-title {
     font-size: 1.7rem;
