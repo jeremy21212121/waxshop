@@ -177,6 +177,7 @@ h2.section-title {
 
 a {
   color: rgba(190, 190, 255, 0.9);
+  text-decoration: none;
 }
 a:visited {
   color: rgba(180, 180, 255, 0.9);
