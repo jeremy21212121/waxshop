@@ -16,7 +16,7 @@
     <div class="img">
       <img src="~/assets/sm-clock.png" alt="clock icon" aria-hidden="true">
     </div>
-    <covid-banner />
+    <!-- <covid-banner /> -->
     <div class="hours-container">
       <div
         v-for="(hours, i) in simplifiedHours"
@@ -40,7 +40,7 @@
       </div>
     </div>
     <div class="info">
-      <!-- <span
+      <span
         v-if="upcomingHolidays && upcomingHolidays.length"
         class="next-holiday"
       >
@@ -51,19 +51,19 @@
           <img src="~/assets/info.png" alt="info" aria-hidden="true">
           Holiday hours
         </span>
-      </a> -->
+      </a>
     </div>
   </div>
 </template>
 
 <script>
 import statHolidaysBC from '~/mixins/statHolidaysBC.js'
-import CovidBanner from '@/components/covidBanner.vue'
+// import CovidBanner from '@/components/covidBanner.vue'
 
 export default {
   name: 'BusinessHours',
   components: {
-    CovidBanner
+    // CovidBanner
   },
   mixins: [
     statHolidaysBC

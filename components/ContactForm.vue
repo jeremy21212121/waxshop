@@ -1,5 +1,5 @@
 <template>
-  <form ref="contactForm" class="mui-form">
+  <form ref="contactForm" id="send-a-message" class="mui-form">
     <img src="~/assets/sm-msg.png" alt="message bubble icon" aria-hidden="true">
     <h2>Send a message</h2>
     <div class="mui-textfield">

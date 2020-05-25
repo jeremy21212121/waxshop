@@ -150,6 +150,7 @@ h2.section-title {
 .container {
   max-width: 740px;
   margin: 0 auto;
+  margin-top: 10%;
   /* min-height: 100vh; */
   /* display: flex; */
   justify-content: center;
@@ -191,6 +192,9 @@ a:visited {
   }
 }
 @media screen and (min-width: 740px) {
+  .container {
+    margin-top: 32px;
+  }
   .section-title {
     font-size: 1.9rem;
   }

@@ -122,7 +122,7 @@ export default {
 }
 @media screen and (min-width: $break-l) {
   .container {
-    margin-top: 64px;
+    margin-top: 32px;
   }
 }
 </style>
