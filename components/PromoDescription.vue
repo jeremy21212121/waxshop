@@ -3,9 +3,10 @@
     <p
       v-for="(paragraph, i) in paragraphs"
       :key="'paragraph' + i"
-    >
-      {{ paragraph }}
-    </p>
+      v-html="paragraph"
+    />
+      <!-- {{ paragraph }}
+    </p> -->
   </div>
 </template>
 <script>

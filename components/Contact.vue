@@ -67,7 +67,7 @@ export default {
     return {
       description: [
         'We\'d love to hear from you!',
-        'Call, send a message or come see us in the heart of Pandosy Village.'
+        'Give us a call or <a href="#send-a-message">send a message</a>. We are located in the heart of Pandosy Village.'
       ]
     }
   }

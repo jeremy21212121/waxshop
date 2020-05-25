@@ -2,7 +2,7 @@
   <nuxt-link :to="'/covid-19'" class="covid">
     <img src="~/assets/info.png" alt="Info" aria-hidden="true">
     <span>
-      Re-opening Friday May 22 with extensive safety measures in place
+      Now open Monday - Friday with extensive safety measures in place
     </span>
     <span class="readmore">
       read more  >

@@ -19,19 +19,17 @@
           :key="'new-service' + nI"
           class="row-wrapper"
         >
-          <span class="service-title" :class="{ strike: cancelledTitles.includes(service.title) }">
+          <span class="service-title" >
             {{ service.title }}
           </span>
           <span
             v-if="service.price > 0"
             class="service-price"
-            :class="{ strike: cancelledTitles.includes(service.title) }"
           >
             ${{ service.price }}
             <span
               v-if="service.info"
               class="service-info"
-              :class="{ strike: cancelledTitles.includes(service.title) }"
             >
               {{ service.info }}
             </span>
@@ -44,7 +42,6 @@
               v-for="(option, k) in service.options"
               :key="'ns-option-' + nI + k"
               class="service-option"
-              :class="{ strike: cancelledTitles.includes(service.title) }"
             >
               <span class="service-option-title">
                 {{ option.title }}
@@ -87,7 +84,7 @@
           :key="'service-' + i + '-' + j"
           class="row-wrapper"
         >
-          <span class="service-title" :class="{ strike: cancelledTitles.includes(service.title) }">
+          <span class="service-title" >
             {{ service.title }}
             <span
               v-if="service.info"
@@ -98,7 +95,6 @@
           <span
             v-if="service.price > 0"
             class="service-price"
-            :class="{ strike: cancelledTitles.includes(service.title) }"
           >
             ${{ service.price }}
             <span
@@ -133,9 +129,9 @@
           </span>
         </li>
       </ul>
-      <span class="disclaimer">
+      <!-- <span class="disclaimer">
         * requires deposit
-      </span>
+      </span> -->
     </div>
     <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" rel="noreferrer noopener">Book Now!</a>
     <p>
@@ -145,6 +141,7 @@
 </template>
 <script>
 import NewServicesSVG from '@/components/NewServicesSvg.vue'
+import servicesData from '@/static/data/services.js'
 
 export default {
   components: {
@@ -161,7 +158,7 @@ export default {
   data () {
     return {
       pageHeading: 'Popular services',
-      services: require('~/static/data/services.json'),
+      services: servicesData,
       cancelledTitles: [
         'Lash lift',
         'Just lashes',
@@ -182,11 +179,12 @@ export default {
             price: 25,
             info: null
           },
-          {
-            title: 'Lash lift',
-            price: 65,
-            info: null
-          }
+// service discontinued due to covid-19
+          // {
+          //   title: 'Lash lift',
+          //   price: 65,
+          //   info: null
+          // }
         ],
         specials: [
           {
@@ -200,17 +198,17 @@ export default {
               }
             ]
           },
-          {
-            title: 'Just lashes',
-            price: 0,
-            // info: 'Lash lift & tint',
-            options: [
-              {
-                title: 'Lash lift & tint',
-                price: 80
-              }
-            ]
-          }
+          // {
+          //   title: 'Just lashes',
+          //   price: 0,
+          //   // info: 'Lash lift & tint',
+          //   options: [
+          //     {
+          //       title: 'Lash lift & tint',
+          //       price: 80
+          //     }
+          //   ]
+          // }
         ]
       }
     }
@@ -245,7 +243,7 @@ export default {
   display: flex;
   // flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 10%;
+  margin-top: 21%;
   .strike {
     text-decoration-line: line-through;
   }
@@ -256,6 +254,7 @@ export default {
     width: 100%;
     h1 {
       text-transform: capitalize;
+      margin-bottom: 10px;
     }
     img {
       width: 48px;
@@ -271,7 +270,7 @@ export default {
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
-    margin: 20px auto;
+    margin: 13px auto;
     padding: 8px 6px;
     background-color: rgba(255, 255, 255, 0.15);
     @include bs-white-1;
@@ -358,9 +357,9 @@ export default {
     margin-bottom: 30px;
     padding: 6px 12px;
     font-size: 1.2rem;
-    a {
-      color: rgba(255, 255, 255, 0.85);
-    }
+    // a {
+    //   // color: rgba(255, 255, 255, 0.85);
+    // }
   }
 }
 @media screen and (min-width: $break-s) {
@@ -400,7 +399,7 @@ export default {
     div.service-wrapper.alt {
       // display: none;
       width: 100%;
-      height: 220px;
+      height: 160px;
       margin: 15px auto;
     }
     p {

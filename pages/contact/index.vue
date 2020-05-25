@@ -41,8 +41,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/scss/vars/breakpoints.scss';
 .container {
   min-height: auto;
   // margin-top: 50px;
+}
+@media screen and (min-width: $break-l) {
+  .container {
+    margin-top: 0px;
+  }
 }
 </style>
