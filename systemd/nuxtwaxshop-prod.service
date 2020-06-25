@@ -1,0 +1,21 @@
+[Unit]
+Description=Waxshop Nuxt Prod
+Wants=network-online.target nginx.service
+After=syslog.target network-online.target
+
+[Service]
+WorkingDirectory=/opt/waxshop-prod
+ExecStart=/home/ubuntu/.nvm/versions/node/v12.9.1/bin/npm run start
+Restart=always
+# Restart service after 10 seconds if node service crashes 
+RestartSec=10
+# Output to syslog
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=nuxt-waxshop-prod
+User=nuxtwaxshop
+Group=nuxtwaxshop
+
+[Install]
+WantedBy=multi-user.target
+
