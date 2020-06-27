@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <breadcrumbs
+      :breadcrumbs="breadCrumbs"
+    />
     <main>
       <img :src="require('@/assets/covid256.png')" alt="SARS-CoV-2" aria-hidden="true">
       <h1 class="title">
@@ -29,14 +32,16 @@
 </template>
 <style lang="scss" scoped>
 @import "@/scss/mixins/boxShadows.scss";
+@import "@/scss/vars/breakpoints.scss";
 
 .container {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   @include bs-white-0b;
+  margin-top: 25%;
 }
 main {
-  margin-top: 18%;
+  // margin-top: 18%;
   margin-bottom: 64px;
   padding: 6px;
   padding-bottom: 32px;
@@ -66,7 +71,6 @@ main {
     text-transform: capitalize;
   }
   img {
-    margin-top: 16px;
     width: 50%;
     max-width: 128px;
   }
@@ -94,7 +98,7 @@ main {
     font-style: italic;
   }
 }
-@media screen and (min-width: 740px){
+@media screen and (min-width: $break-l){
   main {
     margin-top: 10px;
     div {
@@ -113,14 +117,30 @@ p a {
 }
 </style>
 <script>
-// import Masthead from '~/components/Masthead.vue'
-// import SiteFooter from '~/components/SiteFooter.vue'
-// import Message from '~/components/Message.vue'
+import Breadcrumbs from '@/components/Breadcrumbs.vue'
 
 export default {
   name: 'CovidPage',
+  components: {
+    Breadcrumbs
+  },
+  head () {
+    return {
+      title: this.headData.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.headData.description },
+        { hid: 'og:title', name: 'og:title', content: this.headData.title },
+        { hid: 'og:description', name: 'og:description', content: this.headData.description },
+        { hid: 'og:url', name: 'og:url', content: 'https://waxshop.ca/covid-19' },
+      ]
+    }
+  },
   data() {
     return {
+      headData: {
+        title: 'COVID-19 Announcement - The Wax Shop Kelowna',
+        description: 'We have officially re-opened, with extensive safety measures in place!',
+      },
       heading: 'Re-opening Friday May 22 with extensive safety measures in place',
       paragraphs: [
         `We are very excited to be welcoming you back starting Friday, May 22!`,
@@ -129,6 +149,22 @@ export default {
         `Some of these measures may seem extreme at first glance. We believe that we cannot be too careful in these uncertain times. The health of our clients, staff and community is our highest priority.`,
         `We ask that clients familiarize themselves with our safety protocools <i>before</i> scheduling an appointment.`,
         `We look forward to seeing you again soon!`
+      ]
+    }
+  },
+  computed: {
+    breadCrumbs() {
+      return [
+        {
+          title: 'Home',
+          path: '/',
+          current: false
+        },
+        {
+          title: 'COVID-19',
+          path: '/covid-19',
+          current: true
+        }
       ]
     }
   }

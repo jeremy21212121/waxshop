@@ -32,12 +32,12 @@
         <tour-svg />
       </div>
       <span>
-        <a class="button--grey" href="https://youriguide.com/100_2689_pandosy_st_kelowna_bc?nodetails=1&nomenu=1&mute=1&minfp=1" target="_blank" rel="noreferrer noopener">
+        <a class="button--grey" href="https://youriguide.com/100_2689_pandosy_st_kelowna_bc?nodetails=1&nomenu=1&mute=1&minfp=1" target="_blank" rel="noopener">
           3D Virtual Tour
         </a>
       </span>
       <span class="content">
-        Check out our beautiful shop before you book
+        See our beautiful studio before you book
       </span>
     </div>
     <iframe style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJX33ybTGLfVMRLC4l1HzHwEc&key=AIzaSyASCfx46mSwtL11S20Lv3FpusELZKuXA3w" allowfullscreen />
@@ -92,8 +92,8 @@ section.contact {
   margin-bottom: 30px;
   h1 {
     width: 100%;
-    margin-top: 60px;
-    margin-top: 12%;
+    // margin-top: 60px;
+    margin-top: 12px;
     margin-bottom: 0;
     // margin: 0;
   }

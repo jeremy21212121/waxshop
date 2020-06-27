@@ -1,41 +1,75 @@
 <template>
-  <div class="container">
+  <main class="container">
+    <breadcrumbs
+      :breadcrumbs="breadCrumbs"
+    />
     <contact
       :opening-hours="result.opening_hours"
     />
     <message />
-  </div>
+  </main>
 </template>
 
 <script>
-// import axios from 'axios'
-import Contact from '~/components/Contact.vue'
-import Message from '~/components/Message.vue'
+import Breadcrumbs from '@/components/Breadcrumbs.vue'
+import Contact from '@/components/Contact.vue'
+import Message from '@/components/Message.vue'
 
 export default {
   components: {
+    Breadcrumbs,
     Message,
     Contact
   },
-  head () {
-    return {
-      title: 'Contact Us - The Wax Shop',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Hours of operation and contact information for the Wax Shop in Kelowna. Send us a message, take a virtual tour of our lovely studio, or give us a call.' }
-      ]
-    }
-  },
   data () {
     return {
+      headData: {
+        title: 'Contact The Wax Shop Kelowna',
+        description: 'Send us a message, get directions, call us, see our business hours or take a virtual tour of our beautiful waxing studio',
+      },
       result: {
-        opening_hours: JSON.parse('{"open_now":false,"periods":[{"close":{"day":1,"time":"1800"},"open":{"day":1,"time":"1000"}},{"close":{"day":2,"time":"1800"},"open":{"day":2,"time":"1000"}},{"close":{"day":3,"time":"1800"},"open":{"day":3,"time":"1000"}},{"close":{"day":4,"time":"1900"},"open":{"day":4,"time":"1000"}},{"close":{"day":5,"time":"1900"},"open":{"day":5,"time":"1000"}},{"close":{"day":6,"time":"1800"},"open":{"day":6,"time":"1000"}}],"weekday_text" : ["Monday: 10:00 AM – 6:00 PM","Tuesday: 10:00 AM – 6:00 PM","Wednesday: 10:00 AM – 6:00 PM","Thursday: 10:00 AM – 7:00 PM","Friday: 10:00 AM – 7:00 PM","Saturday: 10:00 AM – 6:00 PM","Sunday: Closed"]}')
+        // include default hours in case API call does not succeed
+        opening_hours: JSON.parse("{\"open_now\":false,\"periods\":[{\"close\":{\"day\":1,\"time\":\"1800\"},\"open\":{\"day\":1,\"time\":\"1000\"}},{\"close\":{\"day\":2,\"time\":\"1800\"},\"open\":{\"day\":2,\"time\":\"1000\"}},{\"close\":{\"day\":3,\"time\":\"1800\"},\"open\":{\"day\":3,\"time\":\"1000\"}},{\"close\":{\"day\":4,\"time\":\"1800\"},\"open\":{\"day\":4,\"time\":\"1000\"}},{\"close\":{\"day\":5,\"time\":\"1800\"},\"open\":{\"day\":5,\"time\":\"1000\"}}],\"weekday_text\":[\"Monday: 10:00 AM – 6:00 PM\",\"Tuesday: 10:00 AM – 6:00 PM\",\"Wednesday: 10:00 AM – 6:00 PM\",\"Thursday: 10:00 AM – 6:00 PM\",\"Friday: 10:00 AM – 6:00 PM\",\"Saturday: Closed\",\"Sunday: Closed\"]}")
       },
       status: 'OK',
       error: null
     }
   },
-  asyncData () {
-    return fetch('https://dev.waxshop.ca/hours').then(res => res.json()).catch(e => { this.error = e })
+  head() {
+    return {
+      title: this.headData.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.headData.description },
+        { hid: 'og:title', name: 'og:title', content: this.headData.title },
+        { hid: 'og:description', name: 'og:description', content: this.headData.description },
+        { hid: 'og:url', name: 'og:url', content: 'https://waxshop.ca/contact' },
+      ]
+    }
+  },
+  async fetch() {
+    const openingHours = await this.$axios.$get('https://waxshop.ca/hours')
+    if (openingHours && openingHours.result && openingHours.result.opening_hours && openingHours.status) {
+      this.result.opening_hours = openingHours.result.opening_hours
+      this.status = openingHours.status
+    } else {
+      this.error = new Error('Request to Hours API failed')
+    }
+  },
+  computed: {
+    breadCrumbs() {
+      return [
+        {
+          title: 'Home',
+          path: '/',
+          current: false
+        },
+        {
+          title: 'Contact',
+          path: '/contact',
+          current: true
+        }
+      ]
+    }
   }
 }
 </script>
@@ -44,7 +78,7 @@ export default {
 @import '@/scss/vars/breakpoints.scss';
 .container {
   min-height: auto;
-  // margin-top: 50px;
+  margin-top: 25%;
 }
 @media screen and (min-width: $break-l) {
   .container {

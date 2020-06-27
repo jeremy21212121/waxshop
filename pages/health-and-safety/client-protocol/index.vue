@@ -1,5 +1,8 @@
 <template>
   <main class="container">
+    <breadcrumbs
+      :breadcrumbs="breadCrumbs"
+    />
     <h1 class="title">{{ heading }}</h1>
     <!-- <img :src="headingImg" alt="Sparkle icon" aria-hidden="true"> -->
       <p
@@ -28,8 +31,13 @@
 </template>
 
 <script>
+import Breadcrumbs from '@/components/Breadcrumbs.vue'
+
 export default {
   name:'ClientProtocol',
+  components: {
+    Breadcrumbs
+  },
   data() {
     return {
       heading: `Client safety protocol`,
@@ -83,6 +91,27 @@ export default {
         },
       ]
     }
+  },
+  computed: {
+    breadCrumbs() {
+      return [
+        {
+          title: 'Home',
+          path: '/',
+          current: false
+        },
+        {
+          title: 'Health & Safety',
+          path: '/health-and-safety',
+          current: false
+        },
+        {
+          title: 'Client Protocol',
+          path: '/client-protocol',
+          current: true
+        }
+      ]
+    }
   }
 }
 </script>
@@ -96,7 +125,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   @include bs-white-0b;
-  margin-top: 21%;
+  margin-top: 25%;
   margin-bottom: 64px;
   padding: 6px;
   padding-bottom: 32px;

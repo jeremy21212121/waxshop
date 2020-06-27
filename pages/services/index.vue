@@ -1,5 +1,8 @@
 <template>
   <section class="container">
+    <breadcrumbs
+      :breadcrumbs="breadCrumbs"
+    />
     <div class="main-title-row">
       <h1 class="section-title section-title-alt">
         {{ newServices.heading }}
@@ -140,23 +143,32 @@
   </section>
 </template>
 <script>
+import Breadcrumbs from '@/components/Breadcrumbs.vue'
 import NewServicesSVG from '@/components/NewServicesSvg.vue'
 import servicesData from '@/static/data/services.js'
 
 export default {
   components: {
-    NewServicesSVG
+    NewServicesSVG,
+    Breadcrumbs
   },
   head () {
     return {
-      title: 'Services - The Wax Shop',
+      title: this.headData.title,
       meta: [
-        { hid: 'description', name: 'description', content: 'The services offered by our Kelowna waxing studio- a clean, tranquil environment suited to both men and women. You can relax and be sure you are receiving the best waxing service, every visit, by certified wax technicians.' }
+        { hid: 'description', name: 'description', content: this.headData.description },
+        { hid: 'og:title', name: 'og:title', content: this.headData.title },
+        { hid: 'og:description', name: 'og:description', content: this.headData.description },
+        { hid: 'og:url', name: 'og:url', content: 'https://waxshop.ca/services' },
       ]
     }
   },
   data () {
     return {
+      headData: {
+        title: 'Services - The Wax Shop Kelowna',
+        description: 'Send us a message, get directions, call us, see our business hours or take a virtual tour of our beautiful waxing studio.',
+      },
       pageHeading: 'Popular services',
       services: servicesData,
       cancelledTitles: [
@@ -231,6 +243,22 @@ export default {
       }
       return output
     }
+  },
+  computed: {
+    breadCrumbs() {
+      return [
+        {
+          title: 'Home',
+          path: '/',
+          current: false
+        },
+        {
+          title: 'Services',
+          path: '/services',
+          current: true
+        }
+      ]
+    }
   }
 }
 </script>
@@ -243,7 +271,7 @@ export default {
   display: flex;
   // flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 21%;
+  margin-top: 25%;
   .strike {
     text-decoration-line: line-through;
   }
@@ -261,7 +289,7 @@ export default {
       height: 48px;
     }
     h1.section-title-alt {
-      margin-top: 10px;
+      margin-top: 0px;
       font-weight: 300;
     }
   }

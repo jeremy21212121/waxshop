@@ -194,6 +194,7 @@ a:visited {
 @media screen and (min-width: 740px) {
   .container {
     margin-top: 32px;
+    max-width: 740px;
   }
   .section-title {
     font-size: 1.9rem;
