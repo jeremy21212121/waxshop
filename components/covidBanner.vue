@@ -1,17 +1,20 @@
 <template>
   <nuxt-link :to="'/covid-19'" class="covid">
     <img src="~/assets/info.png" alt="Info" aria-hidden="true">
-    <span>
+    <span class="banner">
       Now open Monday - Friday with extensive safety measures in place
     </span>
-    <span class="readmore">
-      read more  >
-    </span>
+    <read-more />
   </nuxt-link>
 </template>
 <script>
+import ReadMore from '@/components/ReadMore.vue'
+
 export default {
-  name: 'CovidBanner'
+  name: 'CovidBanner',
+  components: {
+    ReadMore
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -31,20 +34,9 @@ export default {
     margin: 2px;
     margin-right: 4px;
   }
-  span {
+  span.banner {
     text-align: center;
     text-transform: capitalize;
-  }
-  .readmore {
-    cursor: pointer;
-    margin: 0 auto;
-    padding: 3px 6px;
-    border: 1px solid rgba(255,255,255,0.75);
-    border-radius: 4px;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 0.5rem;
-    text-align: left;
   }
 }
 @media screen and (min-width: 500px) {

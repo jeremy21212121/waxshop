@@ -2,7 +2,7 @@
   "name": "thewaxshop_kelowna",
   "version": "1.0.0",
   "description": "The place for waxing in Kelowna",
-  "author": "Jeremy",
+  "author": "The Wax Shop Kelowna",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -16,7 +16,9 @@
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/sitemap": "^2.3.0",
-    "nuxt": "^2.12.2"
+    "nuxt": "^2.12.2",
+    "remark": "^12.0.0",
+    "remark-html": "^11.0.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",

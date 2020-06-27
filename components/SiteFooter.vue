@@ -23,7 +23,7 @@
     <nav>
       <ul>
         <li
-          v-for="(link, i) in nav"
+          v-for="(link, i) in filteredNav"
           :key="link.title.toLowerCase() + i"
         >
           <nuxt-link
@@ -40,7 +40,7 @@
       />
     </div>
     <div class="copy">
-      &copy; 2019 <a href="https://waxshop.ca">The Wax Shop</a>
+      &copy; 2019 - {{ new Date().getFullYear() }} <a href="https://waxshop.ca">The Wax Shop</a>
     </div>
   </footer>
 </template>
@@ -74,8 +74,19 @@ export default {
           title: 'Health & Safety',
           path: '/health-and-safety',
           isNuxt: true
+        },
+        {
+          title: 'Posts',
+          path: '/posts',
+          isNuxt: true
         }
       ]
+    }
+  },
+  computed: {
+    filteredNav() {
+      const currentPath = this.$route.path
+      return this.nav.filter(obj => obj.path !== currentPath)
     }
   }
 }

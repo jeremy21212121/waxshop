@@ -123,14 +123,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/scss/vars/breakpoints.scss';
+
 header {
   width: 100%;
   min-width: 320px;
-  max-width: 740px;
+  max-width: $break-l;
   margin: 0 auto;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 995;
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
   .logo {
@@ -140,6 +142,7 @@ header {
     background-color: black;
     padding: 4px 0px;
     box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
+    // z-index: 999;
     a {
       padding-left: 4%;
       svg {
@@ -204,8 +207,12 @@ header {
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
+    max-height: 0px;
     transition: all 200ms ease-out;
+    // display: none;
     &.active {
+      // display: block;
+      max-height: 64px;
       bottom: 0;
       opacity: 1;
       visibility: visible;
@@ -232,9 +239,10 @@ header {
     }
   }
 }
-@media screen and (min-width: 740px) {
+@media screen and (min-width: $break-l) {
   header {
     position: initial;
+    max-width: $break-l;
     .logo {
       justify-content: center;
       box-shadow: none;

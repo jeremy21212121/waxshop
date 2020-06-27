@@ -1,5 +1,8 @@
 <template>
   <main class="container">
+    <breadcrumbs
+      :breadcrumbs="breadCrumbs"
+    />
     <h1 class="title">{{ heading }}</h1>
       <p
         v-for="(paragraph, index) in text"
@@ -27,8 +30,13 @@
 </template>
 
 <script>
+import Breadcrumbs from '@/components/Breadcrumbs.vue'
+
 export default {
   name:'HealthSafetyProcedures',
+  components: {
+    Breadcrumbs
+  },
   data() {
     return {
       heading: `Health and safety protocols`,
@@ -51,6 +59,22 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    breadCrumbs() {
+      return [
+        {
+          title: 'Home',
+          path: '/',
+          current: false
+        },
+        {
+          title: 'Health & Safety',
+          path: '/health-and-safety',
+          current: true
+        }
+      ]
+    }
   }
 }
 </script>
@@ -64,7 +88,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   @include bs-white-0b;
-  margin-top: 21%;
+  margin-top: 25%;
   margin-bottom: 64px;
   padding: 6px;
   padding-bottom: 32px;
