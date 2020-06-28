@@ -31,14 +31,14 @@ export default {
       title: this.headData.title,
       meta: [
         { hid: 'description', name: 'description', content: this.headData.description },
-        { hid: 'og:type', name: 'og:type', content: 'article' },
+        { hid: 'og:type', property: 'og:type', content: 'article' },
         { hid: 'article:published_time', name: 'article:published_time', content: this.ogPublished },
         { hid: 'article:modified', name: 'article:modified', content: this.ogUpdated },
-        { hid: 'og:title', name: 'og:title', content: this.headData.title },
-        { hid: 'og:description', name: 'og:description', content: this.headData.description },
-        { hid: 'og:image', name: 'og:image', content: this.ogImageUrl },
-        { hid: 'og:image:alt', name: 'og:image:alt', content: this.ogAltText },
-        { hid: 'og:url', name: 'og:url', content: `https://waxshop.ca/posts/${this.$route.params.id}` },
+        { hid: 'og:title', property: 'og:title', content: this.headData.title },
+        { hid: 'og:description', property: 'og:description', content: this.headData.description },
+        { hid: 'og:image', property: 'og:image', content: this.ogImageUrl },
+        { hid: 'og:image:alt', property: 'og:image:alt', content: this.ogAltText },
+        { hid: 'og:url', property: 'og:url', content: `https://waxshop.ca/posts/${this.$route.params.id}` },
       ]
     }
   },

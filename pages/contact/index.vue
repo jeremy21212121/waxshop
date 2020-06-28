@@ -40,9 +40,9 @@ export default {
       title: this.headData.title,
       meta: [
         { hid: 'description', name: 'description', content: this.headData.description },
-        { hid: 'og:title', name: 'og:title', content: this.headData.title },
-        { hid: 'og:description', name: 'og:description', content: this.headData.description },
-        { hid: 'og:url', name: 'og:url', content: 'https://waxshop.ca/contact' },
+        { hid: 'og:title', property: 'og:title', content: this.headData.title },
+        { hid: 'og:description', property: 'og:description', content: this.headData.description },
+        { hid: 'og:url', property: 'og:url', content: 'https://waxshop.ca/contact' },
       ]
     }
   },
