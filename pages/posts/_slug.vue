@@ -43,7 +43,7 @@ export default {
         { hid: 'og:description', property: 'og:description', content: this.headData.description },
         { hid: 'og:image', property: 'og:image', content: this.ogImageUrl },
         { hid: 'og:image:alt', property: 'og:image:alt', content: this.ogAltText },
-        { hid: 'og:url', property: 'og:url', content: `https://waxshop.ca/posts/${this.$route.params.slug}` },
+        { hid: 'og:url', property: 'og:url', content: `${this.baseUrl}/posts/${this.$route.params.slug}` },
       ],
       script: [...this.generateHeadScripts(this.completeBlogPostingStructuredData)]
     }

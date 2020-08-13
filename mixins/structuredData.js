@@ -42,8 +42,20 @@ export default {
           caption: this.siteName
         },
         priceRange: "$$",
-        image: { "@id": this.baseUrl + "/#logo" },
+        currenciesAccepted: 'CAD',
+        paymentAccepted: 'Credit Card, Debit Card, Cash',
+        image: {
+          "@type": "ImageObject",
+          "@id": this.baseUrl + "/#image",
+          inLanguage: "en-US",
+          url: this.baseUrl + require("~/assets/landing_rectangle.jpg"),
+          width: 1608,
+          height: 846,
+          caption: this.siteName
+        },
         description: 'A clean, tranquil environment suited to both men and women in which you can relax and be sure you are receiving a superior waxing service every visit by certified wax technicians.',
+        slogan: 'The Place for Waxing in Kelowna!',
+        areaServed: { "@type": 'City', name: 'Kelowna', address: { "@type": 'PostalAddress', addressLocality: 'Kelowna', addressRegion: 'BC', addressCountry: 'Canada'  }},
         address: {
           "@type": "PostalAddress",
           streetAddress: "100-2689 Pandosy Street",
@@ -61,19 +73,23 @@ export default {
           "https://www.google.ca/maps/place/The+Wax+Shop+-+Kelowna+Mission/@49.8665247,-119.4932211,17z/data=!3m1!4b1!4m5!3m4!1s0x537d8b316df27d5f:0x47c0c77cd4252e2c!8m2!3d49.8665247!4d-119.4910271",
         // needs to be dynamically generated from our hours api endpoint. But also, we don't wan't to hold up every render with an http request
         // using nuxt middleware to cache the hours for a reasonable amount of time should work
-        // openingHours:
-        //   "Mo 10:00-18:00 Tu 10:00-18:00 We 10:00-18:00 Th 10:00-18:00 Fr 10:00-18:00",
+        openingHours:
+          "Mo 10:00-18:00 Tu 10:00-18:00 We 10:00-18:00 Th 10:00-19:00 Fr 10:00-19:00 Sa 10:00-18:00",
         telephone: "+12368372100",
         sameAs: [
           "https://www.instagram.com/thewaxshopkelowna/",
           "https://www.facebook.com/thewaxshopkelowna"
-        ]
+        ],
+        knowsAbout: 'waxing & hair removal'
       };
     },
     breadcrumbStructuredData() {
       return {
         "@type": "BreadcrumbList",
         "@id": this.fullUrl() + "/#breadcrumbs",
+        name: 'Webpage Navigation',
+        numberOfItems: this.breadcrumbs.length,
+        itemListOrder: 'Ascending',
         itemListElement: this.breadcrumbs.map((obj, bcIndex) => ({
           "@type": "ListItem",
           position: bcIndex + 1,
