@@ -5,7 +5,7 @@
     />
     <blog-post
       :post="currentPost"
-      :baseUrl="'https://staff.waxshop.ca'"
+      :apiBaseUrl="'https://staff.waxshop.ca'"
       :loading="$fetchState.pending"
       :error="$fetchState.error"
     />

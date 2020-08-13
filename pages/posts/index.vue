@@ -10,7 +10,7 @@
       v-for="(post, postIndex) in posts"
       :key="`post-${postIndex}`"
       :post="post"
-      :baseUrl="api.baseUrl"
+      :apiBaseUrl="api.baseUrl"
       :loading="$fetchState.pending"
       :error="$fetchState.error"
     >

@@ -13,10 +13,23 @@ import SiteFooter from '~/components/SiteFooter.vue'
 import Snackbar from '~/components/Snackbar.vue'
 
 export default {
+  name: 'DefaultLayout',
   components: {
     SiteHeader,
     SiteFooter,
     Snackbar
+  },
+  data() {
+    return {
+      baseUrl: process.env.BASE_URL || "https://waxshop.ca",
+    }
+  },
+  head() {
+    return {
+      meta: [
+        { hid: 'og:image', property: 'og:image', content: this.baseUrl + require('@/assets/landing_rectangle.jpg') }
+      ],
+    }
   }
 }
 </script>
