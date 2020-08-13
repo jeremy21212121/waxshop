@@ -50,7 +50,7 @@ export default {
       ),
       required: true
     },
-    baseUrl: {
+    apiBaseUrl: {
       type: String,
       default: () => (''),
       required: true
@@ -73,7 +73,7 @@ export default {
   },
   computed: {
     imageUrl() {
-      return this.baseUrl + this.post.image.formats.large.url
+      return this.apiBaseUrl + this.post.image.formats.large.url
     },
     dateString() {
       if (!this.post || !this.post.date) { return }

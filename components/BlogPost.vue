@@ -39,7 +39,7 @@ export default {
       default: () => ({ id: 0, date: '', title: '', slug: '', image: {}, html: '', introText: '', fullText: '', updated_at: '' }),
       required: true
     },
-    baseUrl: {
+    apiBaseUrl: {
       type: String,
       default: () => ('https://staff.waxshop.ca'),
       required: true
@@ -73,7 +73,7 @@ export default {
   computed: {
     imageUrl() {
       return this.doneLoading && this.post.image && this.post.image.hasOwnProperty('formats')
-        ? this.baseUrl + this.post.image.formats.large.url
+        ? this.apiBaseUrl + this.post.image.formats.large.url
         : ''
     },
     dateString() {

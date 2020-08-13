@@ -99,6 +99,9 @@ main {
   }
 }
 @media screen and (min-width: $break-l){
+  div.container {
+    margin-top: 64px;
+  }
   main {
     margin-top: 10px;
     div {

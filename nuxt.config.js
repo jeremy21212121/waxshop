@@ -23,7 +23,7 @@ export default {
       { name: 'msapplication-TileImage', content: '/mstile-144x144.png' },
       { name: 'theme-color', content: '#000000' },
       // open graph tags
-      { hid: 'og:image', property: 'og:image', content: baseUrl + '/_nuxt/assets/landing_rectangle.jpg' },
+      // { hid: 'og:image', property: 'og:image', content: baseUrl + '/_nuxt/assets/landing_rectangle.jpg' },
       { hid: 'og:title', property: 'og:title', content: 'The Place for Waxing in Kelowna' },
       { hid: 'og:description', property: 'og:description', content: 'A clean, tranquil environment suited to both men and women in which you can relax and be sure you are receiving a superior waxing service every visit by certified wax technicians.' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'The Wax Shop Kelowna' },

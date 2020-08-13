@@ -46,6 +46,9 @@ export default {
   },
   head() {
     return {
+      // meta: [
+        // { hid: 'og:image', property: 'og:image', content: this.baseUrl + require('@/assets/landing_rectangle.jpg') }
+      // ],
       script: [...this.generateHeadScripts()]
     }
   }

@@ -165,7 +165,8 @@ export default {
         { hid: 'description', name: 'description', content: this.headData.description },
         { hid: 'og:title', property: 'og:title', content: this.headData.title },
         { hid: 'og:description', property: 'og:description', content: this.headData.description },
-        { hid: 'og:url', property: 'og:url', content: 'https://waxshop.ca/services' },
+        { hid: 'og:url', property: 'og:url', content: this.baseUrl + this.$route.path },
+        { hid: 'og:image', property: 'og:image', content: this.baseUrl + require('@/assets/landing_rectangle.jpg') }
       ],
       script: [...this.generateHeadScripts()]
     }
