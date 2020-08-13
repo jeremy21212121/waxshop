@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <breadcrumbs
-      :breadcrumbs="breadCrumbs"
+      :breadcrumbs="breadcrumbs"
     />
     <contact
       :opening-hours="result.opening_hours"
@@ -14,15 +14,21 @@
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
 import Contact from '@/components/Contact.vue'
 import Message from '@/components/Message.vue'
+import structuredData from "@/mixins/structuredData.js"
 
 export default {
+  name: 'ContactPage',
   components: {
     Breadcrumbs,
     Message,
     Contact
   },
+  mixins: [
+    structuredData
+  ],
   data () {
     return {
+      lastModified: '2020-08-12T00:53:01.609Z',
       headData: {
         title: 'Contact The Wax Shop Kelowna',
         description: 'Send us a message, get directions, call us, see our business hours or take a virtual tour of our beautiful waxing studio',
@@ -43,7 +49,8 @@ export default {
         { hid: 'og:title', property: 'og:title', content: this.headData.title },
         { hid: 'og:description', property: 'og:description', content: this.headData.description },
         { hid: 'og:url', property: 'og:url', content: 'https://waxshop.ca/contact' },
-      ]
+      ],
+      script: [...this.generateHeadScripts()]
     }
   },
   async fetch() {
@@ -56,7 +63,7 @@ export default {
     }
   },
   computed: {
-    breadCrumbs() {
+    breadcrumbs() {
       return [
         {
           title: 'Home',

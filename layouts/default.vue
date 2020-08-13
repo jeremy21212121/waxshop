@@ -171,7 +171,7 @@ h2.section-title {
   font-weight: 300;
   font-size: 1.4em;
   color: #999;
-  word-spacing: 5px;
+  /* word-spacing: 5px; */
   padding-bottom: 15px;
 }
 

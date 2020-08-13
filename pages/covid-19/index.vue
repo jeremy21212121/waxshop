@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <breadcrumbs
-      :breadcrumbs="breadCrumbs"
+      :breadcrumbs="breadcrumbs"
     />
     <main>
       <img :src="require('@/assets/covid256.png')" alt="SARS-CoV-2" aria-hidden="true">
@@ -118,12 +118,16 @@ p a {
 </style>
 <script>
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
+import structuredData from "@/mixins/structuredData.js"
 
 export default {
   name: 'CovidPage',
   components: {
     Breadcrumbs
   },
+  mixins: [
+    structuredData
+  ],
   head () {
     return {
       title: this.headData.title,
@@ -132,18 +136,21 @@ export default {
         { hid: 'og:title', property: 'og:title', content: this.headData.title },
         { hid: 'og:description', property: 'og:description', content: this.headData.description },
         { hid: 'og:url', property: 'og:url', content: 'https://waxshop.ca/covid-19' },
-      ]
+      ],
+      script: [...this.generateHeadScripts()]
     }
   },
   data() {
     return {
+      lastModified: '2020-08-12T00:53:01.609Z',
       headData: {
         title: 'COVID-19 Announcement - The Wax Shop Kelowna',
         description: 'We have officially re-opened, with extensive safety measures in place!',
       },
-      heading: 'Re-opening Friday May 22 with extensive safety measures in place',
+      heading: 'Re-opened with extensive safety measures in place',
       paragraphs: [
-        `We are very excited to be welcoming you back starting Friday, May 22!`,
+        `We re-opened May 22 and it has been great!`,
+        `A big thanks to all our exisiting and new clients that have come to see us.`,
         `We have been hard at work re-designing every aspect of our business to be as safe as possible. This process has required significant changes to both the services we offer and how we offer them.`,
         `Please see our <a href="/health-and-safety">Health & Safety page</a> for a detailed list of <a href="/health-and-safety/hygiene">the measures we are taking</a> to protect our clients and staff, as well as <a href="/health-and-safety/client-protocol">what will be expected of you as a client</a>.`,
         `Some of these measures may seem extreme at first glance. We believe that we cannot be too careful in these uncertain times. The health of our clients, staff and community is our highest priority.`,
@@ -153,7 +160,7 @@ export default {
     }
   },
   computed: {
-    breadCrumbs() {
+    breadcrumbs() {
       return [
         {
           title: 'Home',

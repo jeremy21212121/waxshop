@@ -36,6 +36,7 @@ import PhotoRow from '~/components/PhotoRow.vue'
 import PromoDetails from '~/components/PromoDetails.vue'
 import Message from '~/components/Message.vue'
 import imageArrayToSrcset from '@/mixins/imagesToSrcset.js'
+// import structuredData from "@/mixins/structuredData.js"
 
 export default {
   components: {
@@ -45,18 +46,33 @@ export default {
     Message
   },
   mixins: [
-    imageArrayToSrcset
+    imageArrayToSrcset,
+    // structuredData
   ],
   head () {
     return {
       title: 'Gift Card Promo - The Wax Shop',
       meta: [
         { hid: 'description', name: 'description', content: 'Gift card promotion for the Wax Shop Kelowna. A clean, tranquil environment for both men and women. Receive a superior waxing service every visit by certified wax technicians.' }
-      ]
+      ],
+      // script: [...this.generateHeadScripts()]
     }
   },
   data () {
     return {
+      lastModified: '2020-08-12T00:53:01.609Z',
+      breadcrumbs: [
+        {
+          title: "Home",
+          path: "/",
+          current: false
+        },
+        {
+          title: "Gift Card Promo",
+          path: "/gift-card-promo",
+          current: false
+        }
+      ],
       images: {
         masthead: [
           {

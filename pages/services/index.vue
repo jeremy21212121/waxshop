@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <breadcrumbs
-      :breadcrumbs="breadCrumbs"
+      :breadcrumbs="breadcrumbs"
     />
     <div class="main-title-row">
       <h1 class="section-title section-title-alt">
@@ -146,28 +146,35 @@
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
 import NewServicesSVG from '@/components/NewServicesSvg.vue'
 import servicesData from '@/static/data/services.js'
+import structuredData from "@/mixins/structuredData.js"
 
 export default {
+  name: 'ServicesPage',
+  mixins: [
+    structuredData
+  ],
   components: {
     NewServicesSVG,
     Breadcrumbs
   },
   head () {
     return {
+      lastModified: '2020-08-12T00:53:01.609Z',
       title: this.headData.title,
       meta: [
         { hid: 'description', name: 'description', content: this.headData.description },
         { hid: 'og:title', property: 'og:title', content: this.headData.title },
         { hid: 'og:description', property: 'og:description', content: this.headData.description },
         { hid: 'og:url', property: 'og:url', content: 'https://waxshop.ca/services' },
-      ]
+      ],
+      script: [...this.generateHeadScripts()]
     }
   },
   data () {
     return {
       headData: {
         title: 'Services - The Wax Shop Kelowna',
-        description: 'Send us a message, get directions, call us, see our business hours or take a virtual tour of our beautiful waxing studio.',
+        description: 'Check out the various waxing services we offer, or book an appointment.',
       },
       pageHeading: 'Popular services',
       services: servicesData,
@@ -245,7 +252,7 @@ export default {
     }
   },
   computed: {
-    breadCrumbs() {
+    breadcrumbs() {
       return [
         {
           title: 'Home',

@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <breadcrumbs
-      :breadcrumbs="breadCrumbs"
+      :breadcrumbs="breadcrumbs"
     />
     <h1 class="title">
       {{ title }}
@@ -19,17 +19,23 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
 import BlogCard from '@/components/BlogCard.vue'
+import structuredData from "@/mixins/structuredData.js"
 
 export default {
   name: 'BlogPosts',
+  mixins: [
+    structuredData
+  ],
   components: {
     Breadcrumbs,
     BlogCard
   },
   data() {
     return {
+      lastModified: '2020-08-12T23:34:35.463Z',
       headData: {
         title: 'Posts from The Wax Shop Kelowna',
         description: 'Get a feel for who we are by reading our blog posts',
@@ -38,7 +44,7 @@ export default {
         baseUrl: 'https://staff.waxshop.ca'
       },
       title: 'blog posts',
-      posts: []
+      // posts: []
     }
   },
   head() {
@@ -49,17 +55,31 @@ export default {
         { hid: 'og:title', property: 'og:title', content: this.headData.title },
         { hid: 'og:description', property: 'og:description', content: this.headData.description },
         { hid: 'og:url', property: 'og:url', content: 'https://waxshop.ca/posts' },
-      ]
+        { hid: 'og:image', property: 'og:image', content: this.baseUrl + require('@/assets/landing_rectangle.jpg') },
+      ],
+      script: [...this.generateHeadScripts(this.completeBlogStructuredData)]
     }
   },
   async fetch() {
-    const posts = await this.$axios.$get('https://staff.waxshop.ca/posts?published=true')
+    const posts = await this.$axios.$get('https://staff.waxshop.ca/posts')
     if (posts && Array.isArray(posts) && posts.length > 0) {
-      this.posts = posts
+      this.setPosts(posts)
     }
   },
+  methods: {
+    ...mapActions({
+      setPosts: 'posts/setPosts',
+      addPost: 'posts/addPost'
+    })
+  },
   computed: {
-    breadCrumbs() {
+    ...mapState('posts',['posts']),
+    noPostsFound() {
+      return !this.$fetchState.pending &&
+        !this.$fetchState.error &&
+        (!Array.isArray(this.posts) || this.posts.length === 0)
+    },
+    breadcrumbs() {
       return [
         {
           title: 'Home',

@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <breadcrumbs
-      :breadcrumbs="breadCrumbs"
+      :breadcrumbs="breadcrumbs"
     />
     <h1 class="title">{{ heading }}</h1>
       <p
@@ -31,14 +31,23 @@
 
 <script>
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
+import structuredData from "@/mixins/structuredData.js"
 
 export default {
   name:'HealthSafetyProcedures',
+  mixins: [
+    structuredData
+  ],
   components: {
     Breadcrumbs
   },
   data() {
     return {
+      lastModified: '2020-08-12T01:53:01.555Z',
+      headData: {
+        title: 'Health and safety protocols',
+        description: 'The global COVID-19 pandemic has forced us to re-imagine every aspect of how we operate.'
+      },
       heading: `Health and safety protocols`,
       text: [
         `The global COVID-19 pandemic has forced us to re-imagine every aspect of how we operate.`,
@@ -60,8 +69,13 @@ export default {
       ]
     }
   },
+  head() {
+    return {
+      script: [...this.generateHeadScripts()]
+    }
+  },
   computed: {
-    breadCrumbs() {
+    breadcrumbs() {
       return [
         {
           title: 'Home',
