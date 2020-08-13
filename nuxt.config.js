@@ -1,3 +1,9 @@
+require('dotenv').config()
+
+const baseUrl = process.env.BASE_URL || 'https://waxshop.ca'
+
+const fullUrl = (path) => baseUrl + require(path)
+
 
 export default {
   mode: 'universal',
@@ -5,6 +11,7 @@ export default {
   ** Headers of the page
   */
   head: {
+    __dangerouslyDisableSanitizers: ['script'],
     title: 'The Place for Waxing in Kelowna',
     meta: [
       { charset: 'utf-8' },
@@ -15,11 +22,14 @@ export default {
       { name: 'msapplication-TileColor', content: '#000000' },
       { name: 'msapplication-TileImage', content: '/mstile-144x144.png' },
       { name: 'theme-color', content: '#000000' },
-      { hid: 'og:image', property: 'og:image', content: '/_nuxt/assets/landing_rectangle.jpg' },
+      // open graph tags
+      { hid: 'og:image', property: 'og:image', content: baseUrl + '/_nuxt/assets/landing_rectangle.jpg' },
       { hid: 'og:title', property: 'og:title', content: 'The Place for Waxing in Kelowna' },
       { hid: 'og:description', property: 'og:description', content: 'A clean, tranquil environment suited to both men and women in which you can relax and be sure you are receiving a superior waxing service every visit by certified wax technicians.' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'The Wax Shop Kelowna' },
-      { hid: 'og:url', property: 'og:url', content: 'https://waxshop.ca/' },
+      { hid: 'og:url', property: 'og:url', content: baseUrl + '/' },
+      // twitter meta tags
+      { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
     ],
     link: [
       { rel: 'apple-touch-icon-precomposed', sizes: '57x57', href: '/apple-touch-icon-57x57.png' },
@@ -34,6 +44,7 @@ export default {
     ],
     script: [
       // { src: 'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=es5%2Ces6' }
+      // { hid: 'ld+json', innerHTML: 'console.log("hello")', type: 'text/javascript', charset: 'utf-8'}
     ]
   },
   generate: {
@@ -73,6 +84,7 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/dotenv',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', {

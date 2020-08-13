@@ -1,6 +1,6 @@
 <template>
   <article
-    @click="$router.push(`/posts/${post.id}`)"
+    @click="$router.push(`/posts/${post.slug}`)"
     aria-role="link"
   >
     <div v-if="doneLoading" class="wrapper">
@@ -11,6 +11,9 @@
       <h2 class="subtitle">
         {{ post.title }}
       </h2>
+      <p>
+        {{ introSentence }}
+      </p>
       <div class="read">
         <read-more />
       </div>
@@ -42,7 +45,9 @@ export default {
   props: {
     post: {
       type: Object,
-      default: () => ({ id: 0, image: {}, title: '', date: '2020-06-01', body: '' }),
+      default: () => (
+        { id: 0, date: '', title: '', slug: '', image: {}, html: '', introText: '', fullText: '', updated_at: '' }
+      ),
       required: true
     },
     baseUrl: {
@@ -76,6 +81,14 @@ export default {
       const monthIndex = Number(monthString) - 1
       return `${this.months[monthIndex || 0]} ${dayString}, ${yearString}`
     },
+    introSentence() {
+      // find the first sentence-ending punctuation
+      const rE = /[.!?]/
+      const punctuationArray = this.post.introText.match(rE)
+      const hasPunctuation = punctuationArray && Array.isArray(punctuationArray) && punctuationArray.length === 1 && punctuationArray.every(ch => rE.test(ch))
+      const index = hasPunctuation ? this.post.introText.indexOf(punctuationArray[0]) + 1 : this.post.introText.length
+      return this.post.introText.substring(0, index)
+    },
     doneLoading() {
       return !this.loading && !this.error && this.post && this.post.id && this.post.id > 0
     }
@@ -88,6 +101,7 @@ export default {
 @import '@/scss/mixins/boxShadows.scss';
 @import '@/scss/vars/colours.scss';
 @import '@/scss/animations/appear.scss';
+@import '@/scss/vars/breakpoints.scss';
 
 article {
   display: flex;
@@ -114,13 +128,20 @@ article {
   span {
     text-align: left;
     margin: 2px 10px;
+    display: block;
     font-size: 0.8rem;
   }
   h2 {
-    padding-bottom: 4%;
-    padding-top: 4%;
+    // letter-spacing: -1px;
+    padding: 1% 3px;
     font-weight: bold;
     color: $white-text2;
+    font-size: 1.2em;
+    line-height: 1.1em;
+    margin-bottom: 4px;
+  }
+  p {
+    padding: 1% 3px;
   }
   div.read {
     display: flex;
@@ -147,6 +168,14 @@ article:hover, article:active {
     color: $white-text3;
     border-color: $white-text3;
     transition: color, border-color 150ms ease-in;
+  }
+}
+
+@media screen and (min-width: $break-l) {
+  article {
+    img {
+      max-height: 388px;
+    }
   }
 }
 

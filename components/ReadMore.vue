@@ -13,7 +13,7 @@ span.readmore {
   border-radius: 4px;
   text-align: center;
   font-size: 0.5rem;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
 }
 </style>

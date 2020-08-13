@@ -2,7 +2,7 @@
   <nuxt-link :to="'/covid-19'" class="covid">
     <img src="~/assets/info.png" alt="Info" aria-hidden="true">
     <span class="banner">
-      Now open Monday - Friday with extensive safety measures in place
+      Now open Monday - Saturday with extensive safety measures in place
     </span>
     <read-more />
   </nuxt-link>

@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <breadcrumbs
-      :breadcrumbs="breadCrumbs"
+      :breadcrumbs="breadcrumbs"
     />
     <h1 class="title">{{ heading }}</h1>
     <!-- <img :src="headingImg" alt="Sparkle icon" aria-hidden="true"> -->
@@ -32,14 +32,23 @@
 
 <script>
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
+import structuredData from "@/mixins/structuredData.js"
 
 export default {
   name:'Hygiene',
+  mixins: [
+    structuredData
+  ],
   components: {
     Breadcrumbs
   },
   data() {
     return {
+      lastModified: '2020-08-13T00:21:10.844Z',
+      headData: {
+        title: 'New hygiene measures',
+        description: 'Here are some of the changes we have made to help ensure the safety of our clients and staff.'
+      },
       heading: `New hygiene measures`,
       // headingImg: require('~/assets/sm-sparkle.png'),
       text: [
@@ -92,8 +101,13 @@ export default {
       ]
     }
   },
+  head() {
+    return {
+      script: [...this.generateHeadScripts()]
+    }
+  },
   computed: {
-    breadCrumbs() {
+    breadcrumbs() {
       return [
         {
           title: 'Home',
