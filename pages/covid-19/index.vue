@@ -152,7 +152,7 @@ export default {
       },
       heading: 'Re-opened with extensive safety measures in place',
       paragraphs: [
-        `We re-opened May 22 and it has been great!`,
+        `We re-opened on May 22nd and it has been great to welcome you back!`,
         `A big thanks to all our exisiting and new clients that have come to see us.`,
         `We have been hard at work re-designing every aspect of our business to be as safe as possible. This process has required significant changes to both the services we offer and how we offer them.`,
         `Please see our <a href="/health-and-safety">Health & Safety page</a> for a detailed list of <a href="/health-and-safety/hygiene">the measures we are taking</a> to protect our clients and staff, as well as <a href="/health-and-safety/client-protocol">what will be expected of you as a client</a>.`,
