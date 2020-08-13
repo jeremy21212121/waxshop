@@ -67,6 +67,7 @@ export default {
   },
   data() {
     return {
+      baseUrl: process.env.BASE_URL || "https://waxshop.ca",
       months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     }
   },
@@ -85,12 +86,20 @@ export default {
     doneLoading() {
       return !this.loading && !this.error && this.post && this.post.id && this.post.id > 0
     },
+    introSentence() {
+      // find the first sentence-ending punctuation
+      const rE = /[.!?]/
+      const punctuationArray = this.post.introText.match(rE)
+      const hasPunctuation = punctuationArray && Array.isArray(punctuationArray) && punctuationArray.length === 1 && punctuationArray.every(ch => rE.test(ch))
+      const index = hasPunctuation ? this.post.introText.indexOf(punctuationArray[0]) + 1 : this.post.introText.length
+      return this.post.introText.substring(0, index)
+    },
     socialShareOptions() {
       return {
         services: ['facebook', 'twitter', 'email'],
-        url: process.env.BASE_URL + this.$route.fullPath,
+        url: this.baseUrl + this.$route.fullPath,
         title: this.post.title,
-        text: this.post.introText,
+        text: this.introSentence,
         image: this.imageUrl,
         label: 'post',
         name: 'The Wax Shop Kelowna'
