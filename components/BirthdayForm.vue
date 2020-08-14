@@ -1,7 +1,7 @@
 <template>
-  <form ref="contactForm" id="send-a-message" class="mui-form">
-    <img src="~/assets/sm-msg.png" alt="message bubble icon" aria-hidden="true">
-    <h2>Send a message</h2>
+  <form ref="contactForm" id="sendbdayform" class="mui-form">
+    <img src="@/assets/bow.png" alt="Golden bow" aria-hidden="true">
+    <h2>Register</h2>
     <div class="mui-textfield">
       <input
         id="name-input"
@@ -10,7 +10,7 @@
         name="nameinput"
         maxlength="100"
         placeholder="Name"
-        required
+        required="true"
       >
     </div>
     <div class="mui-textfield">
@@ -21,20 +21,63 @@
         name="emailinput"
         maxlength="100"
         placeholder="E-mail"
-        required
+        required="true"
       >
     </div>
     <div class="mui-textfield">
-      <textarea
-        id="message-text"
-        v-model="formData.text"
-        name="messagetext"
-        maxlength="1024"
-        cols="30"
-        rows="3"
-        placeholder="Message"
-        required
-      />
+      <input
+        id="phone-input"
+        v-model="formData.phone"
+        type="phone"
+        name="phoneinput"
+        maxlength="11"
+        placeholder="Phone number (optional)"
+        required="false"
+      >
+    </div>
+    <div class="mui-textfield">
+      <fieldset>
+        <legend>Enter your birthday</legend>
+
+        <div>
+          <label for="bdaymonth">Month</label>
+          <select v-model="formData.birthMonth" name="bdaymonth" id="bdaymonth" required="true">
+            <option
+              v-for="(monthObj, monthIndex) in monthsArray"
+              :key="`monthoption${monthIndex}`"
+              :value="monthObj.name"
+            >{{monthObj.name}}
+            </option>
+          </select>
+        </div>
+
+        <div>
+          <label for="bdayday">Day</label>
+          <select v-model="formData.birthDay" :disabled="!birthMonthSet" name="bdayday" id="bdayday" required="true">
+            <option
+              v-for="(day, dayIndex) in possibleDays"
+              :key="`day${dayIndex}`"
+              :value="day"
+            >
+              {{ day }}
+            </option>
+          </select>
+        </div>
+      </fieldset>
+
+    </div>
+    <div class="mui-textfield">
+      <fieldset>
+        <legend>E-mail consent</legend>
+        <input
+          type="checkbox"
+          name="consentbox"
+          id="consentbox"
+          v-model.boolean="formData.marketingConsent"
+          required="true"
+        />
+        <label v-html="checkboxMessage" for="consentbox" />
+      </fieldset>
     </div>
     <button :class="{ loading }" :disabled="loading" @click="checkForm" type="submit" class="button--grey">
       <span v-if="!loading">
@@ -57,31 +100,50 @@ export default {
   data () {
     return {
       loading: false,
+      checkboxMessage: 'I give the Wax Shop Kelowna permission to occasionally e-mail me about promotions and I agree with the terms in the <a href="#promo-details">details below</a>.',
+      disclaimer: "$25 Gift Card will be sent annually a week prior to the birthdate you submitted through the above form for as long as you remain on our mailing list. This offer must be used within 30 days of the birthdate we have on file. If no other paid services are booked within 6 months of your first appointment, we may remove the birthday offer from your file.",
       formData: {
         name: '',
         email: '',
-        text: ''
+        birthMonth: '',
+        birthDay: 0,
+        phone: '',
+        marketingConsent: false
       },
       apiUrl: {
         dev: 'http://127.0.0.1:8080/v1/send',
         prod: 'https://waxshop.ca/api/v1/send'
-      }
+      },
+      monthsArray: [ { name: 'January', length: 31 },{ name: 'February', length: 29 },{ name: 'March', length: 31 },{ name: 'April', length: 30 },{ name: 'May', length: 31 },{ name: 'June', length: 30 },{ name: 'July', length: 31 },{ name: 'August', length: 31 },{ name: 'September', length: 30 },{ name: 'October', length: 31 },{ name: 'November', length: 30 },{ name: 'December', length: 31 } ]
+ 
     }
   },
   methods: {
+    range: (start, end) => Array.from(Array(end - start + 1)).map((v, i) => i + start),
     resetForm () {
       const f = this.formData
       f.name = ''
       f.email = ''
-      f.text = ''
+      f.birthMonth = ''
+      f.birthDay = 0
+      f.phone = ''
     },
     async submitForm () {
       // detect dev mode by using window.webpackHotUpdate
       const apiUrl = (window.webpackHotUpdate) ? this.apiUrl.dev : this.apiUrl.prod
       this.loading = true
-      const response = await this.$axios.$post(apiUrl, this.formData).catch(e => { console.log(e); return { success: false } })
+      const postData = { name: this.formData.name, email: this.formData.email, text: ''}
+      postData.text = `Birthday promo registration!
+
+      name: ${postData.name}
+      email: ${postData.email}
+      phone: ${this.formData.phone || 'Not provided'}
+      birthday: ${this.formData.birthMonth} ${this.formData.birthDay}
+      `
+      
+      const response = await this.$axios.$post(apiUrl, postData).catch(e => { console.log(e); return { success: false } })
       this.loading = false
-      const msg = (response.success) ? 'Message sent! We will get back to you ASAP.' : 'Sorry, error sending message. Please e-mail hello@waxshop.ca or call.'
+      const msg = (response.success) ? 'Submission received, thanks!' : 'Sorry, there was an error. Please e-mail hello@waxshop.ca or call.'
       // this.setSnackbar(msg)
       this.activateSnackbar(msg)
       // this.$refs.contactForm.reset()
@@ -102,6 +164,23 @@ export default {
     ...mapActions([
       'activateSnackbar'
     ])
+  },
+  computed: {
+    birthMonthSet() {
+      return this.formData.birthMonth !== ''
+    },
+    birthMonthMaxDays() {
+      return (
+        this.monthsArray.find(obj => obj.name === this.formData.birthMonth) ||
+        { length: 0 }
+      ).length
+    },
+    minBdayDays() {
+      return this.birthMonthSet ? 1 : 0
+    },
+    possibleDays() {
+      return this.range(this.minBdayDays, this.birthMonthMaxDays)
+    }
   }
 }
 </script>
@@ -119,11 +198,11 @@ export default {
   // box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   padding: 10px 15px;
-  border-radius: 2px;
+  border-radius: 4px;
   img {
-    padding-top: 10px;
-    max-width: 15%;
-    opacity: 0.87;
+    padding-top: 4px;
+    max-width: 25%;
+    // opacity: 0.87;
   }
   h2 {
     display: block;
@@ -144,6 +223,7 @@ export default {
     margin-bottom: 0.9375rem;
     position: relative;
     input,
+    select,
     textarea {
       width: 90%;
       box-sizing: border-box;
@@ -165,6 +245,38 @@ export default {
       &:focus {
         border-bottom: 2px solid #0074e8;
       }
+    }
+    fieldset {
+      // display: flex;
+      // justify-content: center;
+      // flex-wrap: nowrap;
+      border-color: rgba(255, 255, 255, 0.37);
+      legend {
+        color: rgba(255, 255, 255, 0.77);
+        
+      }
+      label {
+        color: rgba(255, 255, 255, 0.77);
+      }
+      input#consentbox {
+        // display: inline-block;
+        // margin-right: auto;
+        display: inline;
+      }
+      div {
+        width: 47%;
+        display: inline-block;
+        margin: 0 auto;
+        select {
+          font-size: 1.3rem;
+          width: 95%;
+          display: inline-block;
+          option {
+            color: rgba(0,0,0,0.85);
+            text-align: center;
+          }
+        }
+    }
     }
   }
   button {

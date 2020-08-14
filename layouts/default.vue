@@ -170,7 +170,18 @@ h2.section-title {
   align-items: center;
   text-align: center;
 }
-
+span.italic {
+  font-style: italic;
+}
+span.bold {
+  font-weight: bold;
+}
+span.strikethrough {
+  text-decoration: line-through;
+}
+span.underline {
+  text-decoration: underline;
+}
 .title {
   /* font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; */
   display: block;
