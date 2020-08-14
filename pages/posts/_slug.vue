@@ -1,4 +1,4 @@
-<template>
+git status<template>
   <main class="container">
     <breadcrumbs
       :breadcrumbs="breadcrumbs"
@@ -13,9 +13,6 @@
 </template>
 
 <script>
-import Remark from 'remark';
-import RemarkHtml from 'remark-html';
-
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
 import BlogPost from '@/components/BlogPost.vue'
 import structuredData from "@/mixins/structuredData.js"
