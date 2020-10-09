@@ -42,6 +42,7 @@ export default {
       },
       api: {
         baseUrl: 'https://staff.waxshop.ca'
+        // baseUrl: 'http://localhost:1337'
       },
       title: 'blog posts',
       // posts: []
@@ -61,7 +62,7 @@ export default {
     }
   },
   async fetch() {
-    const posts = await this.$axios.$get('https://staff.waxshop.ca/posts')
+    const posts = await this.$axios.$get(this.api.baseUrl + '/posts')
     if (posts && Array.isArray(posts) && posts.length > 0) {
       this.setPosts(posts)
     }

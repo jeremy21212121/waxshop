@@ -1,6 +1,6 @@
 <template>
   <article
-    @click="$router.push(`/posts/${post.slug}`)"
+    @click="$router.push(`/posts/${encodeURIComponent(post.slug)}`)"
     aria-role="link"
   >
     <div v-if="doneLoading" class="wrapper">
@@ -81,13 +81,33 @@ export default {
       const monthIndex = Number(monthString) - 1
       return `${this.months[monthIndex || 0]} ${dayString}, ${yearString}`
     },
+    // This function extracts the first sentence from post.introText paragraph. If the first sentence is very short, it adds sentences until their combined length is greater than minLength.
     introSentence() {
-      // find the first sentence-ending punctuation
+      const minLength = 100;
+      // early return for invalid state
+      if (!this.post || !this.post.introText) {
+        return ''
+      }
+      // early return for unlikely special case. If it is shorter than minLength chars we will save the work and just return it all
+      if (this.post.introText.length < minLength) {
+        return this.post.introText
+      }
       const rE = /[.!?]/
-      const punctuationArray = this.post.introText.match(rE)
-      const hasPunctuation = punctuationArray && Array.isArray(punctuationArray) && punctuationArray.length === 1 && punctuationArray.every(ch => rE.test(ch))
-      const index = hasPunctuation ? this.post.introText.indexOf(punctuationArray[0]) + 1 : this.post.introText.length
-      return this.post.introText.substring(0, index)
+      let sentences = [];
+      let remainingIntroText = this.post.introText;
+      // while our text is under 100 chars and there is remainingIntroText
+      while((!sentences.length || sentences.join(' ').length < minLength) && remainingIntroText.length) {
+        // an array containing our next punction, or empty if none
+        const nextPunctuation = remainingIntroText.match(rE)
+        if (nextPunctuation.length) {
+          const nextPunctuationIndex = remainingIntroText.indexOf(nextPunctuation[0])
+          const nextSentence = remainingIntroText.substring(0, nextPunctuationIndex + 1)
+          sentences.push(nextSentence)
+          // remove nextSentence from the remainingIntroText
+          remainingIntroText = remainingIntroText.substring(nextPunctuationIndex + 1, remainingIntroText.length)
+        }
+      }
+      return sentences.map(sentence => sentence.trim()).join(' ')
     },
     doneLoading() {
       return !this.loading && !this.error && this.post && this.post.id && this.post.id > 0
@@ -110,6 +130,7 @@ article {
   background-color: rgba(255,255,255,0.33);
   @include bs-white-3;
   margin: 6px;
+  margin-bottom: 18px;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(255,255,255,0.21);
   // opacity: 0;
@@ -133,7 +154,7 @@ article {
   }
   h2 {
     // letter-spacing: -1px;
-    padding: 1% 3px;
+    padding: 1%;
     font-weight: bold;
     color: $white-text2;
     font-size: 1.2em;
@@ -141,7 +162,7 @@ article {
     margin-bottom: 4px;
   }
   p {
-    padding: 1% 3px;
+    padding: 1%;
   }
   div.read {
     display: flex;

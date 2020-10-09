@@ -1,4 +1,4 @@
-git status<template>
+<template>
   <main class="container">
     <breadcrumbs
       :breadcrumbs="breadcrumbs"
@@ -49,6 +49,10 @@ export default {
     return {
       defaultImage: {
         path: require('@/assets/landing_rectangle.jpg')
+      },
+      api: {
+        baseUrl: 'https://staff.waxshop.ca'
+        // baseUrl: 'http://local.staff.waxshop.ca'
       }
     }
   },
@@ -56,7 +60,7 @@ export default {
     const postSlug = this.$route.params.slug ? this.$route.params.slug : ''
     if (!this.currentPost && postSlug && postSlug.length) {
       // Valid slug but post is not in store. Fetch from API
-      const postArray = await this.$axios.$get('https://staff.waxshop.ca/posts?slug=' + postSlug )
+      const postArray = await this.$axios.$get(this.api.baseUrl + '/posts?slug=' + encodeURIComponent(postSlug))
       const validResponse = Array.isArray(postArray) && postArray.length === 1
       if (validResponse) {
         this.addPost(postArray[0])
@@ -81,6 +85,7 @@ export default {
   computed: {
     ...mapState('posts',['posts']),
     currentPost() {
+      // $route.params.slug is automatically URL decoded by vue-router
       return Array.isArray(this.posts) && this.posts.find(postObj => postObj.slug === this.$route.params.slug)
     },
     breadcrumbs() {
