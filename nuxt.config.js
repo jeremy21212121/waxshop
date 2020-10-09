@@ -94,7 +94,7 @@ export default {
     '@nuxtjs/sitemap',
     ['@nuxtjs/robots', {
       UserAgent: '*',
-      Disallow: '/'
+      Disallow: ''
     }]
   ],
   /*
