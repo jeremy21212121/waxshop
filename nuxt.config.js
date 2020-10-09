@@ -91,7 +91,11 @@ export default {
       id: 'UA-149462506-1',
       dev: false
     }],
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    ['@nuxtjs/robots', {
+      UserAgent: '*',
+      Disallow: '/'
+    }]
   ],
   /*
   ** Axios module configuration
