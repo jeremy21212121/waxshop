@@ -149,6 +149,9 @@ div.vhtmlContainer {
   ul {
     text-align: left;
     margin-bottom: 32px;
+    li {
+      margin-bottom: 8px;
+    }
   }
 }
 </style>
