@@ -19,7 +19,8 @@
       <div>
         <a id="tel" class="button--grey" href="tel:12368372100">Call us</a>
       </div>
-      <span class="content">
+      <span class="content">Our phone is temporarily out of service</span>
+      <span class="content strike">
         (236) 837-2100
       </span>
     </div>
@@ -65,11 +66,30 @@ export default {
   },
   data () {
     return {
+      monthsArray: [ { name: 'January', length: 31 },{ name: 'February', length: 29 },{ name: 'March', length: 31 },{ name: 'April', length: 30 },{ name: 'May', length: 31 },{ name: 'June', length: 30 },{ name: 'July', length: 31 },{ name: 'August', length: 31 },{ name: 'September', length: 30 },{ name: 'October', length: 31 },{ name: 'November', length: 30 },{ name: 'December', length: 31 } ],
       description: [
-        'We\'d love to hear from you!',
-        'Give us a call or <a href="#send-a-message">send a message</a>. We are located in the heart of Pandosy Village.'
-      ]
+        'Note: Our phones are down today.',
+        'Please <a href="#send-a-message">send a message</a> or <a href="mailto:hello@waxshop.ca">e-mail us</a>'
+        // 'We\'d love to hear from you!',
+        // 'Give us a call or <a href="#send-a-message">send a message</a>. We are located in the heart of Pandosy Village.'
+      ],
     }
+  },
+  methods: {
+    // todayString() {
+    //   let output = ''
+    //   const d = new Date()
+    //   const monthIndex = d.getMonth()
+    //   if (this.monthsArray) {
+    //     const monthString = this.monthsArray[monthIndex].name.substring(0,3) + '.'
+    //     output += monthString
+    //   }
+    //   output += ` ${d.getDate()}`
+    //   return output
+    // },
+    // phonesString() {
+    //   return `Note: Our phones are down today (${this.todayString()})`
+    // }
   }
 }
 </script>
@@ -81,6 +101,8 @@ export default {
 
 a#tel {
   text-decoration: none;
+  pointer-events: none;
+  background-color: #222222;
 }
 section.contact {
   display: flex;
@@ -141,6 +163,9 @@ section.contact {
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+    span.strike {
+      text-decoration: line-through;
     }
   }
   iframe {

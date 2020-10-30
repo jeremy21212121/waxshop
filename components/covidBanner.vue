@@ -1,8 +1,9 @@
 <template>
-  <nuxt-link :to="'/covid-19'" class="covid">
+  <nuxt-link :to="'/contact'" title="Contact us" class="covid">
     <img src="~/assets/info.png" alt="Info" aria-hidden="true">
     <span class="banner">
-      Now open Monday - Saturday with extensive safety measures in place
+      <!-- Now open Monday - Saturday with extensive safety measures in place -->
+      Our phones are temporarily down. {{ isMobile ? 'Tap' : 'Click' }} here to contact us.
     </span>
     <read-more />
   </nuxt-link>
@@ -14,12 +15,18 @@ export default {
   name: 'CovidBanner',
   components: {
     ReadMore
+  },
+  computed: {
+    isMobile() {
+      return this.$el && this.$el.clientWidth && this.$el.clientWidth < 740
+    }
   }
 }
 </script>
 <style lang="scss" scoped>
 .covid {
   background-color: #355992;
+  background-color: #990099;
   width: 100%;
   padding: 4px;
   display: flex;
@@ -59,7 +66,7 @@ export default {
     }
     .readmore {
       font-size: 0.7rem;
-      margin-left: 16px;
+      // margin-left: 16px;
     }
   }
 }
