@@ -19,8 +19,7 @@
       <div>
         <a id="tel" class="button--grey" href="tel:12368372100">Call us</a>
       </div>
-      <span class="content alert">Temporary phone system difficulties. Please try another contact method if you can't get through.</span>
-      <span class="content strike">
+      <span class="content">
         (236) 837-2100
       </span>
     </div>
@@ -67,10 +66,10 @@ export default {
   data () {
     return {
       description: [
-        'Note: Our phone system is experiencing technical difficulties.',
-        'Please <a href="#send-a-message">send a message</a> or <a href="mailto:hello@waxshop.ca">e-mail us</a>'
-        // 'We\'d love to hear from you!',
-        // 'Give us a call or <a href="#send-a-message">send a message</a>. We are located in the heart of Pandosy Village.'
+        // 'Note: Our phones are down today.',
+        // 'Please <a href="#send-a-message">send a message</a> or <a href="mailto:hello@waxshop.ca">e-mail us</a>'
+        'We\'d love to hear from you!',
+        'Give us a call or <a href="#send-a-message">send a message</a>. We are located in the heart of Pandosy Village.'
       ],
     }
   }
@@ -146,13 +145,10 @@ section.contact {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      &.alert {
-        color: #F0D9F0;
-      }
     }
-    span.strike {
-      text-decoration: line-through;
-    }
+    // span.strike {
+    //   text-decoration: line-through;
+    // }
   }
   iframe {
     margin: 0 auto;
