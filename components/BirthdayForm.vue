@@ -73,7 +73,7 @@
           type="checkbox"
           name="consentbox"
           id="consentbox"
-          v-model.boolean="formData.marketingConsent"
+          v-model="formData.marketingConsent"
           required="true"
         />
         <label v-html="checkboxMessage" for="consentbox" />
@@ -105,7 +105,7 @@ export default {
       formData: {
         name: '',
         email: '',
-        birthMonth: '',
+        birthMonth: 'January',
         birthDay: 0,
         phone: '',
         marketingConsent: false
@@ -261,7 +261,40 @@ export default {
       input#consentbox {
         // display: inline-block;
         // margin-right: auto;
-        display: inline;
+        margin: 0 auto;
+        display: block;
+        width: 32px;
+        height: 32px;
+        // -webkit-appearance: none;
+        appearance: none;
+        background-color: #fafafa;
+        border: 1px solid #cacece;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+        padding: 9px;
+        border-radius: 3px;
+        // display: inline-block;
+        // position: relative;
+
+        &:active, &:checked:active {
+          box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        &:checked {
+          background-color: #1565c0;
+          border: 1px solid #adb8c0;
+          // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+            // inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,0.05),
+            inset 0px -15px 10px -12px rgba(0,0,0,0.05),
+            inset 15px 10px 10px -12px rgba(255,255,255,0.1);
+          // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+          color: #99a1a7;
+          background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAAAmJLR0QAOfWIqzoAAAAJcEhZcwAADdcAAA3XAUIom3gAAAGZSURBVFgJ7cFBZJtxHMfhL3+hwpR5KTGqTOlldixRapcSalQvuZQqIXYeO9Yuo8bkUnrcLdQIM6rMmBAjx12mVChVqkSJEC+f0UPz+2dZx/v+ppc+jx7cG57yhkO69DhlTf4o0SRlrCxvVLnCasobNWLnJPLFEtdYKavyxSy/iO3IF4FjYh/kjXfEvhHki5fEzpiTLxboY40oyxczdInV5Y0GsYa8sUnsiCBfzNPHuqQkXxToENuQN/aI7cobL0ixvhDki4RzrB6P5Y0W1ohleaNO7LW8scgA64ggXxT4gXVBIm/sYqWsyRvPGWG9lzcCHawuBWVHkTn9gW2sAYvKiiptUqClCAv0sWrKhlmOGVvXLQLfsVrKijZWW7eoY12QKBtKTFrWDZ5wjVVRVhQYEjvUDT5jHSgPOsRGzEu8wjqhqDx4y6QmFYaMpawoH8r8y77yInDJXa5IlB8fuUtFHtjg7xrywSOGTHdCUV74xDQpK/LDOtPsyROBHpN+MiNfbBEb8kz++MrYgKr+D5bYpMYWqxT14D78BnL/sMKl6kh4AAAAAElFTkSuQmCC");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+
       }
       div {
         width: 47%;
