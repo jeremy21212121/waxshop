@@ -7,12 +7,13 @@
         :sizes="image.sizes"
         :alt="image.alt"
       >
-      <div class="overlay">
-        <h1>The place for Waxing in Kelowna</h1>
+      <!-- <div class="overlay"> -->
+        <!-- <h1>The place for Waxing in Kelowna</h1> -->
         <!-- <span class="highlight-text">Buy a $100 gift card, get a $25 gift card </span>
         <span class="highlight-text caps">for free!</span> -->
-        <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noopener">Book now!</a>
-      </div>
+        <!-- <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noopener">Book now!</a> -->
+      <!-- </div> -->
+      <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noopener">Book now!</a>
     </div>
   </section>
 </template>
@@ -24,20 +25,23 @@ export default {
       image: {
         srcset: [
           {
-            src: require('@/assets/landing_cool-804.jpg'),
+            // src: require('@/assets/landing_cool-804.jpg'),
+            src: require('@/assets/waxshop_h804.jpg'),
             width: 804
           },
           {
-            src: require('@/assets/landing_cool-1206.jpg'),
+            // src: require('@/assets/landing_cool-1206.jpg'),
+            src: require('@/assets/waxshop_h1206.jpg'),
             width: 1206
           },
           {
-            src: require('@/assets/landing_cool-1608.jpg'),
+            // src: require('@/assets/landing_cool-1608.jpg'),
+            src: require('@/assets/waxshop_h1608.jpg'),
             width: 1608
           }
         ],
         sizes: '(min-width: 740px) 740px, 100vw',
-        alt: 'Valentine on wood background'
+        alt: 'Brazilian waxes for $45'
       }
     }
   },
@@ -68,20 +72,32 @@ section {
     // flex-direction: column;
     img {
       width: 100%;
-      object-fit: cover;
-      object-position: 77%;
+      // object-fit: cover;
+      // object-position: 77%;
       height: 80vw;
       max-height: 500px;
       z-index: -1;
       // border-bottom-left-radius: 2px;
       // border-bottom-right-radius: 2px;
     }
+    a {
+      // margin-top: 10px;
+      width: 225px;
+      border: 1px solid rgba(0,0,0,0.5);
+      background-color: #ccc;
+      padding: 5px 30px;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      color: black;
+      position: relative;
+      bottom: 70px;
+    }
     .overlay {
       width: 100%;
       height: 75vw;
       max-height: 485px;
       position: absolute;
-      top: 10px;
+      top: 40%;
       // flex-grow: 1;
       // height: stretch;
       display: flex;
@@ -124,16 +140,16 @@ section {
         padding: 0;
         margin: 0;
       }
-      a {
-        // margin-top: 10px;
-        width: 225px;
-        border: 1px solid rgba(0,0,0,0.5);
-        background-color: #ccc;
-        padding: 5px 30px;
-        font-size: 1.7rem;
-        text-transform: uppercase;
-        color: black;
-      }
+      // a {
+      //   // margin-top: 10px;
+      //   width: 225px;
+      //   border: 1px solid rgba(0,0,0,0.5);
+      //   background-color: #ccc;
+      //   padding: 5px 30px;
+      //   font-size: 1.7rem;
+      //   text-transform: uppercase;
+      //   color: black;
+      // }
     }
   }
 }
