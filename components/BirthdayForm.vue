@@ -32,7 +32,6 @@
         name="phoneinput"
         maxlength="11"
         placeholder="Phone number (optional)"
-        required="false"
       >
     </div>
     <div class="mui-textfield">
