@@ -1,21 +1,21 @@
 <template>
   <div>
     <h1 id="about-wax-shop">About the wax shop</h1>
-    <!-- <p class="teaser">
+    <p class="teaser">
       Kelowna's newest waxing studio
-      <span class="none"> has</span>
-      <span class="highlight-text caps">re-opened</span>
+      <span class="none"> is</span>
+      <span class="highlight-text caps">open</span>
       <span class="none">in</span>
       Pandosy village!
-    </p> -->
-    <!-- <p class="teaser">
+    </p>
+    <p class="teaser">
       Check out the
       <nuxt-link :to="'/health-and-safety'">
        health &amp; safety protocols 
       </nuxt-link>
       we have implemented to serve you safely.
-    </p> -->
-    <h2>
+    </p>
+    <!-- <h2>
       {{ subheading }}
     </h2>
     <p class="teaser">Buy $100, Get $25 <span class="highlight-text caps">Bonus</span> Card</p>
@@ -24,7 +24,7 @@
     </p>
     <p class="teaser lowc">
       Because you deserve a smoother you too!
-    </p>
+    </p> -->
     <!-- <p
       v-for="(p, pIndex) in paragraphs"
       :key="`no-p-${pindex}`"
@@ -39,12 +39,12 @@ export default {
   name: "NowOpen",
   data() {
     return {
-      subheading: "December Gift Card Special Offer",
-      paragraphs: [
-        "Buy $100, Get $25 Bonus Card",
-        "Give it all as a holiday gift, or save the bonus just for you -",
-        "because you deserve a smoother you too!",
-      ],
+      // subheading: "December Gift Card Special Offer",
+      // paragraphs: [
+      //   "Buy $100, Get $25 Bonus Card",
+      //   "Give it all as a holiday gift, or save the bonus just for you -",
+      //   "because you deserve a smoother you too!",
+      // ],
     };
   },
 };
