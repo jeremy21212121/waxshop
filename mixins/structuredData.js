@@ -75,7 +75,7 @@ export default {
         // using nuxt middleware to cache the hours for a reasonable amount of time should work
         openingHours:
           "Mo 10:00-18:00 Tu 10:00-18:00 We 10:00-18:00 Th 10:00-19:00 Fr 10:00-19:00 Sa 10:00-18:00",
-        telephone: "+12368372100",
+        telephone: "+12507632394",
         sameAs: [
           "https://www.instagram.com/thewaxshopkelowna/",
           "https://www.facebook.com/thewaxshopkelowna"

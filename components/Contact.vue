@@ -17,10 +17,10 @@
         <img src="~/assets/sm-phone.png" alt="phone icon" aria-hidden="true">
       </div>
       <div>
-        <a id="tel" class="button--grey" href="tel:12368372100">Call us</a>
+        <a id="tel" class="button--grey" href="tel:12507632394">Call us</a>
       </div>
       <span class="content">
-        (236) 837-2100
+        (250) 763-2394
       </span>
     </div>
     <div class="wrapper">
