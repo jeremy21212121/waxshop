@@ -73,7 +73,7 @@
     <div
       v-for="(group, i) in services"
       :key="'servicegroup' + i"
-      class="service-wrapper"
+      :class="'service-wrapper ' + group.title"
     >
       <div class="title-row">
         <h2>
@@ -86,6 +86,7 @@
           v-for="(service, j) in group.services"
           :key="'service-' + i + '-' + j"
           class="row-wrapper"
+          :title="service.requiresDeposit ? 'Requires deposit' : ''"
         >
           <span class="service-title" >
             {{ service.title }}
@@ -132,10 +133,10 @@
           </span>
         </li>
       </ul>
-      <!-- <span class="disclaimer">
-        * requires deposit
-      </span> -->
     </div>
+    <span class="disclaimer">
+      * requires deposit
+    </span>
     <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" rel="noreferrer noopener">Book Now!</a>
     <p>
       Don’t see the service you were looking for? Check out our <a href="https://go.booker.com/location/TheWaxShop" target="_blank" rel="noreferrer noopener">full services list</a> or we can customize our services to your needs.
@@ -416,7 +417,7 @@ export default {
       margin-left: 0;
       margin-right: 0;
       width: 49%;
-      height: 420px;
+      height: 520px;
       .group-wrapper {
         .row-wrapper {
           padding: 2px 0;
@@ -430,6 +431,13 @@ export default {
       }
       .disclaimer {
         margin-top: auto;
+      }
+      &.his {
+        .group-wrapper {
+          .row-wrapper {
+            padding: 4px 0;
+          }
+        }
       }
     }
     div.service-wrapper.alt {
