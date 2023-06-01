@@ -63,7 +63,7 @@
         </li>
       </ul>
     </div>
-    <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" rel="noreferrer noopener">Book Now!</a>
+    <a href="https://waxshopca.zenoti.com/webstoreNew" target="_blank" class="button--green" rel="noopener">Book Now!</a>
     <div class="main-title-row">
       <h1 class="section-title">
         {{ pageHeading }}
@@ -137,9 +137,9 @@
     <span class="disclaimer">
       * requires deposit
     </span>
-    <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" rel="noreferrer noopener">Book Now!</a>
+    <a href="https://waxshopca.zenoti.com/webstoreNew" target="_blank" class="button--green" rel="noopener">Book Now!</a>
     <p>
-      Don’t see the service you were looking for? Check out our <a href="https://go.booker.com/location/TheWaxShop" target="_blank" rel="noreferrer noopener">full services list</a> or we can customize our services to your needs.
+      Don’t see the service you were looking for? Check out our <a href="https://waxshopca.zenoti.com/webstoreNew" target="_blank" rel="noopener">full services list</a> or we can customize our services to your needs.
     </p>
   </section>
 </template>

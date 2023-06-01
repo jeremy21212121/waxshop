@@ -11,9 +11,9 @@
         <!-- <h1>The place for Waxing in Kelowna</h1> -->
         <!-- <span class="highlight-text">Buy a $100 gift card, get a $25 gift card </span>
         <span class="highlight-text caps">for free!</span> -->
-        <!-- <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noopener">Book now!</a> -->
+        <!-- <a href="https://waxshopca.zenoti.com/webstoreNew" target="_blank" class="button--grey" rel="noopener">Book now!</a> -->
       <!-- </div> -->
-      <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--grey" rel="noopener">Book now!</a>
+      <a href="https://waxshopca.zenoti.com/webstoreNew" target="_blank" class="button--grey" rel="noopener">Book now!</a>
     </div>
   </section>
 </template>

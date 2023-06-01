@@ -54,7 +54,7 @@ export default {
       text: [
         `Here are some of the changes we have made to help ensure the safety of our clients and staff`
       ],
-      moreInfo: 'Please review the <a href="/health-and-safety/client-protocol">procedures for clients</a> before <a href="https://go.booker.com/location/TheWaxShop" target="_blank" rel="noopener">booking an appointment.</a>',
+      moreInfo: 'Please review the <a href="/health-and-safety/client-protocol">procedures for clients</a> before <a href="https://waxshopca.zenoti.com/webstoreNew" target="_blank" rel="noopener">booking an appointment.</a>',
       boxes: [
         {
           title: 'Personal protective equipment',

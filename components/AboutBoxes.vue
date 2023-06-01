@@ -54,7 +54,7 @@ export default {
         },
         {
           title: 'Unbeatable value',
-          message: 'Seamless service at very <a href="https://go.booker.com/location/TheWaxShop" target="_blank" rel="noreferrer noopener">reasonable rates.</a>',
+          message: 'Seamless service at very <a href="https://waxshopca.zenoti.com/webstoreNew" target="_blank" rel="noopener">reasonable rates.</a>',
           imagePath: require('~/assets/sm-dollar2.png'),
           alt: 'Dollar sign',
           active: false

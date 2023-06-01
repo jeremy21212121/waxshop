@@ -20,7 +20,7 @@
       <p class="indent">
         The Wax Shop Staff
       </p>
-      <a href="https://go.booker.com/location/TheWaxShop" target="_blank" class="button--green" rel="noreferrer noopener">Book Now!</a>
+      <a href="https://waxshopca.zenoti.com/webstoreNew" target="_blank" class="button--green" rel="noopener">Book Now!</a>
       <div>
         <img src="@/assets/info.png" alt="info">
         <p>
